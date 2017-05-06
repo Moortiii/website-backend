@@ -1,5 +1,12 @@
 *{box-sizing:border-box;}
 .clear{clear:both;}
+:root {
+  --red: #EF476F;
+  --green: #06D6A0;
+  --blue: #118AB2;
+  --orange: #DFA06E;
+  --navy: #073B4C;
+}
 body, html{
   padding:0;
   margin:0;
@@ -60,7 +67,7 @@ body, html{
   border-bottom:1px solid #eee;
 }
 .section{
-  border-left:5px solid #DFA06E;
+  border-left:5px solid var(--orange);
   padding:5px 10px 5px;
   border-bottom:1px solid #f9f9f9;
   box-shadow:-6px 0px 9px #eee;
@@ -69,7 +76,7 @@ body, html{
 .plusbutton{
   display:inline-block;
   color:#fff;
-  background:#06D6A0;
+  background: var(--green);
   padding:3px 5px;
   text-align:center;
   border-radius:2px;
