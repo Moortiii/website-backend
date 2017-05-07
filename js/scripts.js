@@ -47,7 +47,9 @@ $(".ac-account, .ac-guest").click(function(){
 	if ($(".ac-guest").prop("checked") === true){
 		$(".section.account").hide();
 		$(".plusbutton").show();
+		$(".sites-section, .sitesCont").show();
 	}else{
+		$(".sites-section, .sitesCont").hide();
 		$(".section.account").show();
 		$(".plusbutton").hide();
 	}
@@ -67,7 +69,7 @@ $(document).ready(function(){
   		$(".sitesCont").html(localStorage.getItem("wb-progress"));
   	}
   	if ($(".ac-guest").prop("checked") === true){
-  		
+
   	}
 });
 function doSave(e){
