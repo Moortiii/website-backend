@@ -30,13 +30,17 @@ function createSite(){
 		thesiteName = "New site";
 	}
 	var theTheme = $("select[name='siteTheme']").val();
-	$(".main .sitesCont").prepend("<div class='section sitecreation'><header class='tools'><i class='fa fa-window-close-o'></i> " + theSiteName + "</header><div class='" + uniqueid + "'></div></div>");
+	$(".main .sitesCont").prepend("<div class='section sitecreation' style='display:none;'><header class='tools'><i class='fa fa-window-close-o before'></i> <span>Discard progress? <a href='#' class='yesClose'>Yes</a></span>" + theSiteName + "</header><div class='" + uniqueid + "'></div></div>");
 	$("div[class='" + uniqueid + "']").load("templates/siteCreation.php",  { name: theSiteName, theme:  theTheme}, function() {
 		$("input[name='siteName']").val("");
+		$("." + uniqueid).parent().slideDown(150);
 		$("." + uniqueid + " .loadedSiteName").focus();
 	});
 }
 $("body").on("click", "header.tools .fa-window-close-o", function(){
+	$(this).next("span").animate({width:'toggle'},100);
+});
+$("body").on("click", ".yesClose", function(){
 	$(this).closest(".section").remove();
 });
 $(".ac-account, .ac-guest").click(function(){
