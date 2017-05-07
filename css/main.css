@@ -274,6 +274,8 @@ td select{
     display: none;
     font-size: 12px;
     border-right: 1px solid #ddd;
+    padding-left: 0;
+    margin-left: 0;
 }
 .tools span a{
   color:#000;
@@ -287,5 +289,13 @@ td select{
   }
   .fifty table, .fifty table tr{
     width:100% !important;
+  }
+}
+@media only screen and (max-width:700px){
+  .left-menu{
+    display:none;
+  }
+  .main{
+    width:100%;
   }
 }
