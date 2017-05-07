@@ -64,7 +64,10 @@ $(document).ready(function(){
 		$(".section.account").show();
 	}
   	if (typeof(Storage) !== "undefined") {
-  		$(".sitesCont").html(localStorage.getItem("progress"));
+  		$(".sitesCont").html(localStorage.getItem("wb-progress"));
+  	}
+  	if ($(".ac-guest").prop("checked") === true){
+  		
   	}
 });
 function doSave(e){
@@ -82,7 +85,7 @@ function doSave(e){
 	}else{
 		if (typeof(Storage) !== "undefined") {
 	  		if ($(".ac-guest").prop("checked") === true){
-				localStorage.setItem("progress", $(".sitesCont").html());
+				localStorage.setItem("wb-progress", $(".sitesCont").html());
 			}
 	  	}
   	}
