@@ -96,8 +96,30 @@
     </div>
     
     <div class="section">
-      <h2>Site</h2>
-      <table>
+      <h2>Sites</h2>
+      <a href="#" class="button-navy large show-createSite">Create site</a>
+      <table class="createSite">      
+        <tr>
+          <th colspan="2">Create site
+          </td>
+        </tr>
+        <tr class="afterth">
+          <td>Name</td>
+          <td><input type="text" />
+          </td>
+        </tr>
+        <tr>
+          <td>Theme</td>
+          <td><select><option>Default</option></select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="go">
+          <button class="button small cancel-createSite"><i class="fa fa-ban before"></i> Cancel</button> <button onClick="createSite()" class="go-createSite">Create <i class="fa fa-angle-right after"></i></button>
+          </td>
+        </tr>
+            </table>
+      <!--<table>
          <tr>
           <td>Site name
           </td>
@@ -114,15 +136,19 @@
         <tr>
           <td colspan="2" class="info">You can setup DNS if you own a domain. How to set up DNS.</td>
         </tr>
-      </table>
+      </table>-->
       
     </div>
-    <a href="#" class="plusbutton"><i class="fa fa-plus"></i> New article</a>
-  </div>="#" class="plusbutton"><i class="fa fa-plus"></i> New article</a>
+    <a href="#" class="button-green plusbutton"><i class="fa fa-plus before"></i> New article</a>
+  </div>
     </div>
     <div class="clear">
     </div>
   </div>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>
 </body>
 </html>
