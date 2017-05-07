@@ -111,6 +111,9 @@ body, html{
 .section.account{
   display:none;
 }
+.section.sitecreation {
+    border-left-color: var(--green-dark);
+}
 .section p{
   line-height:1.5em;
   margin:0;
@@ -236,6 +239,9 @@ th{
 .section:nth-child(odd) th{
   border-bottom-color:var(--navy-lighter);
 }
+.section:nth-child(even) .section th{
+  border-bottom-color:rgba(223, 160, 110, 0.2);
+}
 table tr td:first-child{
   width:30%;
 }
@@ -248,6 +254,12 @@ td select{
 }
 .radio{
   padding:5px 0 10px;
+}
+.radio input[type="radio"]{
+  margin:0 5px 0 5px;
+}
+.radio input[type="radio"]:first-child{
+  margin-left:0;
 }
 /* MEDIA QUERIES */
 @media only screen and (max-width:1100px){

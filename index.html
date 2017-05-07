@@ -19,7 +19,7 @@
     <div class="left-menu">
       <div class="box">
         <h3>Settings</h3>
-        <a href="#" class="nav-link"><i class="fa fa-user-o" aria-hidden="true"></i>Admin</a>
+        <a href="#" class="nav-link"><i class="fa fa-user-o" aria-hidden="true"></i> Admin</a>
         <a href="#" class="nav-link">Statistics</a>
         <a href="#" class="nav-link">Edit design</a>
       </div>
@@ -55,18 +55,22 @@
           <div class="fifty">
       <table>
         <tr>
-          <th colspan="2">Settings</th>
+          <th colspan="2">Existing account</th>
         </tr>
         <tr class="afterth">
           <td>Email
           </td>
-          <td><input type="email" disabled value="email@gmail.com" />
+          <td><input type="email" value="" />
           </td>
         </tr>
         <tr>
-          <td>Name
+          <td>Password
           </td>
-          <td><input type="text" value="" />
+          <td><input type="password" value="" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="go"><button>Login</button>
           </td>
         </tr>
         
@@ -77,17 +81,26 @@
             <table>
               
         <tr>
-          <th colspan="2">Reset Password
+          <th colspan="2">New account
           </th>
         </tr>
         <tr class="afterth">
-          <td>Old password</td>
+          <td>Email</td>
           <td><input type="text" />
           </td>
         </tr>
         <tr>
-          <td>New password</td>
-          <td><input type="text" />
+          <td>Password</td>
+          <td><input type="password" />
+          </td>
+        </tr>
+        <tr>
+          <td>Confirm password</td>
+          <td><input type="password" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="go"><button>Create account</button>
           </td>
         </tr>
             </table>
@@ -95,6 +108,8 @@
           </div>
       </div>
     <div class="clear"></div>
+    <p>
+      Your progress is usually saved in localstorage. If you create an account, it will be saved on our servers.</p>
       </div>
     </div>
     
@@ -123,7 +138,9 @@
         </tr>
             </table>
       
-      
+    </div>
+    <div class="sitesCont">
+
     </div>
     <a href="#" class="button-green plusbutton"><i class="fa fa-plus before"></i> New article</a>
   </div>
