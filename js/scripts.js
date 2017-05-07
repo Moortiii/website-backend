@@ -4,7 +4,7 @@ $('a[href="#"]').click(function(e){
 });
 $(".show-createSite, .cancel-createSite").click(function(){
 	$(".createSite").toggle();
-	$(".show-createSite").toggle();
+	$(".site-buttons").toggle();
 	if ($(".show-createSite:visible")){
 		$("input[name='siteName'").focus();
 	}else{
@@ -19,7 +19,7 @@ function guidGenerator() {
 }
 function createSite(){
 	if ($(".show-createSite:visible")){
-		$(".show-createSite").toggle();
+		$(".site-buttons").toggle();
 		$(".createSite").toggle();
 	}else{
 
