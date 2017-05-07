@@ -5,21 +5,66 @@ if ($name == "New site"){
   $name = "";
 }
 ?><form action="createSite.php" method="post">
-<table>
-   <tr>
-    <td>Site name
-    </td>
-    <td><input type="text" value="<?php echo($name); ?>" class="loadedSiteName" />
-    </td>
-  </tr>
-  
-  <tr>
-          <td>Theme</td>
-          <td><select name="siteTheme"><option>Boilerplate</option></select>
-          </td>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" class="info">...</td>
-  </tr>
-</table>
+<div class="fifty-cont">
+  <div class="fifty">
+    <table>
+    <tr>
+    <th colspan="2">Base information</th>
+    </tr>
+       <tr>
+        <td>Site name
+        </td>
+        <td><input type="text" value="<?php echo($name); ?>" class="loadedSiteName" />
+        </td>
+      </tr>
+      
+      <tr>
+              <td>Theme</td>
+              <td><select name="siteTheme"><option>Boilerplate</option></select>
+              </td>
+        </td>
+      </tr>
+    <tr>
+    <th colspan="2">Includes</th>
+    </tr>
+        <tr>
+              <td>Include jQuery</td>
+              <td><input type="checkbox" name="includejQuery" checked />
+              </td>
+        </td>
+        <tr>
+              <td>Normalize CSS</td>
+              <td><input type="checkbox" name="includejQuery" checked />
+              </td>
+        </tr>
+    </table>
+  </div>
+<div class="fifty">
+    <table>
+    <tr>
+    <th colspan="2">Title format</th>
+    </tr>
+       <tr>
+        <td>
+        Format
+        </td>
+        <td>
+        <input type="radio" name="titleformat" checked> Sitename / Pagename
+        </td>
+      </tr>
+       <tr>
+        <td></td><td>
+        <input type="radio" name="titleformat"> Sitename
+        </td>
+      </tr>
+
+       <tr>
+        <td></td><td>
+        <input type="radio" name="titleformat"> Pagename
+        </td>
+        </tr>
+    </table>
+  </div>
+  <div class="clear"></div>
+</div>
+</form>
