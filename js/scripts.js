@@ -33,6 +33,7 @@ function createSite(){
 		thesiteName = "New site";
 	}
 	var theTheme = $("select[name='siteTheme']").val();
+	$(".saveSiteButton").click();
 	$(".main .sitesCont").prepend("<div class='section sitecreation' style='display:none;'><header class='tools'><input type='checkbox' class='mark' name='mark-" + uniqueid + "' /><i class='fa fa-window-close-o before toolsi'></i> <span>Discard site? <a href='#' class='yesClose'>Yes</a></span><em>" + theSiteName + "</em></header><div class='" + uniqueid + "'></div></div>");
 	$("div[class='" + uniqueid + "']").load("templates/siteCreation.php",  { name: theSiteName, theme:  theTheme}, function() {
 		$("input[name='siteName']").val("");

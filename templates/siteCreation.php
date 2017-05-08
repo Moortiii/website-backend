@@ -63,6 +63,9 @@ if ($name == "New site"){
         <input type="radio" name="titleformat"> Pagename
         </td>
         </tr>
+    <tr>
+    <th colspan="2">Finish</th>
+    </tr>
         <tr>
         <td colspan="2" class="go">
         <button class="button light"><i class="fa fa-arrow-circle-down before downloadSiteButton"></i> Download</button> <button class="button light saveSiteButton"><i class="fa fa-floppy-o before"></i> Save</button>
