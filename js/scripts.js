@@ -69,9 +69,6 @@ $(document).ready(function(){
 	}
   	if (typeof(Storage) !== "undefined") {
   		$(".sitesCont").html(localStorage.getItem("wb-progress"), function(){
-			if ($('.isEditing').length){
-				$(".siteCreation").removeClass("isEditing");
-			}
   		});
   	}else{
   		var isEditing = false;
@@ -79,6 +76,10 @@ $(document).ready(function(){
   	if ($(".ac-guest").prop("checked") === true){
 
   	}
+  	if (localStorage.getItem("wb-progress").indexOf("isEditing")){
+		$(".siteCreation").removeClass("isEditing");
+		isEditing = false;
+	}
   	$(".massedit").click(function(){
 		if (isEditing == true){
 			$(this).text("Mass-edit");
