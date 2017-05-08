@@ -73,4 +73,5 @@ if ($name == "New site"){
   <div class="clear"></div>
 </div>
 <a href="#" class="openSiteButton"><i class="fa fa-pencil"></i></a>
+<a href="#" class="downloadSiteButtonLarge"><i class="fa fa-arrow-circle-down"></i></a>
 <!--</form>-->

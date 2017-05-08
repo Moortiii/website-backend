@@ -24,6 +24,9 @@ function createSite(){
 	}else{
 
 	}
+	if ($(".massedit").text() == "Stop editing"){
+		$(".massedit").click();
+	}
 	var uniqueid = guidGenerator();
 	var theSiteName = $("input[name='siteName']").val();
 	if (!$("input[name='siteName']").val() || $("input[name='siteName']").val() == ""){
