@@ -4,7 +4,7 @@ $theme = $_POST['theme'];
 if ($name == "New site"){
   $name = "";
 }
-?><form action="createSite.php" method="post">
+?><!--<form action="createSite.php" method="post">-->
 <div class="fifty-cont">
   <div class="fifty">
     <table>
@@ -63,8 +63,13 @@ if ($name == "New site"){
         <input type="radio" name="titleformat"> Pagename
         </td>
         </tr>
+        <tr>
+        <td colspan="2" class="go">
+        <button class="button-navy light"><i class="fa fa-floppy-o before"></i> Save</button>
+        </td>
+        </tr>
     </table>
   </div>
   <div class="clear"></div>
 </div>
-</form>
+<!--</form>-->

@@ -30,7 +30,7 @@ function createSite(){
 		thesiteName = "New site";
 	}
 	var theTheme = $("select[name='siteTheme']").val();
-	$(".main .sitesCont").prepend("<div class='section sitecreation' style='display:none;'><header class='tools'><i class='fa fa-window-close-o before'></i> <span>Discard site? <a href='#' class='yesClose'>Yes</a></span>" + theSiteName + "</header><div class='" + uniqueid + "'></div></div>");
+	$(".main .sitesCont").prepend("<div class='section sitecreation' style='display:none;'><header class='tools'><input type='checkbox' class='mark' name='mark-" + uniqueid + "' /><i class='fa fa-window-close-o before'></i> <span>Discard site? <a href='#' class='yesClose'>Yes</a></span>" + theSiteName + "</header><div class='" + uniqueid + "'></div></div>");
 	$("div[class='" + uniqueid + "']").load("templates/siteCreation.php",  { name: theSiteName, theme:  theTheme}, function() {
 		$("input[name='siteName']").val("");
 		$("." + uniqueid).parent().slideDown(150);
@@ -100,9 +100,35 @@ $(document).ready(function(){
 			// Turn off editing
 			$(".siteCreation").removeClass("isEditing");
 			$(".sitesCont").sortable("disable");
+			$(".action").hide();
 			isEditing = false;
 		}
-	}
+	}/*
+	$(".doDelete").click(function(){
+		
+	});*/
+	$('.action').on("change", function(){ 
+	    if ($(this).val() == "delete"){
+	    	$('.mark:checkbox:checked').each(function(){
+				$(this).closest(".siteCreation").remove();	
+				$(".action").hide();
+			});
+			$(this).val("action");
+	    }
+	});
+	$(".mark").click(function(){
+		if ($(".mark", ".sitesCont").is(":checked"))
+		{
+			$(".action").show();
+		}
+		else
+		{
+			$(".action").hide();
+		}
+		if($('.sitesCont').find('input:checked').length < 1){
+		}else{
+		}
+	});
 });
 function doSave(e){
 	if (e == "button"){

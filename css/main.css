@@ -115,6 +115,7 @@ body, html{
 .section.sitecreation {
     border-left-color: var(--green-dark);
     border-top: 1px solid transparent;
+    position:relative;
 }
 .section p{
   line-height:1.5em;
@@ -135,6 +136,9 @@ body, html{
   border-left-color:#ddd !important;
   opacity:0.8;
   background:#fff;
+}
+.section .section.sitecreation.isEditing .tools .mark{
+  display:block !important;
 }
 .section .section.sitecreation.isEditing:first-child{
   margin-top:20px;
@@ -198,6 +202,9 @@ i.before{
   font-size:12px;
   background:none;
   border:none;
+}
+*[class^="button"].light{
+  font-weight:normal;
 }
 .button-green{
   background:var(--green);
@@ -300,6 +307,29 @@ td select{
 .tools span a{
   color:#000;
   text-decoration:none;
+}
+.tools .mark {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    display: none;
+    cursor:pointer;
+}
+select.action {
+    width: 100%;
+    border-radius: 0px;
+    background: var(--navy);
+    color: #f9f9f9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 5px 10px;
+    border: 1px solid var(--navy-dark);
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 12px;
+    opacity: 0.5;
+    display:none;
 }
 /* MEDIA QUERIES */
 @media only screen and (max-width:1100px){
