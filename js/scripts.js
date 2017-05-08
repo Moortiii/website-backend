@@ -40,8 +40,15 @@ function createSite(){
 		$("." + uniqueid + " .loadedSiteName").focus();
 	});
 }
-$("body").on("click", "header.tools .fa-window-close-o", function(){
+$("body").on("click", "header.tools .toolsi", function(){
 	$(this).next("span").animate({width:'toggle'},100);
+	if ($(this).hasClass("fa-window-close-o")){
+		$(this).removeClass("fa-window-close-o");
+		$(this).addClass("fa-angle-left");
+	}else{
+		$(this).addClass("fa-window-close-o");
+		$(this).removeClass("fa-angle-left");
+	}
 });
 $("body").on("click", ".yesClose", function(){
 	$(this).closest(".section").remove();
@@ -71,8 +78,25 @@ $(document).ready(function(){
 	}else{
 		$(".section.account").show();
 	}
+	var htmlOriginal = $.fn.html;
+
+// redefine the `.html()` function to accept a callback
+$.fn.html = function(html,callback){
+  // run the old `.html()` function with the first parameter
+  var ret = htmlOriginal.apply(this, arguments);
+  // run the callback (if it is defined)
+  if(typeof callback == "function"){
+    callback();
+  }
+  // make sure chaining is not broken
+  return ret;
+}
   	if (typeof(Storage) !== "undefined") {
   		$(".sitesCont").html(localStorage.getItem("wb-progress"), function(){
+  			$(".siteCreation").each(function(){
+  				$(this).find(".loadedSiteName").val($(this).find("em").text())
+  				console.log($(this).find(".loadedSiteName").val($(this).find("em").text()));
+  			});
   		});
   	}else{
   		var isEditing = false;
@@ -155,7 +179,7 @@ function doSave(e){
   	}
 }
 $(".sitesCont").on("click", ".saveSiteButton", function(){
-	$(this).closest(".fifty-cont").slideUp(150);
+	$(this).closest(".fifty-cont").hide();
 	$(this).closest(".siteCreation").addClass("closed");
 });
 $(".sitesCont").on("click", ".openSiteButton", function(e){
