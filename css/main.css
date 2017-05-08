@@ -114,6 +114,7 @@ body, html{
 }
 .section.sitecreation {
     border-left-color: var(--green-dark);
+    border-top: 1px solid transparent;
 }
 .section p{
   line-height:1.5em;
@@ -125,6 +126,23 @@ body, html{
   border-bottom:1px solid #f9f9f9;
   font-size:26px;
   margin:0px 0 10px;
+}
+/* Editing sections */
+.section .sitecreation.isEditing:hover{
+  border-top-color:#ddd;
+}
+.section .section.sitecreation.isEditing{
+  border-left-color:#ddd !important;
+  opacity:0.8;
+}
+.section .section.sitecreation.isEditing:first-child{
+  margin-top:20px;
+}
+.section .section.sitecreation.isEditing:last-child{
+  margin-bottom:50px;
+}
+.section .section.sitecreation.isediting header{
+  cursor:move;
 }
 /* Form elements */
 input[type="text"], input[type="password"], input[type="email"]{

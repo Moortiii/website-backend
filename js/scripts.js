@@ -60,17 +60,48 @@ $('input[name="siteName"]').keypress(function(event) {
     }
 });
 $(document).ready(function(){
+
+	var isEditing = false;
 	if ($(".ac-guest").prop("checked") === true){
 		$(".section.account").hide();
 	}else{
 		$(".section.account").show();
 	}
   	if (typeof(Storage) !== "undefined") {
-  		$(".sitesCont").html(localStorage.getItem("wb-progress"));
+  		$(".sitesCont").html(localStorage.getItem("wb-progress"), function(){
+			if ($('.isEditing').length){
+				$(".siteCreation").removeClass("isEditing");
+			}
+  		});
+  	}else{
+  		var isEditing = false;
   	}
   	if ($(".ac-guest").prop("checked") === true){
 
   	}
+  	$(".massedit").click(function(){
+		if (isEditing == true){
+			$(this).text("Mass-edit");
+		}else{
+			$(this).text("Stop editing");
+		}
+		massEdit();
+	});
+	function massEdit() {
+		if (isEditing == false){
+			isEditing = true;
+			// Turn on editing
+			$(".site")
+			$(".siteCreation").addClass("isEditing");
+			$(".sitesCont").sortable({placeholder: "ui-state-highlight",helper:'clone', items: '.siteCreation'});
+			$(".sitesCont").sortable("enable");
+		}else{
+			// Turn off editing
+			$(".siteCreation").removeClass("isEditing");
+			$(".sitesCont").sortable("disable");
+			isEditing = false;
+		}
+	}
 });
 function doSave(e){
 	if (e == "button"){
