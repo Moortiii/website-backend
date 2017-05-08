@@ -17,6 +17,12 @@ if ($name == "New site"){
         <td><input type="text" value="<?php echo($name); ?>" class="loadedSiteName" />
         </td>
       </tr>
+       <tr>
+        <td>Page name
+        </td>
+        <td><input type="text" value="" class="" />
+        </td>
+      </tr>
       
       <tr>
               <td>Theme</td>
@@ -28,13 +34,30 @@ if ($name == "New site"){
     <th colspan="2">Includes</th>
     </tr>
         <tr>
-              <td>Include jQuery</td>
+              <td>jQuery</td>
               <td><input type="checkbox" name="includejQuery" checked />
               </td>
         </td>
         <tr>
               <td>Normalize CSS</td>
-              <td><input type="checkbox" name="includejQuery" checked />
+              <td><input type="checkbox" name="normalizeCSS" checked />
+              </td>
+        </tr>
+    <th colspan="2">Meta-data</th>
+    </tr>
+        <tr>
+              <td>Name</td>
+              <td><input type="text" name="meta-name" value="<?php echo($name); ?>" />
+              </td>
+        </td>
+        <tr>
+              <td>Keywords</td>
+              <td><input type="text" name="meta-keywords" value="key, words" />
+              </td>
+        </tr>
+        <tr>
+              <td valign="top">Description</td>
+              <td><textarea name="meta-textarea"></textarea>
               </td>
         </tr>
     </table>
@@ -61,6 +84,38 @@ if ($name == "New site"){
        <tr>
         <td></td><td>
         <input type="radio" name="titleformat"> Pagename
+        </td>
+        </tr>
+        <tr>
+        <td></td><td>
+        <input type="radio" name="titleformat"> Custom
+        </td>
+        </tr>
+    <tr>
+    <th colspan="2">Extra features</th>
+    </tr>
+       <tr>
+        <td>
+        Extra
+        </td>
+        <td>
+        <input type="checkbox" name="titleformat" checked> #1
+        </td>
+      </tr>
+       <tr>
+        <td></td><td>
+        <input type="checkbox" name="titleformat"> #2
+        </td>
+      </tr>
+
+       <tr>
+        <td></td><td>
+        <input type="checkbox" name="titleformat"> #3
+        </td>
+        </tr>
+        <tr>
+        <td></td><td>
+        <input type="checkbox" name="titleformat"> #4
         </td>
         </tr>
     <tr>

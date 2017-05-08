@@ -18,6 +18,9 @@ function guidGenerator() {
     return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }
 function createSite(){
+	$('html,body').animate({
+        scrollTop: $(".sites-section").offset().top},
+        'slow');
 	if ($(".show-createSite:visible")){
 		$(".site-buttons").toggle();
 		$(".createSite").toggle();
@@ -79,30 +82,7 @@ $(document).ready(function(){
 	}else{
 		$(".section.account").show();
 	}
-	var htmlOriginal = $.fn.html;
-	String.prototype.escapeHTML = function () {                                        
-	  return(                                                                 
-	    this.replace(/>/g,'&gt;').
-	         replace(/</g,'&lt;').
-	         replace(/"/g,'&quot;')
-	  );
-	};
-	var codeEl = $("pre");
-	if (codeEl) {
-	  codeEl.innerHTML = codeEl.innerHTML.escapeHTML();
-	}
 
-// redefine the `.html()` function to accept a callback
-$.fn.html = function(html,callback){
-  // run the old `.html()` function with the first parameter
-  var ret = htmlOriginal.apply(this, arguments);
-  // run the callback (if it is defined)
-  if(typeof callback == "function"){
-    callback();
-  }
-  // make sure chaining is not broken
-  return ret;
-}
   	if (typeof(Storage) !== "undefined") {
   		$(".sitesCont").html(localStorage.getItem("wb-progress"), function(){
   			$(".siteCreation").each(function(){

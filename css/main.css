@@ -202,7 +202,7 @@ body, html{
   margin:5px 0;
 }
 /* Form elements */
-input[type="text"], input[type="password"], input[type="email"]{
+input[type="text"], input[type="password"], input[type="email"], textarea{
   border:1px solid #ddd;
   border-bottom-color:#eee;
   border-right-color:#eee;
@@ -217,13 +217,23 @@ input[disabled]{
 input[type="radio"]{
   cursor:pointer;
 }
-input:focus, select:focus, textarea:focus, button:focus, *[class^="button"]:focus{
+input:focus, select:focus, textarea:focus, button:focus, *[class^="button"]:focus, textarea:focus{
   box-shadow:0px 0px 1px 0px #118AB2;
   outline:none;
+}
+textarea{
+  max-width:100%;
+  resize:none;
 }
 input[type="radio"]:focus{
   outline:none;
   box-shadow:none;
+}
+tbody th{
+  padding-top:15px;
+}
+tbody tr:first-child th{
+  padding-top:5px;
 }
 /* BUTTONS */
 *[class^="button"], button{
