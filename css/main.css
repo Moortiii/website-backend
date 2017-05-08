@@ -105,6 +105,7 @@ body, html{
     padding: 5px 10px;
     margin-bottom: 5px;
     color: #333;
+    border-bottom: 1px solid #aaa;
 }
 .section header.tools i{
   cursor:pointer;
@@ -130,7 +131,7 @@ body, html{
 }
 /* Editing sections */
 .section .sitecreation.isEditing:hover{
-  border-top-color:#ddd;
+  border-top-color:#aaa;
 }
 .section .section.sitecreation.isEditing{
   border-left-color:#ddd !important;
@@ -215,6 +216,13 @@ i.before{
 }
 .button-navy{
   background:var(--navy);
+  color:#fff;
+  border-color:var(--navy-dark);
+  border-left-color:#111;
+  border-top-color:#111;
+}
+.button-blue{
+  background:var(--blue);
   color:#fff;
   border-color:var(--navy-dark);
   border-left-color:#111;
@@ -330,6 +338,33 @@ select.action {
     font-size: 12px;
     opacity: 0.5;
     display:none;
+}
+.openSiteButton{
+    position: absolute;
+    top: 9px;
+    left: 39px;
+    font-size: 20px;
+    color: #333;
+    display:none;
+}
+.siteCreation.closed .toolsi{
+  margin-right:35px;
+}
+.siteCreation.closed header.tools{
+  margin-bottom:0;
+  padding:10px;
+}
+.siteCreation.closed .openSiteButton{
+  display:inline-block;
+}
+.siteCreation.closed header i{
+  font-size:20px;
+}
+.siteCreation.closed div{
+  height:0px;
+}
+.siteCreation.closed{
+  height:41px;
 }
 /* MEDIA QUERIES */
 @media only screen and (max-width:1100px){

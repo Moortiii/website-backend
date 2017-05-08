@@ -65,11 +65,12 @@ if ($name == "New site"){
         </tr>
         <tr>
         <td colspan="2" class="go">
-        <button class="button-navy light"><i class="fa fa-floppy-o before"></i> Save</button>
+        <button class="button light"><i class="fa fa-arrow-circle-down before downloadSiteButton"></i> Download</button> <button class="button light saveSiteButton"><i class="fa fa-floppy-o before"></i> Save</button>
         </td>
         </tr>
     </table>
   </div>
   <div class="clear"></div>
 </div>
+<a href="#" class="openSiteButton"><i class="fa fa-pencil"></i></a>
 <!--</form>-->

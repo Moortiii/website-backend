@@ -30,7 +30,7 @@ function createSite(){
 		thesiteName = "New site";
 	}
 	var theTheme = $("select[name='siteTheme']").val();
-	$(".main .sitesCont").prepend("<div class='section sitecreation' style='display:none;'><header class='tools'><input type='checkbox' class='mark' name='mark-" + uniqueid + "' /><i class='fa fa-window-close-o before'></i> <span>Discard site? <a href='#' class='yesClose'>Yes</a></span>" + theSiteName + "</header><div class='" + uniqueid + "'></div></div>");
+	$(".main .sitesCont").prepend("<div class='section sitecreation' style='display:none;'><header class='tools'><input type='checkbox' class='mark' name='mark-" + uniqueid + "' /><i class='fa fa-window-close-o before toolsi'></i> <span>Discard site? <a href='#' class='yesClose'>Yes</a></span><em>" + theSiteName + "</em></header><div class='" + uniqueid + "'></div></div>");
 	$("div[class='" + uniqueid + "']").load("templates/siteCreation.php",  { name: theSiteName, theme:  theTheme}, function() {
 		$("input[name='siteName']").val("");
 		$("." + uniqueid).parent().slideDown(150);
@@ -60,7 +60,8 @@ $('input[name="siteName"]').keypress(function(event) {
     }
 });
 $(document).ready(function(){
-
+	console.log("%c If you are a guest, please be vary of messing with inspect element and console", 'font-size:18px;display:inline-block;padding: 10px 20px;background:#073B4C;color:#f9f9f9;');
+	console.log("%c Your progress is saved directly with .html(), so any changes you make will be saved", 'font-size:18px;display:inline-block;margin-top:10px;padding: 5px 20px;background:#073B4C;color:#f9f9f9;');
 	var isEditing = false;
 	if ($(".ac-guest").prop("checked") === true){
 		$(".section.account").hide();
@@ -150,6 +151,19 @@ function doSave(e){
 	  	}
   	}
 }
+$(".sitesCont").on("click", ".saveSiteButton", function(){
+	$(this).closest(".fifty-cont").slideUp(150);
+	$(this).closest(".siteCreation").addClass("closed");
+});
+$(".sitesCont").on("click", ".openSiteButton", function(e){
+	e.preventDefault();
+	$(this).prev(".fifty-cont").show();
+	$(this).closest(".siteCreation").removeClass("closed");
+	return false;
+});
 $(window).on("unload", function(e) {
   doSave();
+});
+$('body').on("keyup", ".loadedSiteName", function() {
+    jQuery(this).parent().parent().parent().parent().parent().parent().parent().parent().children("header").children("em").text($(this).val());
 });
