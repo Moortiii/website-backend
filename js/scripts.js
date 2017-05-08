@@ -116,7 +116,7 @@ $(document).ready(function(){
 			$(this).val("action");
 	    }
 	});
-	$(".mark").click(function(){
+	$("body").on("click", ".mark", function(){
 		if ($(".mark", ".sitesCont").is(":checked"))
 		{
 			$(".action").show();
