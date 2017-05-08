@@ -80,6 +80,17 @@ $(document).ready(function(){
 		$(".section.account").show();
 	}
 	var htmlOriginal = $.fn.html;
+	String.prototype.escapeHTML = function () {                                        
+	  return(                                                                 
+	    this.replace(/>/g,'&gt;').
+	         replace(/</g,'&lt;').
+	         replace(/"/g,'&quot;')
+	  );
+	};
+	var codeEl = $("pre");
+	if (codeEl) {
+	  codeEl.innerHTML = codeEl.innerHTML.escapeHTML();
+	}
 
 // redefine the `.html()` function to accept a callback
 $.fn.html = function(html,callback){
