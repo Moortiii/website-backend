@@ -189,5 +189,6 @@ $(".sitesCont").on("click", ".downloadSiteButton", function(e){
 	$(this).closest("form");
 });
 $('body').on("keyup", ".loadedSiteName", function() {
-    jQuery(this).parent().parent().parent().parent().parent().parent().parent().parent().children("header").children("em").text($(this).val());
+    $(".loadedSiteName").closest(".siteCreation").children("header").children("em").text($(this).val());
+    $(this).attr("value", $(this).val());
 });
