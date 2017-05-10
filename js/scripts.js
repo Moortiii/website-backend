@@ -186,9 +186,13 @@ $(window).on("unload", function(e) {
   doSave();
 });
 $(".sitesCont").on("click", ".downloadSiteButton", function(e){
-	$(this).closest("form");
+	$(this).closest("form").submit();
+});
+$(".sitesCont").on("click", ".downloadSiteButtonLarge", function(e){
+	$(this).closest(".openSiteButton").click();
+	$(this).closest(".siteCreation").find("form").submit();
 });
 $('body').on("keyup", ".loadedSiteName", function() {
-    $(".loadedSiteName").closest(".siteCreation").children("header").children("em").text($(this).val());
+    $(this).closest(".sitecreation").find("em").text($(this).val());
     $(this).attr("value", $(this).val());
 });
