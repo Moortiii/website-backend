@@ -170,9 +170,11 @@ function doSave(e){
 	  	}
   	}
 }
-$(".sitesCont").on("click", ".saveSiteButton", function(){
+$(".sitesCont").on("click", ".saveSiteButton", function(e){
+	e.preventDefault();
 	$(this).closest(".fifty-cont").hide();
 	$(this).closest(".siteCreation").addClass("closed");
+	return false;
 });
 $(".sitesCont").on("click", ".openSiteButton", function(e){
 	e.preventDefault();
@@ -182,6 +184,9 @@ $(".sitesCont").on("click", ".openSiteButton", function(e){
 });
 $(window).on("unload", function(e) {
   doSave();
+});
+$(".sitesCont").on("click", ".downloadSiteButton", function(e){
+	$(this).closest("form");
 });
 $('body').on("keyup", ".loadedSiteName", function() {
     jQuery(this).parent().parent().parent().parent().parent().parent().parent().parent().children("header").children("em").text($(this).val());

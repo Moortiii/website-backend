@@ -4,7 +4,7 @@ $theme = $_POST['theme'];
 if ($name == "New site"){
   $name = "";
 }
-?><!--<form action="createSite.php" method="post">-->
+?><form action="php/createSite.php" method="post">
 <div class="fifty-cont">
   <div class="fifty">
     <table>
@@ -132,4 +132,4 @@ if ($name == "New site"){
 </div>
 <a href="#" class="openSiteButton"><i class="fa fa-pencil"></i></a>
 <a href="#" class="downloadSiteButtonLarge"><i class="fa fa-arrow-circle-down"></i></a>
-<!--</form>-->
+</form>
