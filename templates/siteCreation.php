@@ -39,9 +39,7 @@ if ($name == "New site"){
               </td>
         </td>
         <tr>
-              <td>Normalize CSS</td>
-              <td><input type="checkbox" name="normalizeCSS" checked />
-              </td>
+              <td colspan="2"><a href="#" class="addInclude"><i class="fa fa-plus"></i></a></td>
         </tr>
     <th colspan="2">Meta-data</th>
     </tr>

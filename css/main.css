@@ -440,3 +440,16 @@ select.action {
     width:100%;
   }
 }
+.addInclude{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: var(--navy);
+    padding: 8px;
+    color: #f9f9f9;
+    opacity: 0.8;
+    cursor:pointer;
+}
+.addInclude:hover{
+  opacity:1;
+}
