@@ -86,7 +86,7 @@ if ($name == "New site"){
         </tr>
         <tr>
         <td></td><td>
-        <input type="radio" name="titleformat"> Custom
+        <input type="radio" name="titleformat" value="custom"> Custom
         </td>
         </tr>
     <tr>

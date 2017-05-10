@@ -196,15 +196,31 @@ $('body').on("keyup", ".loadedSiteName", function() {
     $(this).closest(".sitecreation").find("em").text($(this).val());
     $(this).attr("value", $(this).val());
 });
-$('body').on("click", ".addInclude", function(){
+$('body').on("click", ".addInclude", function(e){
+	e.preventDefault();
 	var uniid = $(this).closest("form").parent().attr("class");
 	if ($("." + uniid + " .cScriptType-0").length == 0){
-		$(this).closest("tr").before('<tr><td><select name="customScriptType-0" class="cScriptType-0"><option value="script">Script</option><option value="css">CSS</option></select></td><td><input type="text" name="customScriptLink-0" class="customScriptLink-0" /></td></tr>');
+		$(this).closest("tr").before('<tr><td><select name="customScriptType-0" class="cScriptType-0"><option value="script">Script</option><option value="css">Stylesheet</option></select></td><td><input type="text" name="customScriptLink-0" placeholder="location/of/file.ext" class="customScriptLink-0" /></td></tr>');
 	}else{
 	var lastID = parseInt($(this).closest(".sitecreation").find("*[class^='cScriptType-']:last").attr("class").substring(12));
 	console.log("Last ID: " + lastID);
 	var newID = lastID + 1;
 	console.log("New ID: " + newID);
-		$(this).closest("tr").before('<tr><td><select name="customScriptType-' + newID + '" class="cScriptType-' + newID + '"><option value="script">Script</option><option value="css">CSS</option></select></td><td><input type="text" name="customScriptLink-' + newID + '" class="customScriptLink-' + newID + '" /></td></tr>');
+		$(this).closest("tr").before('<tr><td><select name="customScriptType-' + newID + '" class="cScriptType-' + newID + '"><option value="script">Script</option><option value="css">Stylesheet</option></select></td><td><input type="text" placeholder="location/of/file.ext" name="customScriptLink-' + newID + '" class="customScriptLink-' + newID + '" /></td></tr>');
 	}
+	return false;
+});
+$("body").on("click", 'input:radio[value!="custom"][name="titleformat"]', function(){
+		console.log("slide....up!!");
+		$("input:radio[name='titleformat']").prop("checked", false);
+		$("input:radio[name='titleformat']").removeAttr("checked");
+		$(this).attr("checked", "checked");
+		$(this).prop("checked", true);
+});
+$("body").on("click", 'input:radio[value="custom"][name="titleformat"]', function(){
+		$("input:radio[name='titleformat']").prop("checked", false);
+		$("input:radio[name='titleformat']").removeAttr("checked");
+		$(this).attr("checked", "checked");
+		$(this).prop("checked", true);
+        console.log("Dropdown!!!");
 });
