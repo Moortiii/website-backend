@@ -14,7 +14,7 @@ if ($name == "New site"){
        <tr>
         <td>Site name
         </td>
-        <td><input type="text" value="<?php echo($name); ?>" class="loadedSiteName" />
+        <td><input type="text" name="siteName" value="<?php echo($name); ?>" class="loadedSiteName" />
         </td>
       </tr>
        <tr>
@@ -23,7 +23,7 @@ if ($name == "New site"){
         <td><input type="text" value="" class="" />
         </td>
       </tr>
-      
+
       <tr>
               <td>Theme</td>
               <td><select name="siteTheme"><option>Boilerplate</option></select>
@@ -39,10 +39,20 @@ if ($name == "New site"){
               </td>
         </td>
         <tr>
+              <td>Normalize</td>
+              <td><input type="checkbox" name="includeNormalize" checked />
+              </td>
+        </tr>
+        <tr>
               <td colspan="2"><a href="#" class="addInclude"><i class="fa fa-plus"></i></a></td>
         </tr>
     <th colspan="2">Meta-data</th>
     </tr>
+        <tr>
+              <td>Author</td>
+              <td><input type="text" name="meta-author" value="" />
+              </td>
+        </td>
         <tr>
               <td>Name</td>
               <td><input type="text" name="meta-name" value="<?php echo($name); ?>" />

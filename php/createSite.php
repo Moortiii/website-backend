@@ -1,69 +1,80 @@
 <?php
-
 // Initialize variables
 $name;
 $theme;
 $jQuery;
 $normalize;
 $meta_name;
-$meta_keywords;
-$meta_description;
+$meta_author;
 
-// Check if includejQuery is checked
 function includejQuery() {
+  global $jQuery;
   if(isset($_POST['includejQuery'])) {
-    $jquery = '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>';
-  } else {
-    $jquery = "";
+    // By ending typing <\/script> we escape the script tag in the template literal later
+    $jQuery = "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'><\/script>";
   }
 }
 
-// Check if normalizeCSS is checked
 function includeNormalize() {
-  if(isset($_POST['normalizeCSS'])) {
-    $normalize = '<link rel="stylesheet" href="css/normalize.css">';
-  } else {
-    $normalize = "";
+  global $normalize;
+  if(isset($_POST['includeNormalize'])) {
+    $normalize = "<link rel='stylesheet' href='css/normalize.css'>";
   }
 }
 
-// Assigns the basic info to the proper variables
-function setBasicInfo() {
-  if(isset($_POST['siteName'])) {
-    $name = $_POST['siteName']; // Get the site name
-  } else {
-    $name = "hello-world";
+function setInfo() {
+  global $name, $theme, $meta_name, $meta_author;
+  if(!empty($_POST['siteName'])) {
+    $name = $_POST['siteName'];
   }
-  if(isset($_POST['siteTheme'])) {
-    $theme = $_POST['siteTheme']; // Grabs the selected theme
+  if(!empty($_POST['siteTheme'])) {
+    $theme = $_POST['siteTheme'];
+  }
+  if(!empty($_POST['meta-name'])) {
+    $meta_name = $_POST['meta-name'];
+  }
+  if(!empty($_POST['meta-name'])) {
+    $meta_author = $_POST['meta-author'];
   }
   includejQuery();
   includeNormalize();
 }
 
-// Assigns the meta-data to the proper variables
-function setMetaData() {
-  if(isset($_POST['meta-name'])) {
-    $meta_name = $_POST['meta-name']; // Get the site name
-  }
-  if(isset($_POST['meta_keywords'])) {
-    $meta_keywords = $_POST['meta_keywords']; // Get the site name
-  }
-  if(isset($_POST['meta_description'])) {
-    $meta_description = $_POST['meta_textarea']; // Get the site name
-  }
-}
-
-// Run the necessary functions
-setBasicInfo();
-setMetaData();
-
+setInfo();
 ?>
 
-<html>
-<head>
-</head>
-<body>
-  <p><?php echo($name); ?></p>
-</body>
-</html>
+<script type="text/javascript">
+  var name = "<?php echo($name); ?>";
+  var theme = "<?php echo($theme); ?>";
+  var jQuery = "<?php echo($jQuery); ?>";
+  var normalize = "<?php echo($normalize); ?>";
+  var meta_name = "<?php echo($meta_name); ?>";
+  var meta_author = "<?php echo($meta_author); ?>";
+
+  var str = `
+  <html>
+    <head>
+      <meta name="author" content="${meta_author}">
+      <meta name="name" content="${meta_name}">
+      ${normalize}
+      <link rel="stylesheet" href="css/main.css">
+      <title>${name}</title>
+      <body>
+        <div>
+          <h1>Large Headline</h1>
+          <p>This is a simple test-page</p>
+          <p>In which we write text to output</p>
+        </div>
+        ${jQuery}
+      </body>
+    </head>
+  </html>
+  `;
+
+var hiddenElement = document.createElement('a');
+
+hiddenElement.href = 'data:attachment/text,' + encodeURI(str);
+hiddenElement.target = '_blank';
+hiddenElement.download = 'myFile.html';
+hiddenElement.click();
+</script>
