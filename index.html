@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/introjs.css">
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
-<!--===============================
+<!-- ===============================
 WARNING FOR USING INSPECTOR TOOLS:
 
 If you are logged in as guest,
@@ -23,7 +24,7 @@ changes you make to the HTML will stay
 that way when you save or reload the
 page...
 
-================================-->
+================================ -->
 <body>
   <div id="container">
     <div class="left-menu">
@@ -126,7 +127,7 @@ page...
     <div class="section sites-section">
       <h2>Sites</h2>
       <div class="site-buttons">
-        <a href="#" class="button-navy large show-createSite">Create site</a>
+        <a href="#" class="button-navy large show-createSite" data-step="1" data-intro="To get started, create a site">Create site</a>
         <a href="#" class="button-red large massedit">Mass-edit</a>
       </div>
       <table class="createSite">
@@ -136,7 +137,7 @@ page...
         </tr>
         <tr class="afterth">
           <td>Name</td>
-          <td><input type="text" name="siteName" />
+          <td><input type="text" name="siteName" data-step="2" data-intro="Give it a name, then hit create" />
           </td>
         </tr>
         <tr>
@@ -174,5 +175,6 @@ page...
   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
   crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/intro.js"></script>
 </body>
 </html>

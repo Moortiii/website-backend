@@ -3,6 +3,7 @@ $('a[href="#"]').click(function(e){
 	return false;
 });
 $(".show-createSite, .cancel-createSite").click(function(){
+	// introJs().goToStep(2).start();
 	$(".createSite").toggle();
 	$(".site-buttons").toggle();
 	if ($(".show-createSite:visible")){
@@ -18,6 +19,7 @@ function guidGenerator() {
     return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }
 function createSite(){
+		introJs().goToStep(3);
 	$('html,body').animate({
         scrollTop: $(".sites-section").offset().top},
         'slow');
@@ -76,6 +78,7 @@ $('input[name="siteName"]').keypress(function(event) {
 $(document).ready(function(){
 	console.log("%c If you are a guest, please be vary of messing with inspect element and console", 'font-size:18px;display:inline-block;padding: 10px 20px;background:#073B4C;color:#f9f9f9;');
 	console.log("%c Your progress is saved directly with .html(), so any changes you make will be saved", 'font-size:18px;display:inline-block;margin-top:10px;padding: 5px 20px;background:#073B4C;color:#f9f9f9;');
+	console.log("----------");
 	var isEditing = false;
 	if ($(".ac-guest").prop("checked") === true){
 		$(".section.account").hide();
