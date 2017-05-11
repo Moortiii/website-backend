@@ -9,7 +9,7 @@ $meta_author;
 
 function includejQuery() {
   global $jQuery;
-  if(isset($_POST['includejQuery'])) {
+  if(isset($_POST['includejQuery'])) {s
     // By ending typing <\/script> we escape the script tag in the template literal laterasd
     $jQuery = "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'><\/script>";
   }
