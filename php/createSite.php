@@ -3,14 +3,15 @@
 $name;
 $theme;
 $jQuery;
-$normalize;
+$normalize; // Link to normalize.css
+$getNormalize; // Grab the actual code
 $meta_name;
 $meta_author;
 
 function includejQuery() {
   global $jQuery;
-  if(isset($_POST['includejQuery'])) {s
-    // By ending typing <\/script> we escape sthe script tag in the template literal laterasd
+  if(isset($_POST['includejQuery'])) {
+    // By ending typing <\/script> we escape the script tag in the template literal later
     $jQuery = "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'><\/script>";
   }
 }
@@ -20,6 +21,11 @@ function includeNormalize() {
   if(isset($_POST['includeNormalize'])) {
     $normalize = "<link rel='stylesheet' href='css/normalize.css'>";
   }
+}
+
+function getNormalize() {
+  global $getNormalize;
+  $normalize =
 }
 
 function setInfo() {
@@ -60,11 +66,7 @@ setInfo();
       <link rel="stylesheet" href="css/main.css">
       <title>${name}</title>
       <body>
-        <div>
-          <h1>Large Headline</h1>
-          <p>This is a simple test-page</p>
-          <p>In which we write text to output</p>
-        </div>
+        ${grid}
         ${jQuery}
       </body>
     </head>
