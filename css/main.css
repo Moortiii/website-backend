@@ -249,6 +249,9 @@ tbody th{
 tbody tr:first-child th{
   padding-top:5px;
 }
+label{
+  cursor: pointer;
+}
 /* BUTTONS */
 *[class^="button"], button{
   display:inline-block;
