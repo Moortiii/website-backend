@@ -52,10 +52,20 @@ body, html{
   font-size:14px;
   background: #222;
   color:#f9f9f9;
+  border-radius:2px;
   cursor: pointer;
+}
+.nav-link:hover{
+  background:#333;
 }
 .left-menu .nav-link:last-child{
   margin-bottom:0;
+}
+
+.nav-link:hover i {
+    transition:all 0.2s ease-in-out;
+    animation: fa-spin 4s infinite linear;
+    margin-right:5px;
 }
 .left-menu .box{
   padding:5px 5px 20px 0px;
