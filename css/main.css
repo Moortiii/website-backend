@@ -69,7 +69,6 @@ body, html{
 }
 .left-menu .box{
   padding:5px 5px 20px 0px;
-  border-bottom:1px solid #eee;
   margin:10px 0;
 }
 .left-menu .box h3{
@@ -336,6 +335,27 @@ header i.before{
   right:15px;
 }
 /* Table */
+.cxtable tr td:first-child{
+  width:15px;
+}
+.cxtable tr td:last-child{
+  border-top-right-radius:0;
+  border-bottom-right-radius: 0;
+}
+.cxtable{
+  color:#ddd;
+}
+.cxtable td{
+  padding:5px 10px;
+  border-radius:2px;
+}
+.cxtable tr{
+  border:none !important;
+  background:#222;
+}
+.cxtable input[type="checkbox"]{
+  cursor:pointer;
+}
 .afterth td{
   padding-top:10px;
 }
