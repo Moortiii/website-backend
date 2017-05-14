@@ -179,13 +179,23 @@ $(document).ready(function(){
 function doSave(e){
 	if (e == "button"){
 		if (typeof(Storage) !== "undefined") {
-	  		if ($(".ac-guest").prop("checked") === true){
-				$.when(doSave()).done(function(){
-		  			$(".plusbutton").html('<i class="fa fa-floppy-o before"></i> Saved');
-		  			window.setTimeout(function () {
-		  				$(".plusbutton").html('<i class="fa fa-floppy-o before"></i> Save');
-		  			}, 1500);
-		  		});
+			if (localStorage.getItem("bs-saveProgress") === "true" || localStorage.getItem("bs-saveProgress")  === null){
+		  		if ($(".ac-guest").prop("checked") === true){
+					$.when(doSave()).done(function(){
+			  			$(".plusbutton").html('<i class="fa fa-floppy-o before"></i> Saved');
+			  			window.setTimeout(function () {
+			  				$(".plusbutton").html('<i class="fa fa-floppy-o before"></i> Save');
+			  			}, 1500);
+			  		});
+				}
+			}else{
+				$(".togglesettings").css("box-shadow", "0px 0px 5px 2px var(--red-dark)");
+				$('.togglesettings')
+			      .delay(2000)
+			      .queue( function(next){ 
+			        $(this).css("box-shadow", "none"); 
+			        next(); 
+			      });
 			}
 		}
 	}else{

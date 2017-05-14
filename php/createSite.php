@@ -24,7 +24,7 @@ function includeNormalize() {
 
 function getNormalize() {
   global $getNormalize;
-  $normalize =
+  $getNormalize = $_POST['includeNormalize'];
 }
 
 function setInfo() {
@@ -57,6 +57,7 @@ body{background:#06D6A0;}
   var normalize = "<?php echo($normalize); ?>";
   var meta_name = "<?php echo($meta_name); ?>";
   var meta_author = "<?php echo($meta_author); ?>";
+  var grid = "";
 
   var str = `
   <html>
