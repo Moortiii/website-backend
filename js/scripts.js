@@ -258,3 +258,25 @@ $("body").on("click", 'input:radio[value="custom"][name="titleformat"]', functio
 		$(this).prop("checked", true);
         // console.log("Dropdown!!!");
 });
+$(function() {
+  var counter = 0;
+  var isDragging = false;
+  $("body").on("mousedown", ".tools", function(){
+  	$(window).mousemove(function() {
+          isDragging = true;
+          $(window).unbind("mousemove");
+      });
+  });
+  $("body").on("mouseup", ".tools", function(){
+      var wasDragging = isDragging;
+      isDragging = false;
+      $(window).unbind("mousemove");
+      if (!wasDragging) {
+      	if ($(".massedit").text() == "Stop editing"){
+          $(this).find(".mark").click();
+	      }else{
+	      	$(this).closest(".sitecreation").find("saveSiteButton").click();
+	      }
+      }
+  });
+});

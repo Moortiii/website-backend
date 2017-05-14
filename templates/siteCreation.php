@@ -1,9 +1,9 @@
 <?php
 $name = $_POST['name'];
 $theme = $_POST['theme'];
-if ($name == "New site"){
+/*if ($name == "New site"){
   $name = "";
-}
+}*/
 ?><form action="php/createSite.php" method="post">
 <div class="fifty-cont">
   <div class="fifty">
