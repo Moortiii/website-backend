@@ -7,7 +7,6 @@ if (localStorage.getItem("bs-account") == "account"){
 		$(".ac-account").prop("checked", true);
 	}
 $(".show-createSite, .cancel-createSite").click(function(){
-	// introJs().goToStep(2).start();
 	$(".createSite").toggle();
 	$(".site-buttons").toggle();
 	if ($(".show-createSite:visible")){
@@ -24,7 +23,6 @@ function guidGenerator() {
 }
 function createSite(){
 	$(".massedit").show();
-		introJs().goToStep(3);
 	$('html,body').animate({
         scrollTop: $(".sites-section").offset().top},
         'slow');
