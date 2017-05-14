@@ -2,6 +2,10 @@ $('a[href="#"]').click(function(e){
 	e.preventDefault();
 	return false;
 });
+if (localStorage.getItem("bs-account") == "account"){
+		$(".ac-account").attr("checked", "checked");
+		$(".ac-account").prop("checked", true);
+	}
 $(".show-createSite, .cancel-createSite").click(function(){
 	// introJs().goToStep(2).start();
 	$(".createSite").toggle();
@@ -19,6 +23,7 @@ function guidGenerator() {
     return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }
 function createSite(){
+	$(".massedit").show();
 		introJs().goToStep(3);
 	$('html,body').animate({
         scrollTop: $(".sites-section").offset().top},
@@ -34,9 +39,6 @@ function createSite(){
 	}
 	var uniqueid = guidGenerator();
 	var theSiteName = $("input[name='siteName']").val();
-	if (!$("input[name='siteName']").val() || $("input[name='siteName']").val() == ""){
-		thesiteName = "New site";
-	}
 	var theTheme = $("select[name='siteTheme']").val();
 	$(".saveSiteButton").click();
 	$(".main .sitesCont").prepend("<div class='section sitecreation' style='display:none;'><header class='tools'><input type='checkbox' class='mark' name='mark-" + uniqueid + "' /><i class='fa fa-window-close-o before toolsi'></i> <span>Discard site? <a href='#' class='yesClose'>Yes</a></span><em>" + theSiteName + "</em></header><div class='" + uniqueid + "'></div></div>");
@@ -76,6 +78,12 @@ $('input[name="siteName"]').keypress(function(event) {
     }
 });
 $(document).ready(function(){
+	
+	if (localStorage.getItem("bs-account") == "account"){
+		$(".ac-account").attr("checked", "checked");
+		$(".ac-account").prop("checked", true);
+		$(".ac-account").click();
+	}
 	console.log("%c If you are a guest, please be vary of messing with inspect element and console", 'font-size:18px;display:inline-block;padding: 10px 20px;background:#073B4C;color:#f9f9f9;');
 	console.log("%c Your progress is saved directly with .html(), so any changes you make will be saved", 'font-size:18px;display:inline-block;margin-top:10px;padding: 5px 20px;background:#073B4C;color:#f9f9f9;');
 	console.log("----------");
@@ -92,6 +100,9 @@ $(document).ready(function(){
   				$(this).find(".loadedSiteName").val($(this).find("em").text())
   				console.log($(this).find(".loadedSiteName").val($(this).find("em").text()));
   			});
+  			if (!$.trim( $('.sitesCont').html() ).length){
+				$(".massedit").hide();
+			}
   		});
   	}else{
   		var isEditing = false;
@@ -115,7 +126,7 @@ $(document).ready(function(){
 		if (isEditing == false){
 			isEditing = true;
 			// Turn on editing
-			$(".site")
+			//$(".site")
 			$(".siteCreation").addClass("isEditing");
 			$(".sitesCont").sortable({placeholder: "ui-state-highlight",helper:'clone', items: '.siteCreation'});
 			$(".sitesCont").sortable("enable");
@@ -135,8 +146,12 @@ $(document).ready(function(){
 	    	$('.mark:checkbox:checked').each(function(){
 				$(this).closest(".siteCreation").remove();	
 				$(".action").hide();
+				if (!$.trim( $('.sitesCont').html() ).length){
+					$(".massedit").hide();
+				}
 			});
 			$(this).val("action");
+			$(".massedit").click();
 	    }
 	});
 	$("body").on("click", ".mark", function(){
@@ -195,6 +210,9 @@ $(".sitesCont").on("click", ".downloadSiteButtonLarge", function(e){
 	$(this).closest(".openSiteButton").click();
 	$(this).closest(".siteCreation").find("form").submit();
 });
+$('body').on("keyup", "input[type='text']", function() {
+    $(this).attr("value", $(this).val());
+});
 $('body').on("keyup", ".loadedSiteName", function() {
     $(this).closest(".sitecreation").find("em").text($(this).val());
     $(this).attr("value", $(this).val());
@@ -213,17 +231,80 @@ $('body').on("click", ".addInclude", function(e){
 	}
 	return false;
 });
-$("body").on("click", 'input:radio[value!="custom"][name="titleformat"]', function(){
-		console.log("slide....up!!");
+$("body").on("click", 'input:radio[name="accountradio"].ac-guest', function(){
+		// console.log("slide....up!!");
+		$("input:radio[name='accountradio']").prop("checked", false);
+		$("input:radio[name='accountradio']").removeAttr("checked");
+		$(this).attr("checked", "checked");
+		$(this).prop("checked", true);
+		localStorage.setItem("bs-account", "guest");
+});
+$("body").on("click", 'input:radio[name="accountradio"].ac-account', function(){
+		// console.log("slide....up!!");
+		$("input:radio[name='accountradio']").prop("checked", false);
+		$("input:radio[name='accountradio']").removeAttr("checked");
+		$(this).attr("checked", "checked");
+		$(this).prop("checked", true);
+		localStorage.setItem("bs-account", "account");
+});
+$("body").on("click", 'input:radio[name="titleformat"]', function(){
+		// console.log("slide....up!!");
 		$("input:radio[name='titleformat']").prop("checked", false);
 		$("input:radio[name='titleformat']").removeAttr("checked");
 		$(this).attr("checked", "checked");
 		$(this).prop("checked", true);
 });
-$("body").on("click", 'input:radio[value="custom"][name="titleformat"]', function(){
-		$("input:radio[name='titleformat']").prop("checked", false);
-		$("input:radio[name='titleformat']").removeAttr("checked");
-		$(this).attr("checked", "checked");
-		$(this).prop("checked", true);
-        console.log("Dropdown!!!");
+$("body").on("change", 'select[name^="customScriptType"]', function(){
+		// console.log("slide....up!!");
+		console.log("abc");
+		$('select[name="' + $(this).attr("name") + '"] option[value!="' + $(this).val() + '"]').prop("selected", false);
+		$('select[name="' + $(this).attr("name") + '"] option[value!="' + $(this).val() + '"]').removeAttr("selected");
+		$('select[name="' + $(this).attr("name") + '"] option[value="' + $(this).val() + '"]').attr("selected", "selected");
+		$('select[name="' + $(this).attr("name") + '"] option[value="' + $(this).val() + '"]').prop("selected", true);
+		$(this).attr("value", $(this).val());
+});
+$("body").on("click", 'input:checkbox[name="titleformat"]', function(){
+		if ($(this).prop("checked") === true){
+			$(this).attr("checked", "checked");
+			$(this).prop("checked", true);
+		}else{
+			$(this).removeAttr("checked");
+			$(this).prop("checked", false);
+	        // console.log("Dropdown!!!");
+		}
+});
+$(function() {
+  var counter = 0;
+  var isDragging = false;
+  $("body").on("mousedown", ".tools", function(){
+  	$(window).mousemove(function() {
+          isDragging = true;
+          $(window).unbind("mousemove");
+      });
+  });
+  $("body").on("mouseup", ".tools", function(){
+      var wasDragging = isDragging;
+      isDragging = false;
+      $(window).unbind("mousemove");
+      if (!wasDragging) {
+      	if ($(".massedit").text() == "Stop editing"){
+          $(this).find(".mark").click();
+	      }else{
+	      	$(this).closest(".sitecreation").find("form").find(".saveSiteButton").click();
+	      	console.log("a");
+	      }
+      }
+  });
+});
+$(".togglesettings").click(function(){
+	if ($(this).hasClass("closed")){
+		$(".settings").toggle();
+		$(this).removeClass("closed");
+		$(this).html('<i class="fa fa-times-circle before fa-spin-hover"></i> Close');
+
+	}else{
+		$(".settings").toggle();
+		$(this).html('<i class="fa fa-cog before fa-spin-hover"></i> Settings');
+		$(this).addClass("closed");
+	}
 });

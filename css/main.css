@@ -21,10 +21,13 @@ body, html{
   font-family:sans-serif, arial;
   font-size:15px;
   color:#333;
+  background:#333;
 }
 #container{
-  max-width:1400px;
-  margin:0 auto;
+  max-width:1400px;/*
+  margin:0 auto;*/
+  margin:0 0px;
+  background: #333;
   min-height:100px;
 }
 /* Universal layout */ 
@@ -45,18 +48,27 @@ body, html{
   text-decoration:none;
   padding:10px;
   margin-bottom:10px;
-  border:1px solid #eee;
   font-weight:600;
   font-size:14px;
-  color:#555;
-  box-shadow:inset 0px 0px 5px #fff;
+  background: #222;
+  color:#f9f9f9;
+  border-radius:2px;
+  cursor: pointer;
+}
+.closed.nav-link:hover{
+  background:#333;
 }
 .left-menu .nav-link:last-child{
   margin-bottom:0;
 }
+
+.closed.nav-link:hover i {
+    transition:all 0.2s ease-in-out;
+    animation: fa-spin 4s infinite linear;
+    margin-right:5px;
+}
 .left-menu .box{
   padding:5px 5px 20px 0px;
-  border-bottom:1px solid #eee;
   margin:10px 0;
 }
 .left-menu .box h3{
@@ -70,19 +82,26 @@ body, html{
 }
 .left-menu{
   width:250px;
-  padding-left:5px;
+  padding-left:10px;
+  padding-right:10px;
 }
 /* Main */
 .main{
-  width:calc(100% - 250px);
-  padding:10px;
-  position:relative;
+    width: calc(100% - 250px);
+    padding: 20px;
+    position: relative;
+    background: #fff;
+    box-shadow: 15px 11px 20px 0px #000;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 10px solid #222;
+    border-top: 0;
 }
 .subpage-header{
   font-weight:300;
   margin:0 0 20px 0;
-  font-size:36px;
-  padding:5px 0;
+  font-size:46px;
+  padding:5px 0 15px;
   border-bottom:1px solid #eee;
 }
 /* Section */
@@ -109,6 +128,10 @@ body, html{
 }
 .section header.tools i{
   cursor:pointer;
+  float:left;
+}
+.section header.tools i:hover, .openSiteButton:hover, .downloadSiteButtonLarge:hover{
+  margin-top:-1px;
 }
 .section.account{
   display:none;
@@ -235,6 +258,9 @@ tbody th{
 tbody tr:first-child th{
   padding-top:5px;
 }
+label{
+  cursor: pointer;
+}
 /* BUTTONS */
 *[class^="button"], button{
   display:inline-block;
@@ -254,6 +280,9 @@ i.after{
 }
 i.before{
   margin-right:2px;
+}
+header i.before{
+  margin-right:5px;
 }
 *[class^="button"].large, button.large{
   padding:25px 20px;
@@ -306,6 +335,30 @@ i.before{
   right:15px;
 }
 /* Table */
+.cxtable tr td:first-child{
+  width:15px;
+}
+.settings{
+  display:none;
+}
+.cxtable tr td:last-child{
+  border-top-right-radius:0;
+  border-bottom-right-radius: 0;
+}
+.cxtable{
+  color:#ddd;
+}
+.cxtable td{
+  padding:5px 10px;
+  border-radius:2px;
+}
+.cxtable tr{
+  border:none !important;
+  background:#222;
+}
+.cxtable input[type="checkbox"]{
+  cursor:pointer;
+}
 .afterth td{
   padding-top:10px;
 }
@@ -421,6 +474,11 @@ select.action {
 .toolsi{
   font-size:16px;
 }
+.mixblend{
+  background:url('../images/blur-pattern-lg.jpg');
+  background-repeat:no-repeat;
+  background-position:left 80%;
+}
 
 /* MEDIA QUERIES */
 @media only screen and (max-width:1100px){
@@ -438,6 +496,12 @@ select.action {
   }
   .main{
     width:100%;
+  }
+}
+@media only screen and (min-width:2000px){
+  #container{
+    margin:0 auto;
+    max-width:1800px;
   }
 }
 .addInclude{

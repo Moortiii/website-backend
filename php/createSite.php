@@ -11,7 +11,6 @@ $meta_author;
 function includejQuery() {
   global $jQuery;
   if(isset($_POST['includejQuery'])) {
-    // By ending typing <\/script> we escape the script tag in the template literal later
     $jQuery = "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'><\/script>";
   }
 }
@@ -19,7 +18,7 @@ function includejQuery() {
 function includeNormalize() {
   global $normalize;
   if(isset($_POST['includeNormalize'])) {
-    $normalize = "<link rel='stylesheet' href='css/normalize.css'>";
+    $normalize = "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css'>";
   }
 }
 
@@ -30,8 +29,8 @@ function getNormalize() {
 
 function setInfo() {
   global $name, $theme, $meta_name, $meta_author;
-  if(!empty($_POST['siteName'])) {
-    $name = $_POST['siteName'];
+  if(!empty($_POST['name'])) {
+    $name = $_POST['name'];
   }
   if(!empty($_POST['siteTheme'])) {
     $theme = $_POST['siteTheme'];
@@ -48,7 +47,9 @@ function setInfo() {
 
 setInfo();
 ?>
-
+<style>
+body{background:#06D6A0;}
+</style>
 <script type="text/javascript">
   var name = "<?php echo($name); ?>";
   var theme = "<?php echo($theme); ?>";
@@ -79,4 +80,5 @@ hiddenElement.href = 'data:attachment/text,' + encodeURI(str);
 hiddenElement.target = '_blank';
 hiddenElement.download = 'myFile.html';
 hiddenElement.click();
+window.location.replace("../");
 </script>

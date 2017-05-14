@@ -12,6 +12,22 @@
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  <noscript>
+  <style>
+  .section{
+    display:none;
+  }
+  h1.subpage-header:after {
+    content: "Please enable javascript to use Boilersite";
+    display: block;
+    padding: 20px 10px;
+    font-size: 15px;
+    background: var(--red);
+    color: #fff;
+    text-align: center;
+}
+  </style>
+  </noscript>
 </head>
 <!-- ===============================
 WARNING FOR USING INSPECTOR TOOLS:
@@ -22,17 +38,27 @@ saving the HTML content in "Sites", in
 localstorage - which means that any
 changes you make to the HTML will stay
 that way when you save or reload the
-page.
+page..
 
 ================================ -->
 <body>
   <div id="container">
     <div class="left-menu">
       <div class="box">
-        <h3>Settings</h3>
-        <a href="index.html" class="nav-link">Sites</a>
-        <a href="templates.html" class="nav-link">Templates</a>
-        <a href="#" class="nav-link">Settings</a>
+        <a href="." class="nav-link closed"><i class="fa fa-refresh before"></i> Sites</a>
+        <a href="#" class="nav-link togglesettings closed"><i class="fa fa-cog before fa-spin-hover"></i> Settings</a>
+      </div>
+      <div class="settings">
+        <table class="cxtable">
+          <tr>
+            <td><input type="checkbox" name="showAds" /></td>
+            <td> Show ads</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="saveProg" checked /></td>
+            <td> Save sites</td>
+          </tr>
+        </table>
       </div>
       <!--<div class="box">
         <h3>Articles</h3>
@@ -52,14 +78,14 @@ page.
     </div>
     <div class="main">
 
-      <h1 class="subpage-header">
+     <h1 class="subpage-header">
       Boilersite
-    </h1>
+  </h1>
 
     <div class="section">
       <h2>Account</h2>
       <div class="radio">
-      <input type="radio" checked name="accountradio" class="ac-guest" /> Guest <input type="radio" name="accountradio" class="ac-account" /> Account
+      <input type="radio" checked name="accountradio" class="ac-guest" id="ac-guest" /> <label for="ac-guest">Guest</label> <input type="radio" name="accountradio" id="ac-account" class="ac-account" /> <label for="ac-account">Account</label>
       </div>
       <div class="section account">
         <div class="fifty-cont">
@@ -161,9 +187,12 @@ page.
     </div>
     </div>
     <a href="#" class="button-green plusbutton" onClick="doSave('button')"><i class="fa fa-floppy-o before"></i> Save</a>
-  </div>
+    <div class="settings">
+
     </div>
+  </div>
     <div class="clear">
+    </div>
     </div>
   </div>
   <script
