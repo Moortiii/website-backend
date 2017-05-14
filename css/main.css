@@ -109,6 +109,10 @@ body, html{
 }
 .section header.tools i{
   cursor:pointer;
+  float:left;
+}
+.section header.tools i:hover, .openSiteButton:hover, .downloadSiteButtonLarge:hover{
+  margin-top:-1px;
 }
 .section.account{
   display:none;
@@ -254,6 +258,9 @@ i.after{
 }
 i.before{
   margin-right:2px;
+}
+header i.before{
+  margin-right:5px;
 }
 *[class^="button"].large, button.large{
   padding:25px 20px;
