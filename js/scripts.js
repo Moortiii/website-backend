@@ -210,6 +210,9 @@ $(".sitesCont").on("click", ".downloadSiteButtonLarge", function(e){
 	$(this).closest(".openSiteButton").click();
 	$(this).closest(".siteCreation").find("form").submit();
 });
+$('body').on("keyup", "input[type='text']", function() {
+    $(this).attr("value", $(this).val());
+});
 $('body').on("keyup", ".loadedSiteName", function() {
     $(this).closest(".sitecreation").find("em").text($(this).val());
     $(this).attr("value", $(this).val());
@@ -244,19 +247,31 @@ $("body").on("click", 'input:radio[name="accountradio"].ac-account', function(){
 		$(this).prop("checked", true);
 		localStorage.setItem("bs-account", "account");
 });
-$("body").on("click", 'input:radio[value!="custom"][name="titleformat"]', function(){
+$("body").on("click", 'input:radio[name="titleformat"]', function(){
 		// console.log("slide....up!!");
 		$("input:radio[name='titleformat']").prop("checked", false);
 		$("input:radio[name='titleformat']").removeAttr("checked");
 		$(this).attr("checked", "checked");
 		$(this).prop("checked", true);
 });
-$("body").on("click", 'input:radio[value="custom"][name="titleformat"]', function(){
-		$("input:radio[name='titleformat']").prop("checked", false);
-		$("input:radio[name='titleformat']").removeAttr("checked");
-		$(this).attr("checked", "checked");
-		$(this).prop("checked", true);
-        // console.log("Dropdown!!!");
+$("body").on("change", 'select[name^="customScriptType"]', function(){
+		// console.log("slide....up!!");
+		console.log("abc");
+		$('select[name="' + $(this).attr("name") + '"] option[value!="' + $(this).val() + '"]').prop("selected", false);
+		$('select[name="' + $(this).attr("name") + '"] option[value!="' + $(this).val() + '"]').removeAttr("selected");
+		$('select[name="' + $(this).attr("name") + '"] option[value="' + $(this).val() + '"]').attr("selected", "selected");
+		$('select[name="' + $(this).attr("name") + '"] option[value="' + $(this).val() + '"]').prop("selected", true);
+		$(this).attr("value", $(this).val());
+});
+$("body").on("click", 'input:checkbox[name="titleformat"]', function(){
+		if ($(this).prop("checked") === true){
+			$(this).attr("checked", "checked");
+			$(this).prop("checked", true);
+		}else{
+			$(this).removeAttr("checked");
+			$(this).prop("checked", false);
+	        // console.log("Dropdown!!!");
+		}
 });
 $(function() {
   var counter = 0;
@@ -275,7 +290,8 @@ $(function() {
       	if ($(".massedit").text() == "Stop editing"){
           $(this).find(".mark").click();
 	      }else{
-	      	$(this).closest(".sitecreation").find("saveSiteButton").click();
+	      	$(this).closest(".sitecreation").find("form").find(".saveSiteButton").click();
+	      	console.log("a");
 	      }
       }
   });
