@@ -14,7 +14,7 @@ if ($name == "New site"){
        <tr>
         <td>Site name
         </td>
-        <td><input type="text" name="siteName" value="<?php echo($name); ?>" class="loadedSiteName" />
+        <td><input type="text" name="name" value="<?php echo($name); ?>" class="loadedSiteName" />
         </td>
       </tr>
        <tr>

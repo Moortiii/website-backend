@@ -2,6 +2,10 @@ $('a[href="#"]').click(function(e){
 	e.preventDefault();
 	return false;
 });
+if (localStorage.getItem("bs-account") == "account"){
+		$(".ac-account").attr("checked", "checked");
+		$(".ac-account").prop("checked", true);
+	}
 $(".show-createSite, .cancel-createSite").click(function(){
 	// introJs().goToStep(2).start();
 	$(".createSite").toggle();
@@ -34,9 +38,6 @@ function createSite(){
 	}
 	var uniqueid = guidGenerator();
 	var theSiteName = $("input[name='siteName']").val();
-	if (!$("input[name='siteName']").val() || $("input[name='siteName']").val() == ""){
-		thesiteName = "New site";
-	}
 	var theTheme = $("select[name='siteTheme']").val();
 	$(".saveSiteButton").click();
 	$(".main .sitesCont").prepend("<div class='section sitecreation' style='display:none;'><header class='tools'><input type='checkbox' class='mark' name='mark-" + uniqueid + "' /><i class='fa fa-window-close-o before toolsi'></i> <span>Discard site? <a href='#' class='yesClose'>Yes</a></span><em>" + theSiteName + "</em></header><div class='" + uniqueid + "'></div></div>");
@@ -76,6 +77,11 @@ $('input[name="siteName"]').keypress(function(event) {
     }
 });
 $(document).ready(function(){
+	if (localStorage.getItem("bs-account") == "account"){
+		$(".ac-account").attr("checked", "checked");
+		$(".ac-account").prop("checked", true);
+		$(".ac-account").click();
+	}
 	console.log("%c If you are a guest, please be vary of messing with inspect element and console", 'font-size:18px;display:inline-block;padding: 10px 20px;background:#073B4C;color:#f9f9f9;');
 	console.log("%c Your progress is saved directly with .html(), so any changes you make will be saved", 'font-size:18px;display:inline-block;margin-top:10px;padding: 5px 20px;background:#073B4C;color:#f9f9f9;');
 	console.log("----------");
@@ -213,8 +219,24 @@ $('body').on("click", ".addInclude", function(e){
 	}
 	return false;
 });
+$("body").on("click", 'input:radio[name="accountradio"].ac-guest', function(){
+		// console.log("slide....up!!");
+		$("input:radio[name='accountradio']").prop("checked", false);
+		$("input:radio[name='accountradio']").removeAttr("checked");
+		$(this).attr("checked", "checked");
+		$(this).prop("checked", true);
+		localStorage.setItem("bs-account", "guest");
+});
+$("body").on("click", 'input:radio[name="accountradio"].ac-account', function(){
+		// console.log("slide....up!!");
+		$("input:radio[name='accountradio']").prop("checked", false);
+		$("input:radio[name='accountradio']").removeAttr("checked");
+		$(this).attr("checked", "checked");
+		$(this).prop("checked", true);
+		localStorage.setItem("bs-account", "account");
+});
 $("body").on("click", 'input:radio[value!="custom"][name="titleformat"]', function(){
-		console.log("slide....up!!");
+		// console.log("slide....up!!");
 		$("input:radio[name='titleformat']").prop("checked", false);
 		$("input:radio[name='titleformat']").removeAttr("checked");
 		$(this).attr("checked", "checked");
@@ -225,5 +247,5 @@ $("body").on("click", 'input:radio[value="custom"][name="titleformat"]', functio
 		$("input:radio[name='titleformat']").removeAttr("checked");
 		$(this).attr("checked", "checked");
 		$(this).prop("checked", true);
-        console.log("Dropdown!!!");
+        // console.log("Dropdown!!!");
 });

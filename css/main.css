@@ -81,8 +81,8 @@ body, html{
 .subpage-header{
   font-weight:300;
   margin:0 0 20px 0;
-  font-size:36px;
-  padding:5px 0;
+  font-size:46px;
+  padding:5px 0 15px;
   border-bottom:1px solid #eee;
 }
 /* Section */
@@ -420,6 +420,11 @@ select.action {
 }
 .toolsi{
   font-size:16px;
+}
+.mixblend{
+  background:url('../images/blur-pattern-lg.jpg');
+  background-repeat:no-repeat;
+  background-position:left 80%;
 }
 
 /* MEDIA QUERIES */
