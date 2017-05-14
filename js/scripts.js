@@ -76,7 +76,15 @@ $('input[name="siteName"]').keypress(function(event) {
     }
 });
 $(document).ready(function(){
-	
+	if (localStorage.getItem("bs-saveProgress") === "true" || localStorage.getItem("bs-saveProgress")  === null){
+		$("input[name='saveProg']").attr("checked", "checked");
+		$("input[name='saveProg']").prop("checked", true);
+		console.log("abc");
+	}else{
+		$("input[name='saveProg']").removeAttr("checked");
+		$("input[name='saveProg']").prop("checked", false);
+		console.log("cba");
+	}
 	if (localStorage.getItem("bs-account") == "account"){
 		$(".ac-account").attr("checked", "checked");
 		$(".ac-account").prop("checked", true);
@@ -93,15 +101,17 @@ $(document).ready(function(){
 	}
 
   	if (typeof(Storage) !== "undefined") {
-  		$(".sitesCont").html(localStorage.getItem("wb-progress"), function(){
-  			$(".siteCreation").each(function(){
-  				$(this).find(".loadedSiteName").val($(this).find("em").text())
-  				console.log($(this).find(".loadedSiteName").val($(this).find("em").text()));
-  			});
-  			if (!$.trim( $('.sitesCont').html() ).length){
-				$(".massedit").hide();
-			}
-  		});
+  		if (localStorage.getItem("bs-saveProgress") === "true" || localStorage.getItem("bs-saveProgress")  === null){
+	  		$(".sitesCont").html(localStorage.getItem("wb-progress"), function(){
+	  			$(".siteCreation").each(function(){
+	  				$(this).find(".loadedSiteName").val($(this).find("em").text())
+	  				console.log($(this).find(".loadedSiteName").val($(this).find("em").text()));
+	  			});
+	  			if (!$.trim( $('.sitesCont').html() ).length){
+					$(".massedit").hide();
+				}
+	  		});
+  		}
   	}else{
   		var isEditing = false;
   	}
@@ -261,11 +271,23 @@ $("body").on("change", 'select[name^="customScriptType"]', function(){
 		$('select[name="' + $(this).attr("name") + '"] option[value="' + $(this).val() + '"]').prop("selected", true);
 		$(this).attr("value", $(this).val());
 });
-$("body").on("click", 'input:checkbox[name="titleformat"]', function(){
+$("body").on("click", 'input:checkbox', function(){
 		if ($(this).prop("checked") === true){
 			$(this).attr("checked", "checked");
 			$(this).prop("checked", true);
 		}else{
+			$(this).removeAttr("checked");
+			$(this).prop("checked", false);
+	        // console.log("Dropdown!!!");
+		}
+});
+$("body").on("click", 'input:checkbox', function(){
+		if ($(this).prop("checked") === true){
+			localStorage.setItem("bs-saveProgress", true);
+			$(this).attr("checked", "checked");
+			$(this).prop("checked", true);
+		}else{
+			localStorage.setItem("bs-saveProgress", false);
 			$(this).removeAttr("checked");
 			$(this).prop("checked", false);
 	        // console.log("Dropdown!!!");
