@@ -296,3 +296,15 @@ $(function() {
       }
   });
 });
+$(".togglesettings").click(function(){
+	if ($(this).hasClass("closed")){
+		$(".settings").toggle();
+		$(this).removeClass("closed");
+		$(this).html('<i class="fa fa-times-circle before fa-spin-hover"></i> Close');
+
+	}else{
+		$(".settings").toggle();
+		$(this).html('<i class="fa fa-cog before fa-spin-hover"></i> Settings');
+		$(this).addClass("closed");
+	}
+});

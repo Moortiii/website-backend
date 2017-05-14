@@ -55,14 +55,14 @@ body, html{
   border-radius:2px;
   cursor: pointer;
 }
-.nav-link:hover{
+.closed.nav-link:hover{
   background:#333;
 }
 .left-menu .nav-link:last-child{
   margin-bottom:0;
 }
 
-.nav-link:hover i {
+.closed.nav-link:hover i {
     transition:all 0.2s ease-in-out;
     animation: fa-spin 4s infinite linear;
     margin-right:5px;
@@ -337,6 +337,9 @@ header i.before{
 /* Table */
 .cxtable tr td:first-child{
   width:15px;
+}
+.settings{
+  display:none;
 }
 .cxtable tr td:last-child{
   border-top-right-radius:0;
