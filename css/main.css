@@ -21,10 +21,13 @@ body, html{
   font-family:sans-serif, arial;
   font-size:15px;
   color:#333;
+  background:#333;
 }
 #container{
-  max-width:1400px;
-  margin:0 auto;
+  max-width:1400px;/*
+  margin:0 auto;*/
+  margin:0 0px;
+  background: #333;
   min-height:100px;
 }
 /* Universal layout */ 
@@ -45,11 +48,11 @@ body, html{
   text-decoration:none;
   padding:10px;
   margin-bottom:10px;
-  border:1px solid #eee;
   font-weight:600;
   font-size:14px;
-  color:#555;
-  box-shadow:inset 0px 0px 5px #fff;
+  background: #222;
+  color:#f9f9f9;
+  cursor: pointer;
 }
 .left-menu .nav-link:last-child{
   margin-bottom:0;
@@ -70,13 +73,20 @@ body, html{
 }
 .left-menu{
   width:250px;
-  padding-left:5px;
+  padding-left:10px;
+  padding-right:10px;
 }
 /* Main */
 .main{
-  width:calc(100% - 250px);
-  padding:10px;
-  position:relative;
+    width: calc(100% - 250px);
+    padding: 20px;
+    position: relative;
+    background: #fff;
+    box-shadow: 15px 11px 20px 0px #000;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 10px solid #222;
+    border-top: 0;
 }
 .subpage-header{
   font-weight:300;
@@ -450,6 +460,12 @@ select.action {
   }
   .main{
     width:100%;
+  }
+}
+@media only screen and (min-width:2000px){
+  #container{
+    margin:0 auto;
+    max-width:1800px;
   }
 }
 .addInclude{
