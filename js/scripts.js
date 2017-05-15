@@ -57,11 +57,13 @@ $("body").on("click", "header.tools .toolsi", function(){
 		$(this).removeClass("fa-angle-left");
 	}
 });
-$("body").on("click", ".yesClose", function(){
+$("body").on("click", ".yesClose", function(e){
+	e.preventDefault();
 	$(this).closest(".section").remove();
 	if (!$('.sitesCont').html().replace(/\s+/g, '').length){
 		$(".massedit").hide();
 	}
+	return false;
 });
 $(".ac-account, .ac-guest").click(function(){
 	if ($(".ac-guest").prop("checked") === true){
