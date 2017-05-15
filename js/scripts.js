@@ -2,7 +2,7 @@ $('a[href="#"]').click(function(e){
 	e.preventDefault();
 	return false;
 });
-					$(".massedit").hide();
+
 if (localStorage.getItem("bs-account") == "account"){
 		$(".ac-account").attr("checked", "checked");
 		$(".ac-account").prop("checked", true);
@@ -45,6 +45,13 @@ function createSite(){
 		$("input[name='siteName']").val("");
 		$("." + uniqueid).parent().slideDown(150);
 		$("." + uniqueid + " .loadedSiteName").focus();
+		if (!$('.sitesCont').html().replace(/\s+/g, '').length){
+				$(".massedit").hide();
+				console.log("abc");
+			}else{
+				$(".massedit").show();
+				console.log("bca");
+			}
 	});
 }
 $("body").on("click", "header.tools .toolsi", function(){
@@ -109,17 +116,32 @@ $(document).ready(function(){
   	if (typeof(Storage) !== "undefined") {
   		if (localStorage.getItem("bs-saveProgress") === "true" || localStorage.getItem("bs-saveProgress")  === null){
 	  		
-  			if (!$('.sitesCont').text().replace(/\s+/g, '').length){
+  			// create a reference to the old `.html()` function
+			var htmlOriginal = $.fn.html;
+
+			// redefine the `.html()` function to accept a callback
+			$.fn.html = function(html,callback){
+			  // run the old `.html()` function with the first parameter
+			  var ret = htmlOriginal.apply(this, arguments);
+			  // run the callback (if it is defined)
+			  if(typeof callback == "function"){
+			    callback();
+			  }
+			  // make sure chaining is not broken
+			  return ret;
+			}
+	  		$(".sitesCont").html(localStorage.getItem("wb-progress"), function(){
+	  			if (!$('.sitesCont').text().replace(/\s+/g, '').length){
 					$(".massedit").hide();
 				}else{
 					$(".massedit").show();
 				}
-	  		$(".sitesCont").html(localStorage.getItem("wb-progress"), function(){
 	  			$(".siteCreation").each(function(){/*
 	  				$(this).find(".loadedSiteName").val($(this).find("em").text());/*
 	  				console.log($(this).find(".loadedSiteName").val($(this).find("em").text()));*/
 
 	  			});
+
 	  		});
   		}else{
   			if ($('.sitesCont').html().replace(/\s+/g, '').length == 0){
