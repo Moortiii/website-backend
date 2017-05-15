@@ -97,6 +97,14 @@ body, html{
     border: 10px solid #222;
     border-top: 0;
 }
+.main:after{
+  content:"Made by Håkon Underbakke, Morten Hauge & ☕";
+  position: absolute;
+  top:calc(100% + 15px);
+  left:0;
+  color:#aaa;
+  font-size:12px;
+}
 .subpage-header{
   font-weight:300;
   margin:0 0 20px 0;

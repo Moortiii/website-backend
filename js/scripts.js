@@ -2,6 +2,7 @@ $('a[href="#"]').click(function(e){
 	e.preventDefault();
 	return false;
 });
+					$(".massedit").hide();
 if (localStorage.getItem("bs-account") == "account"){
 		$(".ac-account").attr("checked", "checked");
 		$(".ac-account").prop("checked", true);
@@ -105,16 +106,23 @@ $(document).ready(function(){
 
   	if (typeof(Storage) !== "undefined") {
   		if (localStorage.getItem("bs-saveProgress") === "true" || localStorage.getItem("bs-saveProgress")  === null){
+	  		
+  			if (!$('.sitesCont').text().replace(/\s+/g, '').length){
+					$(".massedit").hide();
+				}else{
+					$(".massedit").show();
+				}
 	  		$(".sitesCont").html(localStorage.getItem("wb-progress"), function(){
-	  			$(".siteCreation").each(function(){
+	  			$(".siteCreation").each(function(){/*
 	  				$(this).find(".loadedSiteName").val($(this).find("em").text());/*
 	  				console.log($(this).find(".loadedSiteName").val($(this).find("em").text()));*/
 
 	  			});
-	  			if (!$('.sitesCont').text().replace(/\s+/g, '').length){
-						$(".massedit").hide();
-					}
 	  		});
+  		}else{
+  			if ($('.sitesCont').html().replace(/\s+/g, '').length == 0){
+				$(".massedit").hide();
+			}
   		}
   	}else{
   		var isEditing = false;
