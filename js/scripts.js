@@ -160,7 +160,7 @@ $(document).ready(function(){
 	}
   	$(".massedit").click(function(){
 		if (isEditing == true){
-			$(this).text("Mass-edit");
+			$(this).text("Start editing");
 		}else{
 			$(this).text("Stop editing");
 		}
@@ -225,11 +225,13 @@ function doSave(e){
 			  		});
 				}
 			}else{
-				$(".togglesettings").css("box-shadow", "0px 0px 5px 2px var(--red-dark)");
-				$('.togglesettings')
+				$(".togglesettings, .saveSitesTd").css("box-shadow", "0px 0px 5px 2px var(--red-dark)");
+				$(".togglesettings, .saveSitesTd").css("background", "var(--red)");
+				$('.togglesettings, .saveSitesTd')
 			      .delay(2000)
 			      .queue( function(next){ 
 			        $(this).css("box-shadow", "none"); 
+					$(this).css("background", "#222");
 			        next(); 
 			      });
 			}
