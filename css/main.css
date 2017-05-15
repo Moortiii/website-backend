@@ -517,3 +517,6 @@ select.action {
 .addInclude:hover{
   opacity:1;
 }
+.customtr{
+  display: none;;
+}

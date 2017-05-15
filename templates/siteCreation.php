@@ -99,6 +99,12 @@ $theme = $_POST['theme'];
         <input type="radio" name="titleformat" value="custom"> Custom
         </td>
         </tr>
+        <tr class="customtr">
+        <td>Custom</td>
+        <td>
+        <input type="text" name="titleformat-custom" value="$sitename - $pagename" />
+        </td>
+        </tr>
     <tr>
     <th colspan="2">Extra features</th>
     </tr>

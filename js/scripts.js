@@ -58,6 +58,9 @@ $("body").on("click", "header.tools .toolsi", function(){
 });
 $("body").on("click", ".yesClose", function(){
 	$(this).closest(".section").remove();
+	if (!$('.sitesCont').html().replace(/\s+/g, '').length){
+		$(".massedit").hide();
+	}
 });
 $(".ac-account, .ac-guest").click(function(){
 	if ($(".ac-guest").prop("checked") === true){
@@ -76,14 +79,14 @@ $('input[name="siteName"]').keypress(function(event) {
     }
 });
 $(document).ready(function(){
+
+	
 	if (localStorage.getItem("bs-saveProgress") === "true" || localStorage.getItem("bs-saveProgress")  === null){
 		$("input[name='saveProg']").attr("checked", "checked");
 		$("input[name='saveProg']").prop("checked", true);
-		console.log("abc");
 	}else{
 		$("input[name='saveProg']").removeAttr("checked");
 		$("input[name='saveProg']").prop("checked", false);
-		console.log("cba");
 	}
 	if (localStorage.getItem("bs-account") == "account"){
 		$(".ac-account").attr("checked", "checked");
@@ -104,12 +107,13 @@ $(document).ready(function(){
   		if (localStorage.getItem("bs-saveProgress") === "true" || localStorage.getItem("bs-saveProgress")  === null){
 	  		$(".sitesCont").html(localStorage.getItem("wb-progress"), function(){
 	  			$(".siteCreation").each(function(){
-	  				$(this).find(".loadedSiteName").val($(this).find("em").text())
-	  				console.log($(this).find(".loadedSiteName").val($(this).find("em").text()));
+	  				$(this).find(".loadedSiteName").val($(this).find("em").text());/*
+	  				console.log($(this).find(".loadedSiteName").val($(this).find("em").text()));*/
+
 	  			});
-	  			if (!$.trim( $('.sitesCont').html() ).length){
-					$(".massedit").hide();
-				}
+	  			if (!$('.sitesCont').text().replace(/\s+/g, '').length){
+						$(".massedit").hide();
+					}
 	  		});
   		}
   	}else{
@@ -154,7 +158,7 @@ $(document).ready(function(){
 	    	$('.mark:checkbox:checked').each(function(){
 				$(this).closest(".siteCreation").remove();	
 				$(".action").hide();
-				if (!$.trim( $('.sitesCont').html() ).length){
+	  			if (!$('.sitesCont').html().replace(/\s+/g, '').length){
 					$(".massedit").hide();
 				}
 			});
@@ -269,6 +273,7 @@ $("body").on("click", 'input:radio[name="titleformat"]', function(){
 		// console.log("slide....up!!");
 		$("input:radio[name='titleformat']").prop("checked", false);
 		$("input:radio[name='titleformat']").removeAttr("checked");
+		$(".customtr").hide();
 		$(this).attr("checked", "checked");
 		$(this).prop("checked", true);
 });
@@ -288,19 +293,29 @@ $("body").on("click", 'input:checkbox', function(){
 		}else{
 			$(this).removeAttr("checked");
 			$(this).prop("checked", false);
-	        // console.log("Dropdown!!!");
+	  
 		}
 });
 $("body").on("click", 'input:checkbox', function(){
 		if ($(this).prop("checked") === true){
 			localStorage.setItem("bs-saveProgress", true);
 			$(this).attr("checked", "checked");
-			$(this).prop("checked", true);
 		}else{
 			localStorage.setItem("bs-saveProgress", false);
 			$(this).removeAttr("checked");
 			$(this).prop("checked", false);
-	        // console.log("Dropdown!!!");
+	  
+		}
+});
+$("body").on("click", 'input:radio[value="custom"][name="titleformat"]', function(){
+		if ($(this).prop("checked") === true){
+			$(".customtr").show();
+			$(this).attr("checked", "checked");
+			$(this).prop("checked", true);
+		}else{
+			$(".customtr").hide();
+			$(this).removeAttr("checked");
+			$(this).prop("checked", false);
 		}
 });
 $(function() {
