@@ -97,11 +97,12 @@ body, html{
     border: 10px solid #222;
     border-top: 0;
     min-height:600px;
+    margin-bottom:45px;
 }
 .main:after{
   content:"Made by Håkon Underbakke, Morten Hauge & ☕";
   position: absolute;
-  top:calc(100% + 15px);
+  top:calc(100% + 20px);
   left:0;
   color:#aaa;
   font-size:12px;
