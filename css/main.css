@@ -56,7 +56,7 @@ body, html{
   cursor: pointer;
 }
 .closed.nav-link:hover{
-  background:#333;
+  background:#333 !important;
 }
 .left-menu .nav-link:last-child{
   margin-bottom:0;
@@ -96,6 +96,7 @@ body, html{
     border-bottom-right-radius: 5px;
     border: 10px solid #222;
     border-top: 0;
+    min-height:600px;
 }
 .main:after{
   content:"Made by Håkon Underbakke, Morten Hauge & ☕";
