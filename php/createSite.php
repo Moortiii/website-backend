@@ -124,9 +124,13 @@ Creating download...
   var filename = name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + "_" + page.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html";
   var list = [];<?php
   $sCounter = 0;
+
   for ($i=0; $i<count($scriptarray);$i++) { ?>
   // list.push({
   //   <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } die(); ?>
+  for ($i=0; $i<count($scriptarray);$i++) { ?>
+  list.push({
+    <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } ?>
 
   var str = `<html>
   <head>
@@ -159,15 +163,17 @@ function downloadWithBlob() {
 }
 
 downloadWithBlob();
+
+window.location.replace("../");
+setTimeout(function(){
+  self.close();
+  window.close();
+}, 500);
+
 // var hiddenElement = document.createElement('a');
 //
 // hiddenElement.href = 'data:attachment/text,' + encodeURI(str);
 // hiddenElement.target = '_blank';
 // hiddenElement.download = filename;
 // hiddenElement.click();
-//window.location.replace("../");
-// setTimeout(function(){
-//  self.close();
-//  window.close();
-// }, 500);
 </script>
