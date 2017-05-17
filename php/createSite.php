@@ -123,7 +123,7 @@ Creating download...
   $sCounter = 0;
   for ($i=0; $i<count($scriptarray);$i++) { ?> 
   list.push({
-    <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } die(); ?>
+    <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } ?>
 
   var str = `<html>
   <head>
@@ -150,7 +150,7 @@ hiddenElement.download = filename;
 hiddenElement.click();
 //window.location.replace("../");
 setTimeout(function(){
- self.close();
- window.close();
+// self.close();
+// window.close();
 }, 500);
 </script>
