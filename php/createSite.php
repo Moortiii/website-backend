@@ -49,9 +49,20 @@ setInfo();
 ?>
 <style>
 body{background:#06D6A0;}
+body:after{
+  display:block;
+  position:absolute;
+  top:40px;
+  left:100px;
+  content:"Creating download...";
+  color:#fff;
+  font-size:32px;
+  font-family:Sans-Serif, arial;
+}
 </style>
 <script type="text/javascript">
   var name = "<?php echo($name); ?>";
+  document.title = name;
   var theme = "<?php echo($theme); ?>";
   var jQuery = "<?php echo($jQuery); ?>";
   var normalize = "<?php echo($normalize); ?>";
@@ -81,5 +92,9 @@ hiddenElement.href = 'data:attachment/text,' + encodeURI(str);
 hiddenElement.target = '_blank';
 hiddenElement.download = 'myFile.html';
 hiddenElement.click();
-window.location.replace("../");
+//window.location.replace("../");
+setTimeout(function(){
+ self.close();
+ window.close();
+}, 500);
 </script>

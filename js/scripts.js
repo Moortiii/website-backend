@@ -22,6 +22,17 @@ function guidGenerator() {
     };
     return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }
+var suggestionArray = [];
+function createSuggestions(e){
+	suggestionArray = [];
+	$(".sitecreation").each(function(){
+		if (e == $(this).find(".loadedSiteName").val()){
+
+		}else{
+			suggestionArray.push($(this).find(".loadedSiteName").val());
+		}
+	});
+}
 function createSite(){
 	$(".massedit").show();
 	$('html,body').animate({
@@ -37,10 +48,15 @@ function createSite(){
 		$(".massedit").click();
 	}
 	var uniqueid = guidGenerator();
-	var theSiteName = $("input[name='siteName']").val();
+	var theSiteName;
+	if (!$("input[name='siteName']").val()){
+		theSiteName = "New site";
+	}else{
+		theSiteName = $("input[name='siteName']").val();
+	}
 	var theTheme = $("select[name='siteTheme']").val();
 	$(".saveSiteButton").click();
-	$(".main .sitesCont").prepend("<div class='section sitecreation' style='display:none;'><header class='tools'><input type='checkbox' class='mark' name='mark-" + uniqueid + "' /><i class='fa fa-window-close-o before toolsi'></i> <span>Discard site? <a href='#' class='yesClose'>Yes</a></span><em>" + theSiteName + "</em></header><div class='" + uniqueid + "'></div></div>");
+	$(".main .sitesCont").prepend("<div class='section sitecreation' style='display:none;'><header class='tools'><input type='checkbox' class='mark' name='mark-" + uniqueid + "' /><i class='fa fa-window-close-o before toolsi'></i> <span>Discard site? <a href='#' class='yesClose'>Yes</a></span><em>" + theSiteName + "</em><bp-pagename></bp-pagename><bp-activeicons></bp-activeicons></header><div class='" + uniqueid + "'></div></div>");
 	$("div[class='" + uniqueid + "']").load("templates/siteCreation.php",  { name: theSiteName, theme:  theTheme}, function() {
 		$("input[name='siteName']").val("");
 		$("." + uniqueid).parent().slideDown(150);
@@ -171,6 +187,8 @@ $(document).ready(function(){
 			isEditing = true;
 			// Turn on editing
 			//$(".site")
+			$(".mark").prop("checked", false);
+			$(".mark").removeAttr("checked");
 			$(".siteCreation").addClass("isEditing");
 			$(".sitesCont").sortable({placeholder: "ui-state-highlight",helper:'clone', items: '.siteCreation'});
 			$(".sitesCont").sortable("enable");
@@ -196,6 +214,23 @@ $(document).ready(function(){
 			});
 			$(this).val("action");
 			$(".massedit").click();
+	    }else if ($(this).val() == "selectall"){
+	    	$(".mark").attr("checked", "checked");
+			$(".mark").prop("checked", true);
+			$(this).val("action");
+	    }else if ($(this).val() == "selectnone"){
+	    	$(".mark").removeAttr("checked");
+			$(".mark").prop("checked", false);
+			$(this).val("action");
+	    }else if ($(this).val() == "copy"){
+	    	console.log("abc");
+	    	$('.mark:checkbox:checked').each(function(){
+	    		console.log($(this).closest(".siteCreation"));
+				$(this).closest(".siteCreation").clone().prependTo(".sitesCont");
+			});
+			$(this).val("action");
+	    }else {
+			$(this).val("action");
 	    }
 	});
 	$("body").on("click", ".mark", function(){
@@ -269,8 +304,33 @@ $(".sitesCont").on("click", ".downloadSiteButtonLarge", function(e){
 $('body').on("keyup", "input[type='text']", function() {
     $(this).attr("value", $(this).val());
 });
-$('body').on("keyup", ".loadedSiteName", function() {
-    $(this).closest(".sitecreation").find("em").text($(this).val());
+$('body').on("focusout", "textarea", function() {
+    $(this).after("<textarea name='meta-textarea'>" + $(this).val() + "</textarea>");
+    $(this).remove();
+});
+$('body').on("change paste keyup", ".loadedSiteName", function() {
+	if (!$(this).val()){
+		$(this).closest(".sitecreation").find("em").text("-");
+	}else{
+    	$(this).closest(".sitecreation").find("em").text($(this).val());
+	}
+    $(this).attr("value", $(this).val());
+});
+$('body').on("focus", ".loadedSiteName", function() {
+	var sameVal = $(this).val();
+	var dis = $(this);
+	$.when(createSuggestions(sameVal)).done(function(){
+		dis.autocomplete({
+			source: suggestionArray
+		});
+	});
+});
+$('body').on("keyup", ".loadedPageName", function() {
+	if (!$(this).val()){
+		$(this).closest(".sitecreation").find("bp-pagename").text("");
+	}else{
+    	$(this).closest(".sitecreation").find("bp-pagename").text(" - " + $(this).val());
+	}
     $(this).attr("value", $(this).val());
 });
 $('body').on("click", ".addInclude", function(e){
@@ -330,7 +390,7 @@ $("body").on("click", 'input:checkbox', function(){
 	  
 		}
 });
-$("body").on("click", 'input:checkbox', function(){
+$("body").on("click", 'input:checkbox#saveProg', function(){
 		if ($(this).prop("checked") === true){
 			localStorage.setItem("bs-saveProgress", true);
 			$(this).attr("checked", "checked");

@@ -18,7 +18,7 @@
 body, html{
   padding:0;
   margin:0;
-  font-family:sans-serif, arial;
+  font-family:'Raleway', sans-serif, arial;
   font-size:15px;
   color:#333;
   background:#333;
@@ -29,6 +29,9 @@ body, html{
   margin:0 0px;
   background: #333;
   min-height:100px;
+}
+h1{
+  font-family:'PT Serif';
 }
 /* Universal layout */ 
 .fifty-cont{
@@ -66,6 +69,12 @@ body, html{
     transition:all 0.2s ease-in-out;
     animation: fa-spin 4s infinite linear;
     margin-right:5px;
+}
+.sitecreation .tools{
+  cursor:pointer;
+}
+.sitecreation.closed .tools{
+  cursor:auto !important;
 }
 .left-menu .box{
   padding:5px 5px 20px 0px;
@@ -184,11 +193,17 @@ body, html{
   margin-bottom:50px;
 }
 .section .section.sitecreation.isediting header{
-  cursor:move;
+  cursor:move !important;
+}
+.siteCreation bp-activeicons{
+  display:inline !important;
 }
 /* Sitecreation closed */
 .siteCreation.closed .toolsi{
   margin-right:60px;
+}
+.siteCreation.closed bp-activeicons{
+  display:inline !important;
 }
 .siteCreation.closed header.tools{
   margin-bottom:0;
@@ -235,7 +250,7 @@ body, html{
   margin:5px 0;
 }
 /* Form elements */
-input[type="text"], input[type="password"], input[type="email"], textarea{
+input[type="text"], input[type="password"], input[type="email"], textarea, input[type="textarea"]{
   border:1px solid #ddd;
   border-bottom-color:#eee;
   border-right-color:#eee;
@@ -254,7 +269,7 @@ input:focus, select:focus, textarea:focus, button:focus, *[class^="button"]:focu
   box-shadow:0px 0px 1px 0px #118AB2;
   outline:none;
 }
-textarea{
+textarea, input[type="textarea"]{
   max-width:100%;
   resize:none;
 }
@@ -385,11 +400,11 @@ td.go{
   text-align:right;
 }
 table tr td{
-  padding:5px 0;
+  padding:5px 5px 5px 0;
 }
 th{
   text-align:left;
-  padding:5px 0 5px;
+  padding:15px 0 10px 0;
   font-size:15px;
   font-weight:600;
   color:#555;
@@ -402,10 +417,26 @@ th{
   border-bottom-color:rgba(223, 160, 110, 0.2);
 }
 table tr td:first-child{
-  width:30%;
+  width:35%;
 }
 td select{
   width:100%;
+  cursor: pointer;
+}
+.ui-autocomplete{
+  background: #333;
+  color:#f9f9f9;
+  list-style:none;
+  padding:5px;
+  cursor:pointer;
+  max-width:400px;
+}
+.ui-autocomplete li:hover{
+  background:#222;
+}
+.ui-tooltip{
+  color:#f9f9f9;
+  cursor:pointer;
 }
 /* ONE OFF CLASSES */
 .createSite{

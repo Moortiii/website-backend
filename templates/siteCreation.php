@@ -4,7 +4,7 @@ $theme = $_POST['theme'];
 /*if ($name == "New site"){
   $name = "";
 }*/
-?><form action="php/createSite.php" method="post">
+?><form action="php/createSite.php" method="post" target="_blank">
 <div class="fifty-cont">
   <div class="fifty">
     <table>
@@ -20,7 +20,7 @@ $theme = $_POST['theme'];
        <tr>
         <td>Page name
         </td>
-        <td><input type="text" value="" class="" />
+        <td><input type="text" value="" name="pagename" class="loadedPageName" class="" />
         </td>
       </tr>
 
@@ -31,16 +31,16 @@ $theme = $_POST['theme'];
         </td>
       </tr>
     <tr>
-    <th colspan="2">Includes</th>
+    <th colspan="2">External includes</th>
     </tr>
         <tr>
-              <td>jQuery</td>
-              <td><input type="checkbox" name="includejQuery" checked />
+              <td>Include...</td>
+              <td><input type="checkbox" name="includejQuery" checked /> jQuery
               </td>
         </td>
         <tr>
-              <td>Normalize</td>
-              <td><input type="checkbox" name="includeNormalize" checked />
+              <td></td>
+              <td><input type="checkbox" name="includeNormalize" checked /> Normalize
               </td>
         </tr>
         <tr>
@@ -80,23 +80,23 @@ $theme = $_POST['theme'];
         Format
         </td>
         <td>
-        <input type="radio" name="titleformat" checked> Sitename / Pagename
+        <input type="radio" name="titleformat" value="snpn" id="snpn" checked> <label for="snpn">Sitename / Pagename</label>
         </td>
       </tr>
        <tr>
         <td></td><td>
-        <input type="radio" name="titleformat"> Sitename
+        <input type="radio" name="titleformat" value="sn" id="sn"> <label for="sn">Sitename</label>
         </td>
       </tr>
 
        <tr>
         <td></td><td>
-        <input type="radio" name="titleformat"> Pagename
+        <input type="radio" name="titleformat" value="pn" id="pn"> <label for="pn">Pagename</label>
         </td>
         </tr>
         <tr>
         <td></td><td>
-        <input type="radio" name="titleformat" value="custom"> Custom
+        <input type="radio" name="titleformat" value="custom" value="custom" id="radiocustom"> <label for="radiocustom">Custom</label>
         </td>
         </tr>
         <tr class="customtr">
@@ -110,34 +110,23 @@ $theme = $_POST['theme'];
     </tr>
        <tr>
         <td>
-        Extra
+        Include...
         </td>
         <td>
-        <input type="checkbox" name="titleformat" checked> #1
+        <input type="checkbox" name="themeStylesheet" id="themeStylesheet" checked> <label for="themeStylesheet">Theme stylesheet</label>
         </td>
       </tr>
        <tr>
         <td></td><td>
-        <input type="checkbox" name="titleformat"> #2
+        <input type="checkbox" name="themeJquery" id="themejQuery"> <label for="themejQuery">Theme jQuery</label>
         </td>
       </tr>
-
-       <tr>
-        <td></td><td>
-        <input type="checkbox" name="titleformat"> #3
-        </td>
-        </tr>
-        <tr>
-        <td></td><td>
-        <input type="checkbox" name="titleformat"> #4
-        </td>
-        </tr>
     <tr>
     <th colspan="2">Finish</th>
     </tr>
         <tr>
-        <td colspan="2" class="go">
-        <button class="button light"><i class="fa fa-arrow-circle-down before downloadSiteButton"></i> Download</button> <button class="button light saveSiteButton"><i class="fa fa-floppy-o before"></i> Save</button>
+        <td colspan="2" class="go"><br />
+        <button class="button light downloadSiteButton"><i class="fa fa-arrow-circle-down before"></i> Download</button> <button class="button light saveSiteButton"><i class="fa fa-floppy-o before"></i> Save</button>
         </td>
         </tr>
     </table>
