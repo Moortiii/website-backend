@@ -1,5 +1,4 @@
 <?php
-// Initialize variables
 $name;
 $page;
 $theme;
@@ -72,6 +71,33 @@ function setInfo() {
 }
 
 setInfo();
+$scriptarray = array();
+$scriptte = $_POST['customScriptType-0'];
+$scriptnr = 0;
+while (!empty($scriptte)){
+  if (empty($scriptte)){
+    return false;
+  }else{
+  $scriptarray[] = $scriptte;
+    $scriptnr++;
+    $scriptte = $_POST["customScriptType-".$scriptnr];
+  }
+}
+$inputscriptarray = array();
+$inputscriptte = $_POST['customScriptLink-0'];
+$inputscriptnr = 0;
+while (!empty($inputscriptte)){
+  if (empty($inputscriptte)){
+    return false;
+  }else{
+  $inputscriptarray[] = $inputscriptte;
+  $inputscriptnr++;
+  $inputscriptte = $_POST["customScriptLink-".$inputscriptnr];
+  }
+}/*
+die($inputscriptarray[0]);*/
+/*
+die(print_r($scriptarray)."<br /><br />".print_r($inputscriptarray));*/
 ?>
 <style>
 body{
@@ -93,6 +119,11 @@ Creating download...
   var page = "<?php echo ($page) ?>";
   var grid = "";
   var filename = name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + "_" + page.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html";
+  var list = [];<?php
+  $sCounter = 0;
+  for ($i=0; $i<count($scriptarray);$i++) { ?> 
+  list.push({
+    <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } die(); ?>
 
   var str = `<html>
   <head>
@@ -104,6 +135,7 @@ Creating download...
     <body>
       <h1>${name}</h1>
       ${grid}
+      ${list}
       ${jQuery}
     </body>
   </head>
