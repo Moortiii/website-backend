@@ -1,3 +1,6 @@
+<script type="text/javascript" src="../jszip/dist/jszip.js"></script>
+<script type="text/javascript" src="../jszip/vendor/FileSaver.js"></script>
+
 <?php
 $name;
 $page;
@@ -29,7 +32,7 @@ function getNormalize() {
 }
 /*function includeTitleFormat() {
   global $titleformat;
-  
+
 }*/
 
 function setInfo() {
@@ -63,7 +66,7 @@ function setInfo() {
     break;
     case "custom":
       $titleformat = str_replace(
-        array("{sitename}", "{pagename}"), 
+        array("{sitename}", "{pagename}"),
         array($name, $page),
       $_POST['titleformat-custom']);
     break;
@@ -121,9 +124,9 @@ Creating download...
   var filename = name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + "_" + page.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html";
   var list = [];<?php
   $sCounter = 0;
-  for ($i=0; $i<count($scriptarray);$i++) { ?> 
-  list.push({
-    <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } die(); ?>
+  for ($i=0; $i<count($scriptarray);$i++) { ?>
+  // list.push({
+  //   <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } die(); ?>
 
   var str = `<html>
   <head>
@@ -142,15 +145,29 @@ Creating download...
 </html>
   `;
 
-var hiddenElement = document.createElement('a');
+// Create zip
+var zip = new JSZip();
+// Create file
+zip.file("index.html", str);
+// Create folder
+// var css = zip.folder("css");
+// css.file("normalize.css", "body{margin:0 auto;}");
+function downloadWithBlob() {
+  zip.generateAsync({type:"blob"}).then(function (blob) {
+    saveAs(blob, "hello.zip");
+  }
+}
 
-hiddenElement.href = 'data:attachment/text,' + encodeURI(str);
-hiddenElement.target = '_blank';
-hiddenElement.download = filename;
-hiddenElement.click();
+downloadWithBlob();
+// var hiddenElement = document.createElement('a');
+//
+// hiddenElement.href = 'data:attachment/text,' + encodeURI(str);
+// hiddenElement.target = '_blank';
+// hiddenElement.download = filename;
+// hiddenElement.click();
 //window.location.replace("../");
-setTimeout(function(){
- self.close();
- window.close();
-}, 500);
+// setTimeout(function(){
+//  self.close();
+//  window.close();
+// }, 500);
 </script>
