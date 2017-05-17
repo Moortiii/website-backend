@@ -109,7 +109,7 @@ h1{
     margin-bottom:45px;
 }
 .main:after{
-  content:"Made by Håkon Underbakke, Morten Hauge & ☕";
+  content:"Made by Håkon Underbakke & Morten Hauge";
   position: absolute;
   top:calc(100% + 20px);
   left:0;
@@ -285,6 +285,10 @@ tbody tr:first-child th{
 }
 label{
   cursor: pointer;
+}
+label:hover{
+  text-decoration: underline;
+  text-decoration-color: #aaa;
 }
 /* BUTTONS */
 *[class^="button"], button{
@@ -544,6 +548,14 @@ select.action {
     margin:0 auto;
     max-width:1800px;
   }
+}
+.previewThemes{
+      display: block;
+    text-align: left;
+    padding: 5px 10px;
+    color: var(--navy);
+    text-decoration: none;
+    background: #f9f9f9;
 }
 .addInclude{
     display: block;

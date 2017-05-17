@@ -25,8 +25,9 @@ $theme = $_POST['theme'];
       </tr>
 
       <tr>
-              <td>Theme</td>
+              <td valign="top">Theme</td>
               <td><select name="siteTheme"><option>Boilerplate</option></select>
+              <a href="#" class="previewThemes">Preview</a>
               </td>
         </td>
       </tr>
@@ -35,12 +36,12 @@ $theme = $_POST['theme'];
     </tr>
         <tr>
               <td>Include...</td>
-              <td><input type="checkbox" name="includejQuery" checked /> jQuery
+              <td><input type="checkbox" name="includejQuery" id="includejQuery" checked /> <label for="includejQuery">jQuery</label>
               </td>
         </td>
         <tr>
               <td></td>
-              <td><input type="checkbox" name="includeNormalize" checked /> Normalize
+              <td><input type="checkbox" name="includeNormalize" id="includeNormalize" checked /> <label for="includeNormalize">Normalize</label>
               </td>
         </tr>
         <tr>
@@ -102,7 +103,7 @@ $theme = $_POST['theme'];
         <tr class="customtr">
         <td>Custom</td>
         <td>
-        <input type="text" name="titleformat-custom" value="$sitename - $pagename" />
+        <input type="text" name="titleformat-custom" value="{sitename} - {pagename}" />
         </td>
         </tr>
     <tr>
