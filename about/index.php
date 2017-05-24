@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Boilersite</title>
@@ -19,7 +20,7 @@
 <body>
   <div id="container">
     <div class="left-menu">
-    <?php include_once("../templates/leftmenu.php"); ?>
+      <?php include_once("../templates/leftmenu.php"); ?>
     </div>
     <div class="main">
 
@@ -27,25 +28,25 @@
         About
       </h1>
       <div class="section">
-      <h2>What is Boilersite?</h2>
-      <p>Boilersite is a website that makes boilerplate zip packages for web designers, so that they don't have to start from scratch and do all the boring stuff for every new project.</p>
+        <h2>What is Boilersite?</h2>
+        <p>Boilersite is a website that makes boilerplate zip packages for web designers, so that they don't have to start from scratch and do all the boring stuff for every new project.</p>
       </div>
       <div class="section">
-      <h2>How does it work?</h2>
-      <p>Mainly by use of jQuery and Javascript to "template" your saved settings to easily create a downloadable zip file of your own custom boilerplate. Boilerplate uses localstorage saving, and will soon support user accounts for cross-network saving.</p>
+        <h2>How does it work?</h2>
+        <p>Mainly by use of jQuery and Javascript to "template" your saved settings to easily create a downloadable zip file of your own custom boilerplate. Boilerplate uses localstorage saving, and will soon support user accounts for cross-network saving.</p>
       </div>
       <div class="section sitecreation">
-      <h2>More information</h2>
-      <p>Boilerplate started out as a cooperative UI project, and soon turned into a templating machine. It was started in 2017 by <a href="http://haakon.underbakke.net">Håkon Underbakke</a> and <a href="http://mhauge.no/portfolio">Morten Hauge</a>.</p>
-      </div> 
+        <h2>More information</h2>
+        <p>Boilerplate started out as a cooperative UI project, and soon turned into a templating machine. It was started in 2017 by <a href="http://haakon.underbakke.net">Håkon Underbakke</a> and <a href="http://mhauge.no/portfolio">Morten Hauge</a>.</p>
+      </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script>
-  $(".togglesettings").click(function(e){
-    e.preventDefault();
-    window.location = "#settings";
-    return false;
-  });
+    $(".togglesettings").click(function(e) {
+      e.preventDefault();
+      window.location = "#settings";
+      return false;
+    });
   </script>
 </body>

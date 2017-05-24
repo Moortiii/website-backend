@@ -102,35 +102,39 @@ die($inputscriptarray[0]);*/
 /*
 die(print_r($scriptarray)."<br /><br />".print_r($inputscriptarray));*/
 ?>
-<style>
-body{
-  font-family:Sans-Serif, arial;
-  padding:10px;
-  font-size:18px;
-}
-</style>
-Creating download...
-<script type="text/javascript">
-  var name = "<?php echo($name); ?>";
-  document.title = name;
-  var titleformat = "<?php echo($titleformat); ?>";
-  var theme = "<?php echo($theme); ?>";
-  var jQuery = "<?php echo($jQuery); ?>";
-  var normalize = "<?php echo($normalize); ?>";
-  var meta_name = "<?php echo($meta_name); ?>";
-  var meta_author = "<?php echo($meta_author); ?>";
-  var page = "<?php echo ($page) ?>";
-  var grid = "";
-  var filename = name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + "_" + page.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".zip";
-  var list = [];<?php
+  <style>
+    body {
+      font-family: Sans-Serif, arial;
+      padding: 10px;
+      font-size: 18px;
+    }
+  </style>
+  Creating download...
+  <script type="text/javascript">
+    var name = "<?php echo($name); ?>";
+    document.title = name;
+    var titleformat = "<?php echo($titleformat); ?>";
+    var theme = "<?php echo($theme); ?>";
+    var jQuery = "<?php echo($jQuery); ?>";
+    var normalize = "<?php echo($normalize); ?>";
+    var meta_name = "<?php echo($meta_name); ?>";
+    var meta_author = "<?php echo($meta_author); ?>";
+    var page = "<?php echo ($page) ?>";
+    var grid = "";
+    var filename = name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + "_" + page.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".zip";
+    var list = [];
+    <?php
   $sCounter = 0;
   $scriptarray = array_filter($scriptarray);
   if (!empty($scriptarray) or (!empty($inputscriptarray[$i]))) {
       for ($i = 0; $i < count($scriptarray); $i++) { ?>
-        list.push({
-        <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; }
+    list.push({
+      <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"
+    });
+    <?php $sCounter++; }
       } ?>
-  var str = `<!DOCTYPE html>
+    var str =
+      `<!DOCTYPE html>
   <html>
   <head>
     <meta name="author" content="${meta_author}">
@@ -148,33 +152,36 @@ Creating download...
 </html>
   `;
 
-// Create zip
-var zip = new JSZip();
-// Create file
-zip.file("index.html", str);
-//Create folder
-var css = zip.folder("css");
-var scripts = zip.folder("scripts");
-css.file("normalize.css", "body{margin:0 auto;}");
-scripts.file("scripts.js", "alert('Hello World')");
-function downloadWithBlob() {
-  zip.generateAsync({type:"blob"}).then(function (blob) {
-    saveAs(blob, filename);
-  });
-}
+    // Create zip
+    var zip = new JSZip();
+    // Create file
+    zip.file("index.html", str);
+    //Create folder
+    var css = zip.folder("css");
+    var scripts = zip.folder("scripts");
+    css.file("normalize.css", "body{margin:0 auto;}");
+    scripts.file("scripts.js", "alert('Hello World')");
 
-downloadWithBlob();
-/*
-window.location.replace("../");*/
-// setTimeout(function(){
-//   self.close();
-//   window.close();
-// }, 500);
+    function downloadWithBlob() {
+      zip.generateAsync({
+        type: "blob"
+      }).then(function(blob) {
+        saveAs(blob, filename);
+      });
+    }
 
-// var hiddenElement = document.createElement('a');
-//
-// hiddenElement.href = 'data:attachment/text,' + encodeURI(str);
-// hiddenElement.target = '_blank';
-// hiddenElement.download = filename;
-// hiddenElement.click();
-</script>
+    downloadWithBlob();
+    /*
+    window.location.replace("../");*/
+    // setTimeout(function(){
+    //   self.close();
+    //   window.close();
+    // }, 500);
+
+    // var hiddenElement = document.createElement('a');
+    //
+    // hiddenElement.href = 'data:attachment/text,' + encodeURI(str);
+    // hiddenElement.target = '_blank';
+    // hiddenElement.download = filename;
+    // hiddenElement.click();
+  </script>

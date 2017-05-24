@@ -1,38 +1,38 @@
-      <div class="box">
-        <a href="." class="nav-link closed"><i class="fa fa-refresh before dospin"></i> Sites</a>
-        <a href="about" class="nav-link closed"><i class="fa fa-info-circle before" aria-hidden="true"></i> About</a>
-        <a href="#" class="nav-link togglesettings closed"><i class="fa fa-cog before fa-spin-hover dospin"></i> Settings</a>
-      </div>
-      <div class="settings">
-        <table class="cxtable">
-          <tr>
-            <td><input type="checkbox" name="showAds" id="showAds" /></td>
-            <td> <label for="showAds">Show ads</label></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" id="saveProg" name="saveProg" checked /></td>
-            <td class="saveSitesTd"> <label for="saveProg">Save sites</label></td>
-          </tr>
-          <tr>
-            <td colspan="2"> <a href="#" class="exportSave">Export save</a></td>
-          </tr>
-          <tr class="exportSaveTr">
-            <td colspan="2">
-              <textarea></textarea>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2"> <a href="#" class="importSave">Import save</a></td>
-          </tr>
-          <tr class="importSaveTr">
-            <td colspan="2">
-              <textarea></textarea><br />
-              <a href="#" class="importSaveNow">Import</a>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <!--<div class="box">
+<div class="box">
+  <a href="." class="nav-link closed"><i class="fa fa-refresh before dospin"></i> Sites</a>
+  <a href="about" class="nav-link closed"><i class="fa fa-info-circle before" aria-hidden="true"></i> About</a>
+  <a href="#" class="nav-link togglesettings closed"><i class="fa fa-cog before fa-spin-hover dospin"></i> Settings</a>
+</div>
+<div class="settings">
+  <table class="cxtable">
+    <tr>
+      <td><input type="checkbox" name="showAds" id="showAds" /></td>
+      <td> <label for="showAds">Show ads</label></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="saveProg" name="saveProg" checked /></td>
+      <td class="saveSitesTd"> <label for="saveProg">Save sites</label></td>
+    </tr>
+    <tr>
+      <td colspan="2"> <a href="#" class="exportSave">Export save</a></td>
+    </tr>
+    <tr class="exportSaveTr">
+      <td colspan="2">
+        <textarea></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"> <a href="#" class="importSave">Import save</a></td>
+    </tr>
+    <tr class="importSaveTr">
+      <td colspan="2">
+        <textarea></textarea><br />
+        <a href="#" class="importSaveNow">Import</a>
+      </td>
+    </tr>
+  </table>
+</div>
+<!--<div class="box">
         <h3>Articles</h3>
         <a href="#" class="nav-link">New article</a>
         <a href="#" class="nav-link">Manage articles</a>
