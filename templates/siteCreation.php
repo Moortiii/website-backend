@@ -148,9 +148,9 @@ $theme = $_POST['theme'];
               <fieldset>
                 <legend>
                   <select id="theme-select" style="margin: 10px;">
-                    <option value="Flat">Flat</option>
-                    <option value="Rounded">Rounded</option>
-                    <option value="3D">3D</option>
+                    <option id="flat" value="Flat">Flat</option>
+                    <option id="rounded" value="Rounded">Rounded</option>
+                    <option id="3d" value="3D">3D</option>
                   </select>
                 </legend>
                 <div class="form-design">
