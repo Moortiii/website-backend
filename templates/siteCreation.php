@@ -136,8 +136,30 @@ $theme = $_POST['theme'];
       <th colspan="2">Form design</th>
       </tr>
        <tr>
-        <td>...</td><td>
-        ...
+        <td>
+          <form class="test-form">
+            <label for="form-dropdown">Drop-down menu:</label>
+            <select id="form-dropdown" name="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="fiat">Fiat</option>
+              <option value="audi">Audi</option>
+            </select>
+
+            <label for="form-input">Input field:</label>
+            <input id="form-input" class="form-input" value="Default Value">
+
+            <label for="form-button">Buttons:</label>
+            <button id="form-button" class="form-button">Simple Button</button>
+
+            <label for="form-text">Textarea:</label>
+            <textarea id="form-text" class="form-text">
+              "Morten har stor tissefant" - Håkon Underbakke 2017. "I wish I was more like Morten!" - Barack Obama 2016. "Sad! Very sad!" - Donald Trump alldayerryday.
+            </textarea>
+        </form>
+        </td>
+        <td>
+
         </td>
       </tr>
     <tr>
