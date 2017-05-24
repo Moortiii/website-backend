@@ -118,7 +118,7 @@ $theme = $_POST['theme'];
               Include...
             </td>
             <td>
-              <input type="checkbox" name="themeSlider" id="themeSlider" checked> <label for="themeSlider">Image slider</label>
+              <input type="checkbox" name="themeSlider" id="themeSlider"> <label for="themeSlider">Image slider</label>
             </td>
           </tr>
           <tr>
@@ -136,24 +136,35 @@ $theme = $_POST['theme'];
           <tr>
             <td></td>
             <td>
-              <input type="checkbox" name="themeGrid" id="themeGrid"> <label for="themeGrid">Flex grids</label>
+              <input type="checkbox" name="themeGrid" id="themeGrid" checked> <label for="themeGrid">Flex grid</label>
             </td>
           </tr>
           <tr>
             <th colspan="2">Form design</th>
           </tr>
           <tr>
-            <td>
-              <div class="form-design">
-                <form class="test-form">
-                  <label for="form-textarea">Textarea:</label>
-                  <input id="form-textarea" type="textarea">
-                  <label for="form-textinput">Text input:</label>
-                  <input id="form-textinput" type="textinput">
-                  <label for="form-button">Button: </label>
-                  <button id="form-button">Simple button</button>
-                </form>
-              </div>
+            <td colspan="2">
+              <label for="theme-select">Select theme:</label>
+              <fieldset>
+                <legend>
+                  <select id="theme-select" style="margin: 10px;">
+                    <option value="Flat">Flat</option>
+                    <option value="Rounded">Rounded</option>
+                    <option value="3D">3D</option>
+                  </select>
+                </legend>
+                <div class="form-design">
+                  <form class="test-form">
+                    <label for="btn-showcase">
+                    <div id="btn-showcase" class="btn-showcase">Buttons:</label>
+                      <button class="btn normal-btn">Normal</button>
+                      <button class="btn error-btn">Error</button>
+                      <button class="btn success-btn">Success</button>
+                      <button class="btn warning-btn">Warning</button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
             </td>
           </tr>
           <tr>

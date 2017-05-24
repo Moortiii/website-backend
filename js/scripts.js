@@ -134,7 +134,7 @@ $(document).ready(function(){
         //Set's the cookie to true so there is a value and the code shouldn't run again.
         setCookie('firsttime',true);
     }
-	
+
 	if (localStorage.getItem("bs-saveProgress") === "true" || localStorage.getItem("bs-saveProgress")  === null){
 		$("input[name='saveProg']").attr("checked", "checked");
 		$("input[name='saveProg']").prop("checked", true);
@@ -159,7 +159,7 @@ $(document).ready(function(){
 
   	if (typeof(Storage) !== "undefined") {
   		if (localStorage.getItem("bs-saveProgress") === "true" || localStorage.getItem("bs-saveProgress")  === null){
-	  		
+
   			// create a reference to the old `.html()` function
 			var htmlOriginal = $.fn.html;
 
@@ -229,12 +229,12 @@ $(document).ready(function(){
 		}
 	}/*
 	$(".doDelete").click(function(){
-		
+
 	});*/
-	$('.action').on("change", function(){ 
+	$('.action').on("change", function(){
 	    if ($(this).val() == "delete"){
 	    	$('.mark:checkbox:checked').each(function(){
-				$(this).closest(".siteCreation").remove();	
+				$(this).closest(".siteCreation").remove();
 				$(".action").hide();
 	  			if (!$('.sitesCont').html().replace(/\s+/g, '').length){
 					$(".massedit").hide();
@@ -292,10 +292,10 @@ function doSave(e){
 				$(".togglesettings, .saveSitesTd").css("background", "var(--red)");
 				$('.togglesettings, .saveSitesTd')
 			      .delay(2000)
-			      .queue( function(next){ 
-			        $(this).css("box-shadow", "none"); 
+			      .queue( function(next){
+			        $(this).css("box-shadow", "none");
 					$(this).css("background", "#222");
-			        next(); 
+			        next();
 			      });
 			}
 		}
@@ -415,7 +415,7 @@ $("body").on("click", 'input:checkbox', function(){
 		}else{
 			$(this).removeAttr("checked");
 			$(this).prop("checked", false);
-	  
+
 		}
 });
 $("body").on("click", 'input:checkbox#saveProg', function(){
@@ -426,7 +426,7 @@ $("body").on("click", 'input:checkbox#saveProg', function(){
 			localStorage.setItem("bs-saveProgress", false);
 			$(this).removeAttr("checked");
 			$(this).prop("checked", false);
-	  
+
 		}
 });
 $("body").on("click", 'input:radio[value="custom"][name="titleformat"]', function(){

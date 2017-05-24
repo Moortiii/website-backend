@@ -52,10 +52,20 @@ h1 {
     border-bottom: 1px dashed var(--blue);
     background: rgba(40, 150, 195, 0.02);
 }
+<<<<<<< Updated upstream
 
 .section p a:hover {
     background: none;
     border-bottom-style: solid;
+=======
+.section p a:hover{
+  background:none;
+  border-bottom-style:solid;
+}
+/* Universal layout */
+.fifty-cont{
+
+>>>>>>> Stashed changes
 }
 
 
@@ -866,3 +876,52 @@ select.action {
 .massedit {
     display: none;
 }
+<<<<<<< Updated upstream
+=======
+.massedit{display:none;}
+
+
+/* Button Styles */
+
+.btn {
+  display: block;
+  width: 100%;
+  margin: 5px;
+}
+
+.normal-btn {
+  background: #eee;
+  color: #2D2A32;
+  border: 2px solid #d3d3d3;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
+.error-btn {
+  background: #DF2935;
+  color: #2D2A32;
+  padding: 5px 10px;
+  border: 2px solid #A31E27;
+  border-radius: 2px;
+}
+
+.success-btn {
+  background: #37B73F;
+  color: #2D2A32;
+  padding: 5px 10px;
+  border: 2px solid #29862E;
+  border-radius: 2px;
+}
+
+.warning-btn {
+  background: #F58F29;
+  color: #2D2A32;
+  padding: 5px 10px;
+  border: 2px solid #C97622;
+  border-radius: 2px;
+}
+
+#btn-showcase {
+  padding-right: 5px;
+}
+>>>>>>> Stashed changes
