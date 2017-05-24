@@ -529,7 +529,7 @@ $(".togglesettings").click(function(){
 
 	}else{
 		$(".settings").toggle();
-		$(this).html('<i class="fa fa-cog before fa-spin-hover"></i> Settings');
+		$(this).html('<i class="fa fa-cog before fa-spin-hover dospin"></i> Settings');
 		$(this).addClass("closed");
 	}
 });
