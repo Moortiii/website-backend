@@ -70,6 +70,21 @@ function createSite(){
 			}
 	});
 }
+$("body").on("click", ".previewThemes", function(e){
+	e.preventDefault();
+	$(".thPu").remove();
+	var whichTheme = $(this).closest("td").find("select").val();
+	$(".themePopUp").prepend("<div class='thPu'><div></div></div>");
+	$(".thPu div").load("templates/themes.php",  { themeName: whichTheme}, function() {
+		$(".thPu").fadeIn(150);
+	});
+	return false;
+});
+$("body").on("click", ".thPu", function(e){
+	if(e.target == this){
+		$(this).fadeOut();
+	}
+});
 $("body").on("click", "header.tools .toolsi", function(){
 	$(this).next("span").animate({width:'toggle'},100);
 	if ($(this).hasClass("fa-window-close-o")){

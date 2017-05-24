@@ -130,7 +130,7 @@ Creating download...
   //   <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } die(); ?>
   for ($i=0; $i<count($scriptarray);$i++) { ?>
   list.push({
-    <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } ?>
+    <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++;  ?>
 
   var str = `<html>
   <head>

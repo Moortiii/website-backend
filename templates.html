@@ -1,18 +1,37 @@
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
   <title>Boilersite</title>
   <meta name="description" content="Boilersite">
-  <meta name="author" content="Håkon Underbakke & Morten Hauge">
+  <meta name="author" content="Håkon Underbakke &amp; Morten Hauge">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif|Raleway:300,400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pace.css">
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  <noscript>
+  <style>
+  .section{
+    display:none;
+  }
+  h1.subpage-header:after {
+    content: "Please enable javascript to use Boilersite";
+    display: block;
+    padding: 20px 10px;
+    font-size: 15px;
+    background: var(--red);
+    color: #fff;
+    text-align: center;
+}
+  </style>
+  </noscript>
 </head>
-<!--===============================
+<!-- ===============================
 WARNING FOR USING INSPECTOR TOOLS:
 
 If you are logged in as guest,
@@ -21,17 +40,28 @@ saving the HTML content in "Sites", in
 localstorage - which means that any
 changes you make to the HTML will stay
 that way when you save or reload the
-page.
+page..
 
-================================-->
+================================ -->
+
 <body>
   <div id="container">
     <div class="left-menu">
       <div class="box">
-        <h3>Settings</h3>
-        <a href="index.html" class="nav-link">Sites</a>
-        <a href="templates.html" class="nav-link">Templates</a>
-        <a href="#" class="nav-link">Settings</a>
+        <a href="." class="nav-link closed"><i class="fa fa-refresh before"></i> Sites</a>
+        <a href="#" class="nav-link togglesettings closed"><i class="fa fa-cog before fa-spin-hover"></i> Settings</a>
+      </div>
+      <div class="settings">
+        <table class="cxtable">
+          <tr>
+            <td><input type="checkbox" name="showAds" id="showAds" /></td>
+            <td> <label for="showAds">Show ads</label></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="saveProg" name="saveProg" checked /></td>
+            <td class="saveSitesTd"> <label for="saveProg">Save sites</label></td>
+          </tr>
+        </table>
       </div>
       <!--<div class="box">
         <h3>Articles</h3>
@@ -53,129 +83,91 @@ page.
 
       <h1 class="subpage-header">
       Boilersite
-    </h1>
-    
-    <div class="section">
-      <h2>Account</h2>
-      <div class="radio">
-      <input type="radio" checked name="accountradio" class="ac-guest" /> Guest <input type="radio" name="accountradio" class="ac-account" /> Account
-      </div>
-      <div class="section account">
-        <div class="fifty-cont">
-          <div class="fifty">
-      <table>
-        <tr>
-          <th colspan="2">Existing account</th>
-        </tr>
-        <tr class="afterth">
-          <td>Email
-          </td>
-          <td><input type="email" value="" />
-          </td>
-        </tr>
-        <tr>
-          <td>Password
-          </td>
-          <td><input type="password" value="" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="go"><button>Login</button>
-          </td>
-        </tr>
-        
-       
-      </table>
+  </h1>
+
+      <div class="section">
+        <h2>Account</h2>
+        <div class="radio">
+          <input type="radio" checked name="accountradio" class="ac-guest" id="ac-guest" /> <label for="ac-guest">Guest</label> <input type="radio" name="accountradio" id="ac-account" class="ac-account" /> <label for="ac-account">Account</label>
+        </div>
+        <div class="section account">
+          <div class="fifty-cont">
+            <div class="fifty">
+              <table>
+                <tr>
+                  <th colspan="2">Existing account</th>
+                </tr>
+                <tr class="afterth">
+                  <td>Email
+                  </td>
+                  <td><input type="email" value="" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Password
+                  </td>
+                  <td><input type="password" value="" />
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="go"><button>Login</button>
+                  </td>
+                </tr>
+
+
+              </table>
+            </div>
+            <div class="fifty">
+              <table>
+
+                <tr>
+                  <th colspan="2">New account
+                  </th>
+                </tr>
+                <tr class="afterth">
+                  <td>Email</td>
+                  <td><input type="text" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Password</td>
+                  <td><input type="password" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Confirm password</td>
+                  <td><input type="password" />
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="go"><button>Create account</button>
+                  </td>
+                </tr>
+              </table>
+
+            </div>
           </div>
-          <div class="fifty">
-            <table>
-              
-        <tr>
-          <th colspan="2">New account
-          </th>
-        </tr>
-        <tr class="afterth">
-          <td>Email</td>
-          <td><input type="text" />
-          </td>
-        </tr>
-        <tr>
-          <td>Password</td>
-          <td><input type="password" />
-          </td>
-        </tr>
-        <tr>
-          <td>Confirm password</td>
-          <td><input type="password" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="go"><button>Create account</button>
-          </td>
-        </tr>
-            </table>
-            
-          </div>
+          <div class="clear"></div>
+          <p>
+            Your progress is usually saved in localstorage. If you create an account, it will be saved on our servers.</p>
+        </div>
       </div>
-    <div class="clear"></div>
-    <p>
-      Your progress is usually saved in localstorage. If you create an account, it will be saved on our servers.</p>
+
+      <div class="section sites-section">
+        <h2>Templates</h2>
       </div>
-    </div>
-    
-    <div class="section sites-section">
-      <h2>Templates</h2>
-      <div class="section template">
-        <h3>Boilerplate</h3>
-        <h4>index.html</h4>
-<pre><code><xmp><html>
-<head>
-  <title>{title}</title>
-</head>
-<body>
+      <a href="#" class="button-green plusbutton" onClick="doSave('button')"><i class="fa fa-floppy-o before"></i> Save</a>
+      <div class="settings">
 
-</body>
-</html>
-</xmp></code></pre>
-        <h4>about.html</h4>
-        <pre><code><xmp><html>
-        <head>
-          <title>{Title}</title>
-        </head>
-        <body>
-
-        </body>
-        </html>
-        </xmp></code></pre>
       </div>
-      <div class="section template">
-        <h3>Not boilerplate</h3>
-        <h4>index.html</h4>
-<pre><code><xmp><html>
-<head>
-
-</head>
-<body>
-
-</body>
-</html>
-</xmp></code></pre>
-      </div>
-    </div><!--
-    <a href="#" class="button-green plusbutton" onClick="doSave('button')"><i class="fa fa-floppy-o before"></i> Save</a>-->
-  </div>
     </div>
     <div class="clear">
     </div>
   </div>
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>
 </body>
+
 </html>
