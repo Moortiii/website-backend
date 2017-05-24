@@ -125,6 +125,9 @@ $('input[name="siteName"]').keypress(function(event) {
     }
 });
 $(document).ready(function(){
+	if (location.hash == "#settings"){
+		$(".togglesettings").click();
+	}
 	if (!getCookie('firsttime')){
         //Runs the code because the cookie doesn't exist and it's the user's first time
         $(".account").after("<div class='firsttime'>Looks like this is your first time using Boilersite, click About to get more information")

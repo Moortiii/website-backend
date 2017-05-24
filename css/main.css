@@ -33,6 +33,17 @@ body, html{
 h1{
   font-family:'PT Serif';
 }
+.section p a{
+    display: inline-block;
+    text-decoration: none;
+    color:var(--blue);
+    border-bottom: 1px dashed var(--blue);
+    background: rgba(40, 150, 195, 0.02);
+}
+.section p a:hover{
+  background:none;
+  border-bottom-style:solid;
+}
 /* Universal layout */ 
 .fifty-cont{
   
@@ -182,7 +193,7 @@ h1{
     left: 50%;
     margin-left: -201px;
     padding: 20px;
-  
+
 }
 .section.sitecreation {
     border-left-color: var(--green-dark);

@@ -1,7 +1,7 @@
 
       <div class="box">
         <a href="." class="nav-link closed"><i class="fa fa-refresh before dospin"></i> Sites</a>
-        <a href="about" class="nav-link togglesettings closed"><i class="fa fa-info-circle before" aria-hidden="true"></i> About</a>
+        <a href="about" class="nav-link closed"><i class="fa fa-info-circle before" aria-hidden="true"></i> About</a>
         <a href="#" class="nav-link togglesettings closed"><i class="fa fa-cog before fa-spin-hover dospin"></i> Settings</a>
       </div>
       <div class="settings">
