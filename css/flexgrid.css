@@ -58,3 +58,6 @@
   width: calc(100% / 10);
   flex-basis: calc(100 / 10);
 }
+.tissefant {
+  color: #333;
+}
