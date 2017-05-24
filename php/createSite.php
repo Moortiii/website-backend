@@ -124,16 +124,12 @@ Creating download...
   var filename = name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + "_" + page.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html";
   var list = [];<?php
   $sCounter = 0;
-
-  for ($i=0; $i<count($scriptarray);$i++) { ?>
-  // list.push({
-  //   <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } die(); ?>
+  $scriptarray = array_filter($scriptarray);
+  if (!empty($scriptarray)){
   for ($i=0; $i<count($scriptarray);$i++) { ?>
   list.push({
-    <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++;  ?>
-
-  var str = `<!doctype html>
-  <html>
+    <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } } ?>
+  var str = `<!doctype html><html>
   <head>
     <meta name="author" content="${meta_author}">
     <meta name="name" content="${meta_name}">
@@ -160,12 +156,12 @@ zip.file("index.html", str);
 function downloadWithBlob() {
   zip.generateAsync({type:"blob"}).then(function (blob) {
     saveAs(blob, "hello.zip");
-  }
+  });
 }
 
 downloadWithBlob();
-
-window.location.replace("../");
+/*
+window.location.replace("../");*/
 setTimeout(function(){
   self.close();
   window.close();
