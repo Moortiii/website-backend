@@ -121,15 +121,17 @@ Creating download...
   var meta_author = "<?php echo($meta_author); ?>";
   var page = "<?php echo ($page) ?>";
   var grid = "";
-  var filename = name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + "_" + page.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".html";
+  var filename = name.replace(/[^a-z0-9]/gi, '_').toLowerCase() + "_" + page.replace(/[^a-z0-9]/gi, '_').toLowerCase() + ".zip";
   var list = [];<?php
   $sCounter = 0;
   $scriptarray = array_filter($scriptarray);
-  if (!empty($scriptarray)){
-  for ($i=0; $i<count($scriptarray);$i++) { ?>
-  list.push({
-    <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; } } ?>
-  var str = `<!doctype html><html>
+  if (!empty($scriptarray) or (!empty($inputscriptarray[$i]))) {
+      for ($i = 0; $i < count($scriptarray); $i++) { ?>
+        list.push({
+        <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++; }
+      } ?>
+  var str = `<!DOCTYPE html>
+  <html>
   <head>
     <meta name="author" content="${meta_author}">
     <meta name="name" content="${meta_name}">
@@ -150,22 +152,24 @@ Creating download...
 var zip = new JSZip();
 // Create file
 zip.file("index.html", str);
-// Create folder
-// var css = zip.folder("css");
-// css.file("normalize.css", "body{margin:0 auto;}");
+//Create folder
+var css = zip.folder("css");
+var scripts = zip.folder("scripts");
+css.file("normalize.css", "body{margin:0 auto;}");
+scripts.file("scripts.js", "alert('Hello World')");
 function downloadWithBlob() {
   zip.generateAsync({type:"blob"}).then(function (blob) {
-    saveAs(blob, "hello.zip");
+    saveAs(blob, filename);
   });
 }
 
 downloadWithBlob();
 /*
 window.location.replace("../");*/
-setTimeout(function(){
-  self.close();
-  window.close();
-}, 500);
+// setTimeout(function(){
+//   self.close();
+//   window.close();
+// }, 500);
 
 // var hiddenElement = document.createElement('a');
 //

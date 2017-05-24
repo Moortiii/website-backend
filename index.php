@@ -131,7 +131,7 @@ page..
         <table class="createSite">
           <tr>
             <th colspan="2">Create site
-              </td>
+            </th>
           </tr>
           <tr class="afterth">
             <td>Name</td>

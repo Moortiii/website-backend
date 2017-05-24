@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+*[class^="col"] {
+  background: #333;
+  border: 1px solid green;
+  height: 100px;
+}
+.flex.row, .flex-column {
+  display: flex;
+}
+.flex-row {
+  flex-flow: row wrap;
+}
+.flex-column {
+  flex-flow: column wrap;
+}
+.flex-container {
+  display: flex;
+}
+.col-1 {
+  width: calc(100% / 1);
+  flex-basis: calc(100% / 1);
+}
+.col-2 {
+  width: calc(100% / 2);
+  flex-basis: calc(100% / 2);
+}
+.col-3 {
+  width: calc(100% / 3);
+  flex-basis: calc(100% / 3);
+}
+.col-4 {
+  width: calc(100% / 4);
+  flex-basis: calc(100 / 4);
+}
+.col-5 {
+  width: calc(100% / 5);
+  flex-basis: calc(100 / 5);
+}
+.col-6 {
+  width: calc(100% / 6);
+  flex-basis: calc(100 / 6);
+}
+.col-7 {
+  width: calc(100% / 7);
+  flex-basis: calc(100 / 7);
+}
+.col-8 {
+  width: calc(100% / 8);
+  flex-basis: calc(100 / 8);
+}
+.col-9 {
+  width: calc(100% / 9);
+  flex-basis: calc(100 / 9);
+}
+.col-10 {
+  width: calc(100% / 10);
+  flex-basis: calc(100 / 10);
+}
