@@ -149,7 +149,7 @@ h1{
   border-left-color:var(--navy);
 }
 .section header.tools{
-    background:#eee;
+    background:#fff;
     margin: -5px -10px;
     padding: 5px 10px;
     margin-bottom: 5px;
@@ -197,7 +197,7 @@ h1{
 }
 .section.sitecreation {
     border-left-color: var(--green-dark);
-    border-top: 1px solid transparent;
+    border-top: 1px solid #f9f9f9;
     position:relative;
 }
 .section p{
