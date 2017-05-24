@@ -114,12 +114,30 @@ $theme = $_POST['theme'];
         Include...
         </td>
         <td>
-        <input type="checkbox" name="themeStylesheet" id="themeStylesheet" checked> <label for="themeStylesheet">Theme stylesheet</label>
+        <input type="checkbox" name="themeSlider" id="themeSlider" checked> <label for="themeSlider">Image slider</label>
         </td>
       </tr>
        <tr>
         <td></td><td>
-        <input type="checkbox" name="themeJquery" id="themejQuery"> <label for="themejQuery">Theme jQuery</label>
+        <input type="checkbox" name="themeHero" id="themeHero"> <label for="themeHero">Hero</label>
+        </td>
+      </tr>
+       <tr>
+        <td></td><td>
+        <input type="checkbox" name="themeHamburger" id="themeHamburger"> <label for="themeHamburger">Hamburger menu</label>
+        </td>
+      </tr>
+       <tr>
+        <td></td><td>
+        <input type="checkbox" name="themeGrid" id="themeGrid"> <label for="themeGrid">Flex grids</label>
+        </td>
+      </tr>
+      <tr>
+      <th colspan="2">Form design</th>
+      </tr>
+       <tr>
+        <td>...</td><td>
+        ...
         </td>
       </tr>
     <tr>
