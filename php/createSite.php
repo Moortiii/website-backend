@@ -132,7 +132,8 @@ Creating download...
   list.push({
     <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"});<?php $sCounter++;  ?>
 
-  var str = `<html>
+  var str = `<!doctype html>
+  <html>
   <head>
     <meta name="author" content="${meta_author}">
     <meta name="name" content="${meta_name}">

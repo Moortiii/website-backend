@@ -77,6 +77,9 @@ $("body").on("click", ".previewThemes", function(e){
 	$(".themePopUp").prepend("<div class='thPu'><div></div></div>");
 	$(".thPu div").load("templates/themes.php",  { themeName: whichTheme}, function() {
 		$(".thPu").fadeIn(150);
+		$('pre code').each(function(i, block) {
+		    hljs.highlightBlock(block);
+		  });
 	});
 	return false;
 });

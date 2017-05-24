@@ -589,5 +589,17 @@ select.action {
   color:#f9f9f9;
   padding:10px;
   cursor:default;
+  border:10px solid #222;
+  border-top:none;
+}
+.thPu h3{margin: 5px -10px;
+    background: #222;
+    padding: 5px 10px;}
+.thPu h4{
+  color: #aaa;
+    margin: 10px 0 0px;
+}
+.thPu code{
+  border:10px solid #222;
 }
 .massedit{display:none;}
