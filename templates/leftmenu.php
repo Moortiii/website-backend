@@ -1,4 +1,3 @@
-
       <div class="box">
         <a href="." class="nav-link closed"><i class="fa fa-refresh before dospin"></i> Sites</a>
         <a href="about" class="nav-link closed"><i class="fa fa-info-circle before" aria-hidden="true"></i> About</a>
@@ -15,7 +14,7 @@
             <td class="saveSitesTd"> <label for="saveProg">Save sites</label></td>
           </tr>
           <tr>
-            <td colspan="2"><a href="#" class="exportSave">Export save</a></td>
+            <td colspan="2"> <a href="#" class="exportSave">Export save</a></td>
           </tr>
           <tr class="exportSaveTr">
             <td colspan="2">
@@ -23,7 +22,7 @@
             </td>
           </tr>
           <tr>
-            <td colspan="2"><a href="#" class="importSave">Import save</a></td>
+            <td colspan="2"> <a href="#" class="importSave">Import save</a></td>
           </tr>
           <tr class="importSaveTr">
             <td colspan="2">

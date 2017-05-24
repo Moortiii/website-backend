@@ -443,6 +443,11 @@ $("body").on("click", 'input:radio[value="custom"][name="titleformat"]', functio
 $("body").on("click", '.firsttime', function(){
 		$(this).fadeOut();
 });
+$("body").on("click", '.removeTd', function(e){
+	e.preventDefault();
+	$(this).closest("tr").remove();
+	return false;
+});
 $(function() {
   var counter = 0;
   var isDragging = false;

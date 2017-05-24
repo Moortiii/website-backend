@@ -19,7 +19,7 @@
 <body>
   <div id="container">
     <div class="left-menu">
-    <?php include("../templates/leftmenu.php"); ?>
+    <?php include_once("../templates/leftmenu.php"); ?>
     </div>
     <div class="main">
 

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -46,7 +47,7 @@ page..
 <body>
   <div id="container">
     <div class="left-menu">
-    <?php include("templates/leftmenu.php"); ?>
+    <?php require_once realpath('templates/leftmenu.php'); ?>
     </div>
     <div class="main">
 

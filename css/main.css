@@ -649,6 +649,7 @@ select.action {
   position:absolute;
   top:0;
   right:0;
+  color:#333;
 }
 .exportSaveTr, .importSaveTr{
   display:none;
@@ -658,6 +659,9 @@ select.action {
   padding:5px;
   color:#fff;
   max-width:200px;
+}
+.ui-sortable-helper{
+  cursor:move !important;
 }
 .exportSave, .importSave{
   color:#fff;
