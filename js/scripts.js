@@ -332,7 +332,7 @@ $(".sitesCont").on("click", ".downloadSiteButtonLarge", function(e){
 $('body').on("keyup", "input[type='text']", function() {
     $(this).attr("value", $(this).val());
 });
-$('body').on("focusout", "textarea", function() {
+$('body').on("focusout", "textarea[name='meta-textarea']", function() {
     $(this).after("<textarea name='meta-textarea'>" + $(this).val() + "</textarea>");
     $(this).remove();
 });
@@ -371,7 +371,7 @@ $('body').on("click", ".addInclude", function(e){
 	console.log("Last ID: " + lastID);
 	var newID = lastID + 1;
 	console.log("New ID: " + newID);
-		$(this).closest("tr").before('<tr><td><select name="customScriptType-' + newID + '" class="cScriptType-' + newID + '"><option value="script">Script</option><option value="css">Stylesheet</option></select></td><td><input type="text" placeholder="location/of/file.ext" name="customScriptLink-' + newID + '" class="customScriptLink-' + newID + '" /></td></tr>');
+		$(this).closest("tr").before('<tr><td><select name="customScriptType-' + newID + '" class="cScriptType-' + newID + '"><option value="script">Script</option><option value="css">Stylesheet</option></select></td><td class="plusminustd"><input type="text" placeholder="location/of/file.ext" name="customScriptLink-' + newID + '" class="customScriptLink-' + newID + '" /><a href="#" class="removeTd"><i class="fa fa-minus-square" aria-hidden="true"></i></a></td></tr>');
 	}
 	return false;
 });
@@ -465,6 +465,56 @@ $(function() {
 	      }
       }
   });
+});
+$('.importSave').click(function(){
+	if ($(this).text() == "Close"){
+		$(".importSaveTr").hide();
+		$(this).text("Import save");
+	}else{
+		$(".importSaveTr").show();
+		$(this).text("Close");
+	}
+});
+$('.exportSave').click(function(){
+	if ($(this).text() == "Close"){
+		$(".exportSaveTr").hide();
+		$(this).text("Export save");
+	}else{
+		$(".exportSaveTr").find("textarea").val(localStorage.getItem("wb-progress"));
+		$(".exportSaveTr").show();
+		$(this).text("Close");
+	}
+});
+$(".importSaveNow").click(function(e){
+	e.preventDefault();
+		var stringOfHtml= $(this).closest("tr").find("textarea").val();
+		var wrappedString = '<div>' + stringOfHtml + '</div>';
+		var noScript = wrappedString.replace("<script>", "..");
+		var noScript = noScript.replace("</script>", "..");
+		var Newhtml = $(noScript);
+		$(".sitesCont").html(Newhtml, function(){
+	  			if (!$('.sitesCont').text().replace(/\s+/g, '').length){
+					$(".massedit").hide();
+				}else{
+					$(".massedit").show();
+				}
+	  			$(".siteCreation").each(function(){/*
+	  				$(this).find(".loadedSiteName").val($(this).find("em").text());/*
+	  				console.log($(this).find(".loadedSiteName").val($(this).find("em").text()));*/
+	  			});
+	  	});
+	return false;
+});
+$(".exportSaveTr textarea").focus(function(){
+	var $this = $(this);
+    $this.select();
+
+    // Work around Chrome's little problem
+    $this.mouseup(function() {
+        // Prevent further mouseup intervention
+        $this.unbind("mouseup");
+        return false;
+    });
 });
 $(".togglesettings").click(function(){
 	if ($(this).hasClass("closed")){

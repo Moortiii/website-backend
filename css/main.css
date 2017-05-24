@@ -642,6 +642,28 @@ select.action {
 .thPu code{
   border:10px solid #222;
 }
+.plusminustd{
+  position:relative;
+}
+.removeTd{
+  position:absolute;
+  top:0;
+  right:0;
+}
+.exportSaveTr, .importSaveTr{
+  display:none;
+}
+.exportSaveNow, .importSaveNow{
+  display:block;
+  padding:5px;
+  color:#fff;
+  max-width:200px;
+}
+.exportSave, .importSave{
+  color:#fff;
+  display:block;
+  text-decoration:none;
+}
 .firsttime{
       position: absolute;
     top: 65px;
