@@ -65,7 +65,7 @@ h1{
   margin-bottom:0;
 }
 
-.closed.nav-link:hover i {
+.closed.nav-link:hover i.dospin {
     transition:all 0.2s ease-in-out;
     animation: fa-spin 4s infinite linear;
     margin-right:5px;
@@ -601,5 +601,16 @@ select.action {
 }
 .thPu code{
   border:10px solid #222;
+}
+.firsttime{
+      position: absolute;
+    top: 65px;
+    right: 20px;
+    background: rgba(95, 28, 44, 0.05);
+    padding: 5px;
+    border: 1px solid var(--red-dark);
+    border-bottom: 0;
+    border-right: 0;
+    cursor:pointer;
 }
 .massedit{display:none;}

@@ -1,8 +1,6 @@
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-
   <title>Boilersite</title>
   <meta name="description" content="Boilersite">
   <meta name="author" content="Håkon Underbakke &amp; Morten Hauge">
@@ -11,6 +9,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/pace.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -124,7 +123,43 @@ page..
       </div>
 
       <div class="section sites-section">
-        <h2>Templates</h2>
+        <h2>Sites</h2>
+        <div class="site-buttons">
+          <a href="#" class="button-navy large show-createSite">Create site</a>
+          <a href="#" class="button-red large massedit">Start editing</a>
+        </div>
+        <table class="createSite">
+          <tr>
+            <th colspan="2">Create site
+              </td>
+          </tr>
+          <tr class="afterth">
+            <td>Name</td>
+            <td><input type="text" name="siteName" />
+            </td>
+          </tr>
+          <tr>
+            <td>Theme</td>
+            <td><select name="siteTheme"><option>Boilerplate</option></select>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="go">
+              <button class="button small cancel-createSite"><i class="fa fa-ban before"></i> Cancel</button> <button onClick="createSite()" class="go-createSite">Create <i class="fa fa-angle-right after"></i></button>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <select class="action">
+      <option value="action">Action:</option>
+      <option class="do-delete" value="delete">------ Delete</option>
+      <option class="do-copy" value="copy">------ Duplicate</option>
+      <option class="do-selectall" value="selectall">------ Select all</option>
+      <option class="do-selectnone" value="selectnone">------ Select none</option>
+      </select>
+        <div class="sitesCont">
+
+        </div>
       </div>
       <a href="#" class="button-green plusbutton" onClick="doSave('button')"><i class="fa fa-floppy-o before"></i> Save</a>
       <div class="settings">
@@ -133,11 +168,14 @@ page..
     </div>
     <div class="clear">
     </div>
+    <div class="themePopUp"></div>
   </div>
   </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/pace.min.js"></script>
 </body>
 
 </html>
