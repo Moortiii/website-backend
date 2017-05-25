@@ -389,7 +389,9 @@ input[type="textarea"] {
     outline: none;
     width: 100%;
 }
-
+input[type="checkbox"]:focus, input[type="radio"]:focus{
+    box-shadow:0px 0px 5px var(--green-dark);
+}
 input[disabled] {
     background: #f9f9f9;
 }
@@ -763,13 +765,20 @@ select.action {
     color: var(--navy);
     text-decoration: none;
     background: #f9f9f9;
+    border-bottom:1px solid transparent;
 }
+.previewThemes:focus, .addInclude:focus{
+    border-bottom-color:var(--green);
+    outline:none;
+}
+
 
 .addInclude {
     display: block;
     text-align: center;
     text-decoration: none;
     background: var(--navy);
+    border-bottom:1px solid transparent;
     padding: 8px;
     color: #f9f9f9;
     opacity: 0.8;
@@ -958,10 +967,15 @@ select.action {
 
 .keepV{
   transition:padding-left 0.1s ease-in-out;
-  background:url('../images/check.png') 5px center;
+  background-image:url('../images/check.png');
+  background-position: 5px center;
   background-size:auto 65%;
   background-repeat:no-repeat;
   padding-left:21px !important;
+}
+textarea.keepV{
+    background-size:auto 12px;
+    background-position:5px 5px;
 }
 .keepV:before{
   content:"v";

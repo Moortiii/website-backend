@@ -333,7 +333,7 @@ $('body').on("keyup", "input[type='text']", function() {
     $(this).attr("value", $(this).val());
 });
 $('body').on("focusout", "textarea[name='meta-textarea']", function() {
-    $(this).after("<textarea name='meta-textarea'>" + $(this).val() + "</textarea>");
+    $(this).after("<textarea name='meta-textarea' class='keepV'>" + $(this).val() + "</textarea>");
     $(this).remove();
 });
 $('body').on("change paste keyup", ".loadedSiteName", function() {
@@ -483,7 +483,18 @@ $("body").on("focusout", "input[type='text']", function(){
    	}); 
    }  
 });
-$("body").on("focus", "input[type='text']", function(){
+$("body").on("focusout", "input[type='text']", function(){
+	if (!$(this).val()){
+		// 
+	}else if (currentValuess == $(this).val()){
+		$(this).addClass("keepV");
+	}else{
+   	$(this).addClass("doanimation").delay(250).queue(function(next){
+     $(this).removeClass("doanimation").addClass("keepV").dequeue();;
+   	}); 
+   }  
+});
+$("body").on("focus", "input[type='text'], textarea", function(){
   $(this).removeClass("doanimation").removeClass("secondanimation").removeClass("keepV");
   currentValuess = $(this).val();
 });
