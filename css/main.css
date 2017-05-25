@@ -961,7 +961,7 @@ select.action {
 }
 .keepV{
   transition:padding-left 0.1s ease-in-out;
-  background:url('https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678134-sign-check-128.png') 5px center;
+  background:url('../images/check.png') 5px center;
   background-size:auto 65%;
   background-repeat:no-repeat;
   padding-left:21px !important;
