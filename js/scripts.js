@@ -471,6 +471,14 @@ $(function() {
       }
   });
 });
+$("body").on("focusout", "input[type='text']", function(){
+   $(this).addClass("doanimation").delay(250).queue(function(next){
+     $(this).removeClass("doanimation").addClass("secondanimation").addClass("keepV").dequeue();;
+   });   
+});
+$("body").on("focus", "input[type='text']", function(){
+  $(this).removeClass("doanimation").removeClass("secondanimation").removeClass("keepV");
+});
 $('.importSave').click(function(){
 	if ($(this).text() == "Close"){
 		$(".importSaveTr").hide();
