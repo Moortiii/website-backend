@@ -476,10 +476,10 @@ $("body").on("focusout", "input[type='text']", function(){
 	if (!$(this).val()){
 
 	}else if (currentValuess == $(this).val()){
-		$(this).addClass("secondAnimation").addClass("keepV");
+		$(this).addClass("keepV");
 	}else{
    	$(this).addClass("doanimation").delay(250).queue(function(next){
-     $(this).removeClass("doanimation").addClass("secondanimation").addClass("keepV").dequeue();;
+     $(this).removeClass("doanimation").addClass("keepV").dequeue();;
    	}); 
    }  
 });

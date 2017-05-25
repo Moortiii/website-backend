@@ -956,9 +956,7 @@ select.action {
 .doanimation{
   animation: moveBackground 0.3s ease-out;
 }
-.secondanimation{
-  animation: secondAnimation 0.2s ease-in;
-}
+
 .keepV{
   transition:padding-left 0.1s ease-in-out;
   background:url('../images/check.png') 5px center;
