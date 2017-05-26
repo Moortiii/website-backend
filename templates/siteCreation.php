@@ -21,7 +21,7 @@ $theme = $_POST['theme'];
           <tr>
             <td>Page name
             </td>
-            <td><input type="text" value="" name="pagename" class="loadedPageName" class="" />
+            <td class="pagetd"><input type="text" value="" name="pagename" class="loadedPageName" class="" /><a href="#" class="newPage"><i class="fa fa-plus"></i></a>
             </td>
           </tr>
 

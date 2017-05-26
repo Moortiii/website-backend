@@ -456,6 +456,13 @@ $("body").on("click", 'input:radio[value="custom"][name="titleformat"]', functio
 $("body").on("click", '.firsttime', function(){
 		$(this).fadeOut();
 });
+$("body").on("click", ".newPage", function(){
+	$(this).closest(".siteCreation").clone().prependTo(".sitesCont");
+	$(this).closest(".siteCreation").find(".saveSiteButton").click();
+	$("<div style='position:fixed;top:10px;left:10px;padding:10px;background:var(--green);color:#f9f9f9;font-size:24px;' class='satus'>Site cloned</div>").appendTo("#container").delay(1500).queue(function(next){
+     $(".satus").fadeOut(200).remove();
+   	}); 
+});
 $("body").on("click", '.removeTd', function(e){
 	e.preventDefault();
 	$(this).closest("tr").remove();

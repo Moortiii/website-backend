@@ -781,6 +781,7 @@ select.action {
 .previewThemes:focus, .addInclude:focus{
     border-bottom-color:var(--green);
     outline:none;
+    box-shadow: 4px 2px 10px -5px #aaa;
 }
 
 
@@ -842,17 +843,21 @@ select.action {
     border: 10px solid #222;
 }
 
-.plusminustd {
+.plusminustd, .pagetd {
     position: relative;
 }
 
-.removeTd {
+.removeTd, .newPage {
     position: absolute;
     top: 0;
     right: 0;
     color: #333;
 }
-.removeTd i{
+.removeTd:focus, .newPage:focus{
+    outline:none;
+    color:var(--red);
+}
+.removeTd i, .newPage i{
         background: white;
     border-radius: 25px;
 }
