@@ -239,14 +239,14 @@ fieldset{
 }
 
 .section.account:before {
-    content: "Accounts coming soon";
+    content: "Accounts coming ... maybe sometime!";
     position: absolute;
     top: 55px;
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
     font-size: 31px;
     left: 50%;
-    margin-left: -201px;
+    margin-left: -301px;
     padding: 20px;
 }
 
