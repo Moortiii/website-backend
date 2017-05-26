@@ -44,7 +44,9 @@ html {
 h1 {
     font-family: 'PT Serif';
 }
-
+fieldset{
+    border:1px solid #ddd;
+}
 .section p a {
     display: inline-block;
     text-decoration: none;
