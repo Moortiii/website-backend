@@ -390,7 +390,10 @@ input[type="textarea"] {
     width: 100%;
 }
 input[type="checkbox"]:focus, input[type="radio"]:focus{
-    box-shadow:0px 0px 5px var(--green-dark);
+    
+}
+input[type="checkbox"]{
+    cursor:pointer;
 }
 input[disabled] {
     background: #f9f9f9;
@@ -432,6 +435,12 @@ tbody tr:first-child th {
 
 label {
     cursor: pointer;
+      -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
 }
 
 label:hover {
@@ -841,6 +850,10 @@ select.action {
     right: 0;
     color: #333;
 }
+.removeTd i{
+        background: white;
+    border-radius: 25px;
+}
 
 .exportSaveTr,
 .importSaveTr {
@@ -965,13 +978,26 @@ select.action {
   animation: moveBackground 0.3s ease-out;
 }
 
-.keepV{
+.keepV, .errorInput{
   transition:padding-left 0.1s ease-in-out;
-  background-image:url('../images/check.png');
   background-position: 5px center;
   background-size:auto 65%;
   background-repeat:no-repeat;
   padding-left:21px !important;
+}
+.keepV{
+  background-image:url('../images/check.png');
+}
+.errorInput{
+    background-image:url('../images/close.png');
+    padding-left:22px !important;
+}
+.fancyTrAni{
+    transition:all 0.1s ease-in-out;
+    box-shadow: 4px 2px 10px -5px #aaa;
+}
+td{
+    transition:all 0.1s ease-in-out;
 }
 textarea.keepV{
     background-size:auto 12px;

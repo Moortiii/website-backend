@@ -24,6 +24,14 @@ function guidGenerator() {
     };
     return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }
+function isHTML(str) {
+    var a = document.createElement('div');
+    a.innerHTML = str;
+    for (var c = a.childNodes, i = c.length; i--; ) {
+        if (c[i].nodeType == 1) return true; 
+    }
+    return false;
+}
 var suggestionArray = [];
 function createSuggestions(e){
 	suggestionArray = [];
@@ -125,6 +133,7 @@ $('input[name="siteName"]').keypress(function(event) {
     }
 });
 $(document).ready(function(){
+	$("label").disableSelection();
 	if (location.hash == "#settings"){
 		$(".togglesettings").click();
 	}
@@ -333,7 +342,11 @@ $('body').on("keyup", "input[type='text']", function() {
     $(this).attr("value", $(this).val());
 });
 $('body').on("focusout", "textarea[name='meta-textarea']", function() {
-    $(this).after("<textarea name='meta-textarea' class='keepV'>" + $(this).val() + "</textarea>");
+	if (!$(this).val()){
+   		$(this).after("<textarea name='meta-textarea'>" + $(this).val() + "</textarea>");
+	}else{
+   		$(this).after("<textarea name='meta-textarea' class='keepV'>" + $(this).val() + "</textarea>");
+	}
     $(this).remove();
 });
 $('body').on("change paste keyup", ".loadedSiteName", function() {
@@ -486,6 +499,14 @@ $("body").on("focusout", "input[type='text']", function(){
 $("body").on("focusout", "input[type='text']", function(){
 	if (!$(this).val()){
 		// 
+	}else if (isHTML($(this).val())){
+		$(this).addClass("doanimation").delay(250).queue(function(next){
+     		$(this).removeClass("doanimation").addClass("errorInput").dequeue();;
+   		}); 
+	}else if($(this).val().indexOf('\'') >= 0 && $(this).val().indexOf('"') >= 0){
+		$(this).addClass("doanimation").delay(250).queue(function(next){
+     		$(this).removeClass("doanimation").addClass("errorInput").dequeue();;
+   		}); 
 	}else if (currentValuess == $(this).val()){
 		$(this).addClass("keepV");
 	}else{
@@ -494,9 +515,28 @@ $("body").on("focusout", "input[type='text']", function(){
    	}); 
    }  
 });
+$("body").on("focusout", "input[name^='customScriptLink']", function(){
+	var cslNum = $(this).attr("name").substring(17);
+	console.log($(this).val().substr(-3));
+	if ($(this).val().substr(-2) == "js"){
+		$(this).closest("tr").find("select[name^='customScriptType']").val("script");
+		$(this).closest("tr").find("select[name^='customScriptType']").find("option[value='script']").attr("selected", "selected");
+		$(this).closest("tr").find("select[name^='customScriptType']").find("option[value='css']").removeAttr("selected");
+	}else if ($(this).val().substr(-3) == "css"){
+		$(this).closest("tr").find("select[name^='customScriptType']").val("css");
+		$(this).closest("tr").find("select[name^='customScriptType']").find("option[value='css']").attr("selected", "selected");
+		$(this).closest("tr").find("select[name^='customScriptType']").find("option[value='script']").removeAttr("selected");
+	}
+
+});
 $("body").on("focus", "input[type='text'], textarea", function(){
-  $(this).removeClass("doanimation").removeClass("secondanimation").removeClass("keepV");
+  $(this).removeClass("doanimation").removeClass("secondanimation").removeClass("keepV").removeClass("errorInput");
   currentValuess = $(this).val();
+});
+$("body").on("click", "td label, td input[type='checkbox'], td input[type='radio']", function(){
+	$(this).closest("td").addClass("fancyTrAni").delay(250).queue(function(next){
+		$(this).closest("td").removeClass("fancyTrAni").dequeue();
+	});
 });
 $('.importSave').click(function(){
 	if ($(this).text() == "Close"){
@@ -548,6 +588,7 @@ $(".exportSaveTr textarea").focus(function(){
         return false;
     });
 });
+
 $(".togglesettings").click(function(){
 	if ($(this).hasClass("closed")){
 		$(".settings").toggle();
