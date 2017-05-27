@@ -334,7 +334,7 @@ fieldset {
 
 .siteCreation.closed .openSiteButton,
 .siteCreation.closed .downloadSiteButtonLarge {
-    display: inline-block !important;
+    display: inline-block !important;/* */
 }
 
 .siteCreation.closed header i {
