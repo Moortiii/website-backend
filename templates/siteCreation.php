@@ -47,7 +47,7 @@ $theme = $_POST['theme'];
             </tr>
             <tr>
               <td colspan="2"><a href="#" class="addInclude"><i class="fa fa-plus"></i></a></td>
-            </tr>
+            </tr><tr>
             <th colspan="2">Meta-data</th>
           </tr>
           <tr>
@@ -62,14 +62,36 @@ $theme = $_POST['theme'];
               </td>
               <tr>
                 <td>Keywords</td>
-                <td><input type="text" name="meta-keywords" value="key, words" />
+                <td><input type="text" name="meta-keywords" placeholder="key, words" />
                 </td>
               </tr>
               <tr>
                 <td valign="top">Description</td>
                 <td><textarea name="meta-textarea"></textarea>
                 </td>
-              </tr>
+              </tr><tr>
+            <th colspan="2">Apple-touch</th>
+          </tr>
+          <tr>
+            <td>Icon <a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html"  target="_blank" class="helpLink" data-help="appletouchicon"><i class="fa fa-question-circle"></i><span></span></a></td>
+            <td><input type="text" name="appletouch-icon" placeholder="path/to/img.png" />
+            </td></tr>
+          <tr>
+            <td>Launch screen</td>
+            <td><input type="text" name="appletouch-icon" placeholder="path/to/img.png" />
+            </td></tr>
+            <tr>
+            <td>App title</td>
+            <td><input type="text" name="appletouch-title" value="" />
+            </td>
+            <tr>
+            <td>Status bar</td>
+            <td><select name="appletouch-statusbar" value="default">
+            <option value="default" selected>Default</option>
+            <option value="black">Black</option>
+            <option value="black-translucent">Black-translucent</option>
+            </select>
+            </td>
         </table>
       </div>
       <div class="fifty">
@@ -145,7 +167,7 @@ $theme = $_POST['theme'];
           <tr>
             <td colspan="2">
               <label for="theme-select">Select theme:</label>
-              <fieldset>
+              <fieldset class="resetstyles">
                 <legend>
                   <select id="theme-select" style="margin: 10px;">
                     <option id="flat" value="Flat">Flat</option>
@@ -155,8 +177,7 @@ $theme = $_POST['theme'];
                 </legend>
                 <div class="form-design">
                   <form class="test-form">
-                    <label for="btn-showcase">
-                    <div id="btn-showcase" class="btn-showcase">Buttons:</label>
+                    <div id="btn-showcase" class="btn-showcase">Buttons:
                       <button class="btn normal-btn">Normal</button>
                       <button class="btn error-btn">Error</button>
                       <button class="btn success-btn">Success</button>

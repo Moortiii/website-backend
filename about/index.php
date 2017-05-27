@@ -5,6 +5,7 @@
   <title>Boilersite</title>
   <base href="../index.php">
   <meta name="description" content="Boilersite">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Håkon Underbakke &amp; Morten Hauge">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif|Raleway:300,400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
@@ -15,6 +16,21 @@
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  <style>
+  .leftp{
+    float:left;max-width: calc(100% - 520px);
+  }
+  .rightimg{
+    float:right;border:1px solid #aaa;max-width:60%;
+  }
+  @media screen and (max-width: 990px){
+    .leftp, .rightimg{
+      float:none;
+      max-width:100%;
+      
+    }
+  }
+  </style>
 </head>
 
 <body>
@@ -33,7 +49,9 @@
       </div>
       <div class="section">
         <h2>How does it work?</h2>
-        <p>Mainly by use of jQuery and Javascript to "template" your saved settings to easily create a downloadable zip file of your own custom boilerplate. Boilerplate uses localstorage saving, and will soon support user accounts for cross-network saving.</p>
+        <p class="leftp">Mainly by use of jQuery and Javascript to "template" your saved settings to easily create a downloadable zip file of your own custom boilerplate. Boilerplate uses localstorage saving, and will soon support user accounts for cross-network saving.</p>
+        <img src="images/demo-1.gif" alt="Demo" class="rightimg" />
+        <div class="clear"></div>
       </div>
       <div class="section sitecreation">
         <h2>More information</h2>
