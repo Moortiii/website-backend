@@ -554,7 +554,14 @@ $("body").on("click", "td label, td input[type='checkbox'], td input[type='radio
 	});
 });
 $("body").on("change", "#boilerColour", function(){
-	$(this).closest(".siteCreation").find(".tools").attr("style", "background-color:" + $(this).val() + ";");
+	$(this).closest(".siteCreation").find(".tools").css("background-color", $(this).val());
+	$(this).attr("value", $(this).val());
+});
+$("body").on("change", "#boilerText", function(){
+	$(this).closest(".siteCreation").find(".toolsi.fa-window-close-o").css("color", $(this).val());
+	$(this).closest(".siteCreation").find(".openSiteButton").css("color", $(this).val());
+	$(this).closest(".siteCreation").find(".tools").css("color", $(this).val());
+	$(this).attr("value", $(this).val());
 });
 $('.importSave').click(function(){
 	if ($(this).text() == "Close"){

@@ -36,8 +36,13 @@ $theme = $_POST['theme'];
             <th colspan="2">Boilersite</th>
           </tr>
           <tr>
-            <td>Color</td>
+            <td>Background</td>
             <td><input type="color" name="boilerColour" id="boilerColour" value="#ffffff" /> 
+            </td>
+            </tr>
+          <tr>
+            <td>Text</td>
+            <td><input type="color" name="boilerText" id="boilerText" value="#333333" /> 
             </td>
             </tr>
           <tr>
