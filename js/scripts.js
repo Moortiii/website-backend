@@ -549,9 +549,17 @@ $("body").on("focus", "input[type='text'], textarea", function(){
   currentValuess = $(this).val();
 });
 $("body").on("click", "td label, td input[type='checkbox'], td input[type='radio']", function(){
+	if ($(this).closest("td").find("input").prop("checked") == true){
+		$(this).closest("td").find("input").prop("checked", false);
+		$(this).closest("td").find("input").removeAttr("checked");
+	}else{
+		$(this).closest("td").find("input").prop("checked", true);
+		$(this).closest("td").find("input").attr("checked", "checked");
+	}
 	$(this).closest("td").addClass("fancyTrAni").delay(250).queue(function(next){
 		$(this).closest("td").removeClass("fancyTrAni").dequeue();
 	});
+	
 });
 $("body").on("change", "#boilerColour", function(){
 	$(this).closest(".siteCreation").find(".tools").css("background-color", $(this).val());

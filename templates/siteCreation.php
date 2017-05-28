@@ -50,12 +50,12 @@ $theme = $_POST['theme'];
           </tr>
           <tr>
             <td>Include...</td>
-            <td><input type="checkbox" name="includejQuery" id="includejQuery" checked /> <label for="includejQuery">jQuery</label>
+            <td><label><input type="checkbox" name="includejQuery" id="includejQuery" checked /> jQuery</label>
             </td>
             </tr>
             <tr>
               <td></td>
-              <td><input type="checkbox" name="includeNormalize" id="includeNormalize" checked /> <label for="includeNormalize">Normalize</label>
+              <td><label><input type="checkbox" name="includeNormalize" id="includeNormalize" checked /> Normalize</label>
               </td>
             </tr>
             <tr>
@@ -117,26 +117,26 @@ $theme = $_POST['theme'];
               Format
             </td>
             <td>
-              <input type="radio" name="titleformat" value="snpn" id="snpn" checked> <label for="snpn">Sitename / Pagename</label>
+              <label><input type="radio" name="titleformat" value="snpn" id="snpn" checked> Sitename / Pagename</label>
             </td>
           </tr>
           <tr>
             <td></td>
             <td>
-              <input type="radio" name="titleformat" value="sn" id="sn"> <label for="sn">Sitename</label>
+              <label><input type="radio" name="titleformat" value="sn" id="sn"> Sitename</label>
             </td>
           </tr>
 
           <tr>
             <td></td>
             <td>
-              <input type="radio" name="titleformat" value="pn" id="pn"> <label for="pn">Pagename</label>
+              <label><input type="radio" name="titleformat" value="pn" id="pn"> Pagename</label>
             </td>
           </tr>
           <tr>
             <td></td>
             <td>
-              <input type="radio" name="titleformat" value="custom" value="custom" id="radiocustom"> <label for="radiocustom">Custom</label>
+              <label><input type="radio" name="titleformat" value="custom" value="custom" id="radiocustom"> Custom</label>
             </td>
           </tr>
           <tr class="customtr">
@@ -153,25 +153,25 @@ $theme = $_POST['theme'];
               Include...
             </td>
             <td>
-              <input type="checkbox" name="themeSlider" id="themeSlider"> <label for="themeSlider">Image slider</label>
+              <label><input type="checkbox" name="themeSlider" id="themeSlider"> Image slider</label>
             </td>
           </tr>
           <tr>
             <td></td>
             <td>
-              <input type="checkbox" name="themeHero" id="themeHero"> <label for="themeHero">Hero</label>
+              <label><input type="checkbox" name="themeHero" id="themeHero"> Hero</label>
             </td>
           </tr>
           <tr>
             <td></td>
             <td>
-              <input type="checkbox" name="themeHamburger" id="themeHamburger"> <label for="themeHamburger">Hamburger menu</label>
+              <label><input type="checkbox" name="themeHamburger" id="themeHamburger"> Hamburger menu</label>
             </td>
           </tr>
           <tr>
             <td></td>
             <td>
-              <input type="checkbox" name="themeGrid" id="themeGrid" checked> <label for="themeGrid">Flex grid</label>
+              <label><input type="checkbox" name="themeGrid" id="themeGrid" checked> Flex grid</label>
             </td>
           </tr>
           <tr>
