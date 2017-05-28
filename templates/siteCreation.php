@@ -190,11 +190,11 @@ $theme = $_POST['theme'];
                 </legend>
                 <div class="form-design">
                   <form class="test-form">
-                    <div id="btn-showcase" class="btn-showcase">Buttons:
-                      <button class="btn normal-btn">Normal</button>
-                      <button class="btn error-btn">Error</button>
-                      <button class="btn success-btn">Success</button>
-                      <button class="btn warning-btn">Warning</button>
+                    <div id="btn-showcase" class="btn-showcase">Buttons:<br />
+                      <button class="btn normal-btn flat">Normal</button>
+                      <button class="btn error-btn flat">Error</button>
+                      <button class="btn success-btn flat">Success</button>
+                      <button class="btn warning-btn flat">Warning</button>
                     </div>
                   </div>
                 </fieldset>

@@ -940,23 +940,31 @@ select.action {
 /* Button Styles */
 
 .btn {
-    display: block;
-    width: 100%;
+    display: inline-block;
     margin: 5px;
 }
 
 .flat {
-    padding: 20px 20px;
+        padding: 5px 10px;
     border-radius: 2px;
+    border-width: 1px !important;
+    font-weight: 300;
 }
 
 .rounded {
-    padding: 15px 15px;
-    border-radius: 45px;
+        padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 300;
+    border-width: 1px !important;
 }
 
 .btn3d {
     display: inline-block;
+    border-right:1px !important;
+    border-top-width:0px !important;
+    border-left-width:3px !important;
+    border-bottom-width:3px !important;
+    font-weight:300;/*
     text-decoration: none;
     color: #fff;
     font-weight: bold;
@@ -976,31 +984,47 @@ select.action {
     text-shadow: 0px -1px 0px rgba(0, 0, 0, .5);
     -webkit-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
     -moz-box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
-    box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);
+    box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0, 0, 0, .4), inset 0px 1px 0px rgba(255, 255, 255, .3), inset 0px 0px 3px rgba(255, 255, 255, .5);*/
 }
+.btn3d:active{
+    border-left-width:1px !important;
+    border-bottom-width:1px !important;
+}
+
 
 .normal-btn {
     background: #eee;
     color: #2D2A32;
     border: 2px solid #d3d3d3;
 }
-
+.normal-btn:focus{
+    border-color:#d3d3d3;
+}
 .error-btn {
     background: #DF2935;
-    color: #2D2A32;
+    color: #efefef;
     border: 2px solid #A31E27;
+}
+.error-btn:focus{
+    border-color:#A31E27;
 }
 
 .success-btn {
     background: #37B73F;
-    color: #2D2A32;
+    color: #edfff1;
     border: 2px solid #29862E;
+}
+.success-btn:focus{
+    border-color:#29862E;
 }
 
 .warning-btn {
     background: #F58F29;
-    color: #2D2A32;
+    color: #3a2b00;
     border: 2px solid #C97622;
+}
+.warning-btn:focus{
+    border-color:#C97622;
 }
 
 #btn-showcase {

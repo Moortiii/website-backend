@@ -99,6 +99,11 @@ $("body").on("click", ".thPu", function(e){
 		$(this).fadeOut();
 	}
 });
+$("body").on("change", "select", function(e){
+	$(this).attr("value", $(this).val());
+	$(this).find("option").removeAttr("selected");
+	$(this).find("option[value='" + $(this).val() + "']").attr("selected", "selected");
+});
 $("body").on("click", "header.tools .toolsi", function(){
 	$(this).next("span").animate({width:'toggle'},100);
 	if ($(this).hasClass("fa-window-close-o")){
@@ -108,6 +113,10 @@ $("body").on("click", "header.tools .toolsi", function(){
 		$(this).addClass("fa-window-close-o");
 		$(this).removeClass("fa-angle-left");
 	}
+});
+$("body").on("click", ".btn", function(e){
+	e.preventDefault();
+	return false;
 });
 $("body").on("click", ".yesClose", function(e){
 	e.preventDefault();
