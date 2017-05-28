@@ -33,13 +33,21 @@ $theme = $_POST['theme'];
             </td>
           </tr>
           <tr>
+            <th colspan="2">Boilersite</th>
+          </tr>
+          <tr>
+            <td>Color</td>
+            <td><input type="color" name="boilerColour" id="boilerColour" value="#ffffff" /> 
+            </td>
+            </tr>
+          <tr>
             <th colspan="2">External includes</th>
           </tr>
           <tr>
             <td>Include...</td>
             <td><input type="checkbox" name="includejQuery" id="includejQuery" checked /> <label for="includejQuery">jQuery</label>
             </td>
-            </td>
+            </tr>
             <tr>
               <td></td>
               <td><input type="checkbox" name="includeNormalize" id="includeNormalize" checked /> <label for="includeNormalize">Normalize</label>

@@ -17,6 +17,7 @@ $(".show-createSite, .cancel-createSite").click(function(){
 	}else{
 
 	}
+	this.blur();
 });
 function guidGenerator() {
     var S4 = function() {
@@ -218,6 +219,7 @@ $(document).ready(function(){
 			$(this).text("Stop editing");
 		}
 		massEdit();
+		this.blur();
 	});
 	function massEdit() {
 		if (isEditing == false){
@@ -458,8 +460,12 @@ $("body").on("click", '.firsttime', function(){
 });
 $("body").on("click", ".newPage", function(e){
 	e.preventDefault();
-	$(this).closest(".siteCreation").clone().prependTo(".sitesCont");
+	$(this).closest(".siteCreation").clone().addClass("tempClonedClass").appendTo(".sitesCont");
 	$(this).closest(".siteCreation").find(".saveSiteButton").click();
+	$(".tempClonedClass .loadedPageName").val($(".tempClonedClass .loadedPageName").val() + "-clone");
+	$(".tempClonedClass .loadedPageName").focus();
+	$(".tempClonedClass > div").removeClass().addClass(guidGenerator());
+	$(".tempClonedClass").removeClass("tempClonedClass");
 	$("<div style='position:fixed;top:10px;left:50%;margin-left:-70px;border:1px solid var(--green-dark);padding:10px 20px;background:var(--green);color:#f9f9f9;font-size:24px;' class='satus'>Site cloned</div>").appendTo("#container").delay(1500).queue(function(next){
      $(".satus").fadeOut(200).remove();
    	}); 
