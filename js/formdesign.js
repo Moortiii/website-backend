@@ -14,13 +14,13 @@ $(document).ready(function() {
     // var option = select.options[select.selectedIndex].text;
     switch ($(this).val()){
       case "Rounded":
-        $(".btn").removeClass("flat").removeClass("btn3d").addClass("rounded");
+        $(this).closest("fieldset").find(".btn").removeClass("btn3d").addClass("rounded");
       break;
       case "Flat":
-        $(".btn").removeClass("rounded").removeClass("btn3d").addClass("flat");
+        $(this).closest("fieldset").find(".btn").removeClass("rounded").removeClass("btn3d").addClass("flat");
       break;
       case "3D":
-        $(".btn").removeClass("rounded").removeClass("flat").addClass("btn3d");
+        $(this).closest("fieldset").find(".btn").removeClass("rounded").removeClass("flat").addClass("btn3d");
       break;
     }/*
     if(option == "Rounded") {

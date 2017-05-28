@@ -153,8 +153,8 @@ page..
         <br />
         <select class="action">
       <option value="action">Action:</option>
-      <option class="do-delete" value="delete">------ Delete</option>
-      <option class="do-copy" value="copy">------ Duplicate</option>
+      <option class="do-delete" value="delete">------ Delete</option><!--
+      <option class="do-copy" value="copy">------ Duplicate</option>-->
       <option class="do-selectall" value="selectall">------ Select all</option>
       <option class="do-selectnone" value="selectnone">------ Select none</option>
       </select>
