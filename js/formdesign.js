@@ -12,15 +12,16 @@ $(document).ready(function() {
   $("body").on("change", "#theme-select", function() {
     // var select = document.getElementById("theme-select");
     // var option = select.options[select.selectedIndex].text;
+    var theButtons = $(this).closest("fieldset").find(".btn");
     switch ($(this).val()){
       case "Rounded":
-        $(this).closest("fieldset").find(".btn").removeClass("btn3d").addClass("rounded");
+        theButtons.removeClass("btn3d").addClass("rounded");
       break;
       case "Flat":
-        $(this).closest("fieldset").find(".btn").removeClass("rounded").removeClass("btn3d").addClass("flat");
+        theButtons.removeClass("rounded").removeClass("btn3d").addClass("flat");
       break;
       case "3D":
-        $(this).closest("fieldset").find(".btn").removeClass("rounded").removeClass("flat").addClass("btn3d");
+        theButtons.removeClass("rounded").removeClass("flat").addClass("btn3d");
       break;
     }/*
     if(option == "Rounded") {
