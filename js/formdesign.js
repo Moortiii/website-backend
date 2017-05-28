@@ -11,7 +11,7 @@ $(document).ready(function() {
 
   $("body").on("change", "#theme-select", function() {
     var select = document.getElementById("theme-select");
-    var option = select.options[select.selectedIndex].text;
+    // var option = select.options[select.selectedIndex].text;
     switch ($(this).val()){
       case "Rounded":
         $(".btn").removeClass("flat").removeClass("btn3d").addClass("rounded");
