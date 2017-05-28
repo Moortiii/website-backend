@@ -560,6 +560,7 @@ $("body").on("change", "#boilerColour", function(){
 $("body").on("change", "#boilerText", function(){
 	$(this).closest(".siteCreation").find(".toolsi.fa-window-close-o").css("color", $(this).val());
 	$(this).closest(".siteCreation").find(".openSiteButton").css("color", $(this).val());
+	$(this).closest(".siteCreation").find(".downloadSiteButtonLarge").css("color", $(this).val());
 	$(this).closest(".siteCreation").find(".tools").css("color", $(this).val());
 	$(this).attr("value", $(this).val());
 });
