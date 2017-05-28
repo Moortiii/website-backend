@@ -945,17 +945,35 @@ select.action {
 }
 
 .flat {
-        padding: 5px 10px;
-    border-radius: 2px;
+        padding: 4px 12px;
+    border-radius: 0px;
     border-width: 1px !important;
     font-weight: 300;
 }
+.flat:hover{
+    background:transparent;
+}
+.flat:active{
+    border-style:dashed;
+}
 
 .rounded {
-        padding: 5px 10px;
+        padding: 4px 12px;
     border-radius: 5px;
     font-weight: 300;
     border-width: 1px !important;
+    border-bottom-width:2px !important;
+    border-color:transparent !important;
+}
+.rounded:hover{
+    box-shadow:inset -1px -4px 20px -11px #fff;
+    border-color:rgba(0,0,0,0.2) !important;
+}
+.rounded:active{
+    border-bottom-width:1px !important;
+    border-top-width:2px !important;
+    margin-top:-1px;
+    border-color:transparent !important;
 }
 
 .btn3d {
@@ -964,7 +982,8 @@ select.action {
     border-top-width:0px !important;
     border-left-width:3px !important;
     border-bottom-width:3px !important;
-    font-weight:300;/*
+    font-weight:300;
+    /*
     text-decoration: none;
     color: #fff;
     font-weight: bold;
@@ -989,6 +1008,10 @@ select.action {
 .btn3d:active{
     border-left-width:1px !important;
     border-bottom-width:1px !important;
+    margin-right:7px;
+    box-shadow:inset -4px 3px 10px rgba(0, 0, 0, 0.07);
+        margin-bottom: 0;
+    border-bottom: 3px solid transparent !important;
 }
 
 
@@ -1005,6 +1028,9 @@ select.action {
     color: #efefef;
     border: 2px solid #A31E27;
 }
+.flat.error-btn:hover{
+    color:#333;
+}
 .error-btn:focus{
     border-color:#A31E27;
 }
@@ -1013,6 +1039,9 @@ select.action {
     background: #37B73F;
     color: #edfff1;
     border: 2px solid #29862E;
+}
+.flat.success-btn:hover{
+    color:#333;
 }
 .success-btn:focus{
     border-color:#29862E;

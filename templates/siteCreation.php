@@ -175,7 +175,7 @@ $theme = $_POST['theme'];
             </td>
           </tr>
           <tr>
-            <th colspan="2">Form design</th>
+            <th colspan="2"><label><input type="checkbox" name="enableFormDesign" checked /> Form design</label></th>
           </tr>
           <tr>
             <td colspan="2">
