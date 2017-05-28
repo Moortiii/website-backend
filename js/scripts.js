@@ -456,12 +456,14 @@ $("body").on("click", 'input:radio[value="custom"][name="titleformat"]', functio
 $("body").on("click", '.firsttime', function(){
 		$(this).fadeOut();
 });
-$("body").on("click", ".newPage", function(){
+$("body").on("click", ".newPage", function(e){
+	e.preventDefault();
 	$(this).closest(".siteCreation").clone().prependTo(".sitesCont");
 	$(this).closest(".siteCreation").find(".saveSiteButton").click();
-	$("<div style='position:fixed;top:10px;left:10px;padding:10px;background:var(--green);color:#f9f9f9;font-size:24px;' class='satus'>Site cloned</div>").appendTo("#container").delay(1500).queue(function(next){
+	$("<div style='position:fixed;top:10px;left:50%;margin-left:-70px;border:1px solid var(--green-dark);padding:10px 20px;background:var(--green);color:#f9f9f9;font-size:24px;' class='satus'>Site cloned</div>").appendTo("#container").delay(1500).queue(function(next){
      $(".satus").fadeOut(200).remove();
    	}); 
+   	return false;
 });
 $("body").on("click", '.removeTd', function(e){
 	e.preventDefault();

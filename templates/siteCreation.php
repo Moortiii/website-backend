@@ -192,7 +192,13 @@ $theme = $_POST['theme'];
             <th colspan="2">Finish</th>
           </tr>
           <tr>
-            <td colspan="2" class="go"><br />
+            <td></td>
+            <td>
+              <input type="checkbox" name="incDocumentation" id="incDocumentation" checked> <label for="incDocumentation" style="">Include documentation</label>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="go">
               <button class="button light downloadSiteButton"><i class="fa fa-arrow-circle-down before"></i> Download</button> <button class="button light saveSiteButton"><i class="fa fa-floppy-o before"></i> Save</button>
             </td>
           </tr>

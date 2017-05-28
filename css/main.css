@@ -352,7 +352,7 @@ fieldset {
 .siteCreation.closed em {
     display: inline-block;
     padding-left: 10px;
-    border-left: 1px solid #ddd;
+    border-left: 1px solid #ddd;/**/
     font-size: 18px;
     font-style: normal;
 }
