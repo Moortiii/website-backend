@@ -553,6 +553,9 @@ $("body").on("click", "td label, td input[type='checkbox'], td input[type='radio
 		$(this).closest("td").removeClass("fancyTrAni").dequeue();
 	});
 });
+$("body").on("change", "#boilerColour", function(){
+	$(this).closest(".siteCreation").find(".tools").attr("style", "background-color:" + $(this).val() + ";");
+});
 $('.importSave').click(function(){
 	if ($(this).text() == "Close"){
 		$(".importSaveTr").hide();
