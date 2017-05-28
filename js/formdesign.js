@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  removeClasses(); // Strip the button of all classes
+  /*removeClasses(); // Strip the button of all classes
 
   $(".btn").addClass("flat"); // Add a default class
 
@@ -7,7 +7,7 @@ $(document).ready(function() {
     $(".btn").removeClass("flat");
     $(".btn").removeClass("rounded");
     $(".btn").removeClass("btn3d");
-  }
+  }*/
 
   $("body").on("change", "#theme-select", function() {
     // var select = document.getElementById("theme-select");
