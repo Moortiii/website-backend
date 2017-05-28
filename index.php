@@ -5,7 +5,7 @@
   <meta name="description" content="Boilersite">
   <meta name="author" content="Håkon Underbakke &amp; Morten Hauge">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif|Raleway:300,400,600,700" rel="stylesheet">
-  <link rel="icon" href="http://i.imgur.com/qLckX6o.png" type="image/png" />
+  <link rel="icon" href="http://i.imgur.com/Gu47ouy.png" type="image/png" />
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
