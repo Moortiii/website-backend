@@ -930,6 +930,9 @@ select.action {
 .useAnimations{
     transition:all 0.2s ease-in-out;
 }
+.useAnimations:active{
+    
+}
 .massedit {
     display: none;
 }
