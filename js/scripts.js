@@ -595,11 +595,11 @@ $("body").on("click", "td label, td input[type='checkbox'], td input[type='radio
     });
 
 });
-$("body").on("change, foucsout", "#boilerColour", function() {
+$("body").on("change focusout", "#boilerColour", function() {
     $(this).closest(".siteCreation").find(".tools").css("background-color", $(this).val());
     $(this).attr("value", $(this).val());
 });
-$("body").on("change, foucsout", "#boilerText", function() {
+$("body").on("change focusout", "#boilerText", function() {
     $(this).closest(".siteCreation").find(".toolsi.fa-window-close-o").css("color", $(this).val());
     $(this).closest(".siteCreation").find(".openSiteButton").css("color", $(this).val());
     $(this).closest(".siteCreation").find(".downloadSiteButtonLarge").css("color", $(this).val());

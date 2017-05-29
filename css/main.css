@@ -931,7 +931,7 @@ select.action {
     transition:all 0.2s ease-in-out;
 }
 .useAnimations:active{
-    
+    transition:none;
 }
 .massedit {
     display: none;
