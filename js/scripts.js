@@ -114,10 +114,6 @@ $("body").on("click", "header.tools .toolsi", function(){
 		$(this).removeClass("fa-angle-left");
 	}
 });
-$("body").on("click", ".btn", function(e){
-	e.preventDefault();
-	return false;
-});
 $("body").on("click", ".yesClose", function(e){
 	e.preventDefault();
 	$(this).closest(".section").remove();
@@ -449,6 +445,7 @@ $("body").on("click", 'input:checkbox', function(){
 
 		}
 });
+
 $("body").on("click", 'input:checkbox#saveProg', function(){
 		if ($(this).prop("checked") === true){
 			localStorage.setItem("bs-saveProgress", true);

@@ -179,7 +179,8 @@ $theme = $_POST['theme'];
           </tr>
           <tr>
             <td colspan="2">
-              <label for="theme-select">Select theme:</label>
+              Options:<br /><br />
+              <label><input type="checkbox" name="haveAnimations" class="haveAnimations" checked /> Transitions</label>
               <fieldset class="resetstyles">
                 <legend>
                   <select id="theme-select" style="margin: 10px;">
@@ -190,11 +191,11 @@ $theme = $_POST['theme'];
                 </legend>
                 <div class="form-design">
                   <form class="test-form">
-                    <div id="btn-showcase" class="btn-showcase">Buttons:<br />
-                      <button class="btn normal-btn flat">Normal</button>
-                      <button class="btn error-btn flat">Error</button>
-                      <button class="btn success-btn flat">Success</button>
-                      <button class="btn warning-btn flat">Warning</button>
+                    <div id="btn-showcase" class="btn-showcase useAnimations">Buttons:<br />
+                      <button class="btn normal-btn flat useAnimations">Normal</button>
+                      <button class="btn error-btn flat useAnimations">Error</button>
+                      <button class="btn success-btn flat useAnimations">Success</button>
+                      <button class="btn warning-btn flat useAnimations">Warning</button>
                     </div>
                   </div>
                 </fieldset>

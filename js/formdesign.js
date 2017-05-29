@@ -39,4 +39,22 @@ $(document).ready(function() {
       break;
     }
   });
+  $("body").on("click", ".haveAnimations", function(){
+    var theButtons = $(this).closest("td").find(".btn");
+  if ($(this).prop("checked") === true){
+      $(this).attr("checked", "checked");
+      $(this).prop("checked", true);
+      theButtons.addClass("useAnimations");
+    }else{
+      $(this).removeAttr("checked");
+      $(this).prop("checked", false);
+      theButtons.removeClass("useAnimations");
+    }
+  });
+  $("body").on("click", ".btn", function(e){
+    console.log($(this).attr("class"));
+    e.preventDefault();
+    return false;
+    console.log($(this).attr("class"));
+  });
 });
