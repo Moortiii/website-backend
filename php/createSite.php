@@ -126,7 +126,7 @@ die(print_r($scriptarray)."<br /><br />".print_r($inputscriptarray));*/
     <?php
   $sCounter = 0;
   $scriptarray = array_filter($scriptarray);
-  if (!empty($scriptarray) or (!empty($inputscriptarray[$i]))) {
+  if (!empty($scriptarray)) {
       for ($i = 0; $i < count($scriptarray); $i++) { ?>
     list.push({
       <?php echo($scriptarray[$i]); ?>: "<?php echo($inputscriptarray[$i]); ?>"
