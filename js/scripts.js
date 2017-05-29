@@ -547,7 +547,7 @@ $("body").on("focusout", "input[type='text']", function() {
 });
 $("body").on("focusout", "input[type='text']", function() {
     if (!$(this).val()) {
-        // 
+        //
     } else if (isHTML($(this).val())) {
         $(this).addClass("doanimation").delay(250).queue(function(next) {
             $(this).removeClass("doanimation").addClass("errorInput").dequeue();;
