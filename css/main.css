@@ -1034,27 +1034,22 @@ select.action {
     box-shadow: 0px 6px #c0392b;
 }
 
-.flat.success-btn:hover,
-.rounded.success-btn:active,
-.rounded.error-btn:active {
-    color: #333;
-}
-
 .btn3d.normal-btn,
 .btn3d.error-btn,
 .btn3d.success-btn,
 .btn3d.warning-btn {
-    border:none !important;
+    border: none !important;
 }
 
 /* Button Active Styles */
 
 .flat:active {
-    border-style:dashed;
+    border-style: dashed;
 }
 
 .rounded:active{
     background:transparent;
+    color: #333;
 }
 
 .btn3d:active {
@@ -1066,19 +1061,12 @@ select.action {
 
 .flat:hover {
     background:transparent;
+    color:#333;
 }
 
 .rounded:hover {
     box-shadow:inset -1px -4px 20px -11px #fff;
     border-color:rgba(0,0,0,0.2) !important;
-}
-
-.flat.error-btn:hover {
-    color:#333;
-}
-
-.flat.warning-btn:hover {
-    color: #333;
 }
 
 /* Button Fous Styles */
