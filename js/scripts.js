@@ -142,6 +142,13 @@ $('input[name="siteName"]').keypress(function(event) {
     	$(".go-createsite").click();
     }
 });
+/*$("body").on("keypress", '.sitecreation input[text="text"]', function(event) {
+    	console.log("abc");
+    if (event.keyCode == 13) {
+    	console.log("abc");
+    $(this).next().focus();
+    }
+});*/
 $(document).ready(function(){
 	$("label").disableSelection();
 	if (location.hash == "#settings"){
@@ -349,7 +356,7 @@ $(".sitesCont").on("click", ".downloadSiteButtonLarge", function(e){
 	$(this).closest(".openSiteButton").click();
 	$(this).closest(".siteCreation").find("form").submit();
 });
-$('body').on("keyup", "input[type='text']", function() {
+$('body').on("keyup", "input[type='text']", function(event) {
     $(this).attr("value", $(this).val());
 });
 $('body').on("focusout", "textarea[name='meta-textarea']", function() {
