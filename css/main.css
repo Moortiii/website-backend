@@ -121,12 +121,15 @@ fieldset {
 .sitecreation .tools {
     cursor: pointer;
 }
-.sitecreation .tools:hover{
-    background:rgba(223, 160, 110, 0.19);
+
+.sitecreation .tools:hover {
+    background: rgba(223, 160, 110, 0.19);
 }
-.sitecreation.closed .tools:hover{
-    background:#fff;
+
+.sitecreation.closed .tools:hover {
+    background: #fff;
 }
+
 .sitecreation.closed .tools {
     cursor: auto !important;
 }
@@ -334,7 +337,8 @@ fieldset {
 
 .siteCreation.closed .openSiteButton,
 .siteCreation.closed .downloadSiteButtonLarge {
-    display: inline-block !important;/* */
+    display: inline-block !important;
+    /* */
 }
 
 .siteCreation.closed header i {
@@ -352,7 +356,8 @@ fieldset {
 .siteCreation.closed em {
     display: inline-block;
     padding-left: 10px;
-    border-left: 1px solid #ddd;/**/
+    border-left: 1px solid #ddd;
+    /**/
     font-size: 18px;
     font-style: normal;
 }
@@ -927,12 +932,21 @@ select.action {
     border-right: 0;
     cursor: pointer;
 }
-.useAnimations{
-    transition:all 0.2s ease-in-out;
+
+.useAnimations {
+    transition: all 0.2s ease-in-out;
+}
+
+.useAnimations:active {
+    transition: none;
 }
 
 .useAnimations:active{
+}
 
+.flat.useAnimations:active {
+    transition: all 0.2s ease-in-out !important;
+>>>>>>> 428e747d06653a34544f8bd9d32d53b0446a88ac
 }
 
 .massedit {
@@ -966,13 +980,21 @@ select.action {
     border-style:dashed;
 }
 
+.flat:hover {
+    background: transparent;
+}
+
+.flat:active {
+    border-style: dashed;
+}
+
 .rounded {
     padding: 4px 12px;
     border-radius: 5px;
     font-weight: 300;
     border-width: 1px !important;
-    border-bottom-width:2px !important;
-    border-color:transparent !important;
+    border-bottom-width: 2px !important;
+    border-color: transparent !important;
 }
 
 .rounded:hover{
@@ -983,20 +1005,29 @@ select.action {
 .rounded:active{
     background:transparent;
 }
+.rounded:hover {
+    box-shadow: inset -1px -4px 20px -11px #fff;
+    border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.rounded:active {
+    background: transparent;
+}
 
 .btn3d {
+    padding: 4px 12px;
     display: inline-block;
     box-shadow: 0px 6px #7f8c8d;
-    border:none;
-    font-weight:300;
+    border: none;
+    font-weight: 300;
 }
-.btn3d:active{
+
+.btn3d:active {
     box-shadow: none;
     transform: translate(0px, 6px);
 }
 
-.btn3d.normal-btn{
-}
+.btn3d.normal-btn {}
 
 .normal-btn {
     background: #ecf0f1;
@@ -1004,8 +1035,13 @@ select.action {
     border: 2px solid #bdc3c7;
 }
 
+
 .normal-btn:focus{
     border-color:#d3d3d3;
+}
+
+.normal-btn:focus {
+    border-color: #d3d3d3;
 }
 
 .error-btn {
@@ -1023,6 +1059,14 @@ select.action {
     border-color:#A31E27;
 }
 
+.flat.error-btn:hover {
+    color: #333;
+}
+
+.error-btn:focus {
+    border-color: #A31E27;
+}
+
 .success-btn {
     /*background: #37B73F;*/
     background: #2ecc71;
@@ -1036,6 +1080,16 @@ select.action {
 
 .success-btn:focus{
     border-color:#29862E;
+}
+
+.flat.success-btn:hover,
+.rounded.success-btn:active,
+.rounded.error-btn:active {
+    color: #333;
+}
+
+.success-btn:focus {
+    border-color: #29862E;
 }
 
 .warning-btn {
@@ -1070,6 +1124,37 @@ select.action {
 
 .btn3d:active{
     box-shadow:none !important;
+}
+
+.warning-btn:focus {
+    border-color: #C97622;
+}
+
+.btn3d.normal-btn,
+.btn3d.error-btn,
+.btn3d.success-btn,
+.btn3d.warning-btn {
+    border: none !important;
+}
+
+.btn3d.normal-btn {
+    box-shadow: 0px 6px #ddd;
+}
+
+.btn3d.success-btn {
+    box-shadow: 0px 6px #188a1f;
+}
+
+.btn3d.warning-btn {
+    box-shadow: 0px 6px #bd6f21;
+}
+
+.btn3d.error-btn {
+    box-shadow: 0px 6px #ab1a23;
+}
+
+.btn3d:active {
+    box-shadow: none !important;
 }
 
 #btn-showcase {
@@ -1118,6 +1203,8 @@ textarea.keepV {
     top: 0;
     right: 0;
 }
+
+
 /*.resetstyles,.resetstyles *,.resetstyles a:hover,.resetstyles a:visited,.resetstyles a:active{
     background:none;
     border:none;
@@ -1125,7 +1212,11 @@ textarea.keepV {
     clear:none;
     cursor:default;
     /* didn't really know what the default for display should be*/
-    /*display:inline;*/
+
+
+/*display:inline;*/
+
+
 /*    float:none;
     font-family:Arial, Helvetica, sans-serif;
     font-size:medium;
@@ -1152,6 +1243,7 @@ textarea.keepV {
     width:auto;
     z-index:auto;
 }*/
+
 @keyframes moveBackground {
     0% {
         background: linear-gradient(90deg, #ffffff 0%, rgba(0, 0, 0, 0.1) 0%, #ffffff 8%);
