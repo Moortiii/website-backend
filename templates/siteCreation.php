@@ -33,7 +33,7 @@ $theme = $_POST['theme'];
             </td>
           </tr>
           <tr>
-            <th colspan="2">Boilersite</th>
+            <th colspan="2">Boilersite header</th>
           </tr>
           <tr>
             <td>Background</td>
@@ -195,7 +195,7 @@ $theme = $_POST['theme'];
                       <button class="btn normal-btn flat useAnimations">Normal</button>
                       <button class="btn error-btn flat useAnimations">Error</button>
                       <button class="btn success-btn flat useAnimations">Success</button>
-                      <button class="btn warning-btn flat useAnimations">Warning</button>
+                      <button class="btn warning-btn flat useAnimations">Alternative</button>
                     </div>
                   </div>
                 </fieldset>
@@ -213,7 +213,7 @@ $theme = $_POST['theme'];
           </tr>
           <tr>
             <td colspan="2" class="go">
-              <button class="button light downloadSiteButton"><i class="fa fa-arrow-circle-down before"></i> Download</button> <button class="button light saveSiteButton"><i class="fa fa-floppy-o before"></i> Save</button>
+              <button class="button light downloadSiteButton warning-btn rounded" style="background:var(--blue);"><i class="fa fa-arrow-circle-down before"></i> Download</button> <button class="button light saveSiteButton rounded success-btn" style="background:var(--blue-light);"><i class="fa fa-floppy-o before"></i> Save</button>
             </td>
           </tr>
         </table>

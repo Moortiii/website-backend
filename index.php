@@ -162,7 +162,7 @@ page..
 
         </div>
       </div>
-      <a href="#" class="button-green plusbutton" onClick="doSave('button')"><i class="fa fa-floppy-o before"></i> Save</a>
+      <a href="#" class="button-green plusbutton btn3d success-btn useAnimations" onClick="doSave('button')"><i class="fa fa-floppy-o before"></i> Save</a>
       <div class="settings">
 
       </div>

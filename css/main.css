@@ -943,6 +943,9 @@ fieldset{
     transition: none;
 }
 
+.useAnimations:active{
+}
+
 .flat.useAnimations:active {
     transition: all 0.2s ease-in-out !important;
 }
@@ -955,12 +958,41 @@ fieldset{
     display: none;
 }
 
+/* General Button Styles */
 
-/* Button Styles */
+#btn-showcase {
+    padding-right: 5px;
+}
 
 .btn {
     display: inline-block;
     margin: 5px;
+}
+
+.error-btn {
+    background: #e74c3c;
+    color: #efefef;
+    border: 2px solid #c0392b;
+}
+
+.success-btn {
+    background: #2ecc71;
+    color: #edfff1;
+    border: 2px solid #27ae60;
+}
+
+.warning-btn {
+    background: #34495e;
+    color: #edfff1;
+    border: 2px solid #2c3e50;
+}
+
+/* Specific Button Theme Styles */
+
+.normal-btn {
+    background: #ecf0f1;
+    color: #2D2A32;
+    border: 2px solid #bdc3c7;
 }
 
 .flat {
@@ -968,14 +1000,6 @@ fieldset{
     border-radius: 0px;
     border-width: 1px !important;
     font-weight: 300;
-}
-
-.flat:hover {
-    background: transparent;
-}
-
-.flat:active {
-    border-style: dashed;
 }
 
 .rounded {
@@ -987,15 +1011,6 @@ fieldset{
     border-color: transparent !important;
 }
 
-.rounded:hover {
-    box-shadow: inset -1px -4px 20px -11px #fff;
-    border-color: rgba(0, 0, 0, 0.2) !important;
-}
-
-.rounded:active {
-    background: transparent;
-}
-
 .btn3d {
     padding: 4px 12px;
     display: inline-block;
@@ -1004,42 +1019,22 @@ fieldset{
     font-weight: 300;
 }
 
-.btn3d:active {
-    box-shadow: none;
-    transform: translate(0px, 6px);
+.btn3d.normal-btn{
+    box-shadow: 0px 6px #bdc3c7;
 }
 
-.btn3d.normal-btn {}
-
-.normal-btn {
-    background: #eee;
-    color: #2D2A32;
-    border: 2px solid #d3d3d3;
+.btn3d.success-btn{
+    box-shadow: 0px 6px #27ae60;
 }
 
-.normal-btn:focus {
-    border-color: #d3d3d3;
+.btn3d.warning-btn {
+    box-shadow: 0px 6px #d35400;
 }
 
-.error-btn {
-    background: #DF2935;
-    color: #efefef;
-    border: 2px solid #A31E27;
+.btn3d.error-btn {
+    box-shadow: 0px 6px #c0392b;
 }
 
-.flat.error-btn:hover, .flat.warning-btn:hover, .rounded.warning-btn:active {
-    color: #333;
-}
-
-.error-btn:focus {
-    border-color: #A31E27;
-}
-
-.success-btn {
-    background: #37B73F;
-    color: #edfff1;
-    border: 2px solid #29862E;
-}
 
 .flat.success-btn:hover,
 .rounded.success-btn:active,
@@ -1047,8 +1042,21 @@ fieldset{
     color: #333;
 }
 
-.success-btn:focus {
-    border-color: #29862E;
+.btn3d.normal-btn,
+.btn3d.error-btn,
+.btn3d.success-btn,
+.btn3d.warning-btn {
+    border:none !important;
+}
+
+/* Button Active Styles */
+
+.flat:active {
+    border-style:dashed;
+}
+
+.rounded:active{
+    background:transparent;
 }
 
 .warning-btn {
@@ -1056,41 +1064,49 @@ fieldset{
     color: #f9f9f9;
     border: 2px solid #C97622;
 }
-
-.warning-btn:focus {
-    border-color: #C97622;
-}
-
-.btn3d.normal-btn,
-.btn3d.error-btn,
-.btn3d.success-btn,
-.btn3d.warning-btn {
-    border: none !important;
-}
-
-.btn3d.normal-btn {
-    box-shadow: 0px 6px #ddd;
-}
-
-.btn3d.success-btn {
-    box-shadow: 0px 6px #188a1f;
-}
-
-.btn3d.warning-btn {
-    box-shadow: 0px 6px #bd6f21;
-}
-
-.btn3d.error-btn {
-    box-shadow: 0px 6px #ab1a23;
-}
-
 .btn3d:active {
     box-shadow: none !important;
+    transform: translate(0px, 6px);
 }
 
-#btn-showcase {
-    padding-right: 5px;
+/* Button Hover Styles */
+
+.flat:hover {
+    background:transparent;
 }
+
+.rounded:hover {
+    box-shadow:inset -1px -4px 20px -11px #fff;
+    border-color:rgba(0,0,0,0.2) !important;
+}
+
+.flat.error-btn:hover {
+    color:#333;
+}
+
+.flat.warning-btn:hover {
+    color: #333;
+}
+
+/* Button Fous Styles */
+
+.normal-btn:focus {
+    border-color: #bdc3c7;
+}
+
+.error-btn:focus {
+    border-color: #c0392b;
+}
+
+.success-btn:focus{
+    border-color: #29862E;
+}
+
+.warning-btn:focus {
+    border-color: #2c3e50;
+}
+
+/* Animation Styles */
 
 .doanimation {
     animation: moveBackground 0.3s ease-out;
