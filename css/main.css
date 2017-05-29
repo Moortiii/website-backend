@@ -920,7 +920,9 @@ select.action {
     display: block;
     text-decoration: none;
 }
-
+fieldset{
+    transition:all 0.2s ease-in-out;
+}
 .firsttime {
     position: absolute;
     top: 65px;
@@ -1025,7 +1027,7 @@ select.action {
     border: 2px solid #A31E27;
 }
 
-.flat.error-btn:hover {
+.flat.error-btn:hover, .flat.warning-btn:hover, .rounded.warning-btn:active {
     color: #333;
 }
 
@@ -1051,7 +1053,7 @@ select.action {
 
 .warning-btn {
     background: #F58F29;
-    color: #3a2b00;
+    color: #f9f9f9;
     border: 2px solid #C97622;
 }
 
