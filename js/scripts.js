@@ -578,6 +578,35 @@ $("body").on("focusout", "input[name^='customScriptLink']", function() {
     }
 
 });
+var timeoutId;
+$("body").on("mouseover", ".main", function(){
+    if ($(".togglesettings i").hasClass("fa-times-circle")){
+        if (!timeoutId) {
+            timeoutId = window.setTimeout(function() {
+                timeoutId = null;
+                $(".togglesettings").click();
+           }, 2000);
+        }
+    }
+}, function () {
+    if ($(".togglesettings i").hasClass("fa-times-circle")){
+        if (timeoutId) {
+            window.clearTimeout(timeoutId);
+            timeoutId = null;
+        }
+        else {
+            $(".togglesettings").click();
+        }
+    }
+});
+
+
+$("#NewsStrip").hover(function() {
+});
+
+
+
+
 $("body").on("focus", "input[type='text'], textarea", function() {
     $(this).removeClass("doanimation").removeClass("secondanimation").removeClass("keepV").removeClass("errorInput");
     currentValuess = $(this).val();

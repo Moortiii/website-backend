@@ -84,13 +84,31 @@ fieldset {
 
 
 /* Left menu */
-
 .left-menu,
 .main {
     float: left;
-    min-height: 200px;
+    min-height: 500px;
+    transition:width 0.5s ease-in-out 0.5s;
 }
-
+.nav-link i{
+    margin-right: 15px !important;
+}
+.nav-link{
+    min-width:150px;
+}
+.left-menu {
+    /*width: 250px;*/
+    width:45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow:hidden;
+}
+.left-menu:hover{
+    width: 250px;
+}
+.left-menu:hover + .main{
+    width:calc(100% - 250px);
+}
 .left-menu .nav-link {
     display: block;
     text-decoration: none;
@@ -150,17 +168,11 @@ fieldset {
     border-bottom: 0;
 }
 
-.left-menu {
-    width: 250px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
 
 /* Main */
 
 .main {
-    width: calc(100% - 250px);
+    width: calc(100% - 45px);
     padding: 20px;
     position: relative;
     background: #fff;
@@ -173,8 +185,8 @@ fieldset {
     margin-bottom: 45px;
 }
 
-.main:after {
-    content: "Made by Håkon Underbakke & Morten Hauge";
+.main:after {/*
+    content: "Made by Håkon Underbakke & Morten Hauge";*/
     position: absolute;
     top: calc(100% + 20px);
     left: 0;
@@ -790,10 +802,10 @@ select.action {
     }
 }
 
-@media only screen and (min-width:2000px) {
+@media only screen and (min-width:1200px) {
     #container {
         margin: 0 auto;
-        max-width: 1800px;
+        max-width: 1200px;
     }
 }
 
