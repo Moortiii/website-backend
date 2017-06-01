@@ -75,7 +75,7 @@ function createSite() {
     } else {
 
     }
-    if ($(".massedit").text() == "Stop editing") {
+    if ($(".massedit").hasClass("iamcur")) {
         $(".massedit").click();
     }
     var uniqueid = guidGenerator();
@@ -163,6 +163,26 @@ $('input[name="siteName"]').keypress(function(event) {
     $(this).next().focus();
     }
 });*/
+$(function() {
+    var $sidebar = $('.leftmenucont');
+    $window = $(window);
+    offset = $sidebar.offset();
+    topPadding = 0;
+
+    $window.scroll(function() {
+        if ($window.scrollTop() > offset.top) {
+            $sidebar.css({
+                'top': '0',
+                'position': 'fixed'
+            });
+        } else {
+            $sidebar.css({
+                'top': '',
+                'position': ''
+            });
+        }
+    });            
+});
 $(document).ready(function() {
     $("label").disableSelection();
     if (location.hash === "#settings") {
@@ -256,9 +276,13 @@ $(document).ready(function() {
     }
     $(".massedit").click(function() {
         if (isEditing == true) {
-            $(this).text("Start editing");
+            $(this).html('<i class="fa fa-pencil-square-o before navLinkIcon"></i> Start editing');
+            $(this).removeClass("iamcur");
+            $(this).find("i").css("color", "#f9f9f9");
         } else {
-            $(this).text("Stop editing");
+            $(this).html('<i class="fa fa-pencil-square-o before navLinkIcon"></i> Stop editing');
+            $(this).addClass("iamcur");
+            $(this).find("i").css("color", "#2ecc71");
         }
         massEdit();
         this.blur();
@@ -533,7 +557,7 @@ $(function() {
         isDragging = false;
         $(window).unbind("mousemove");
         if (!wasDragging) {
-            if ($(".massedit").text() == "Stop editing") {
+            if ($(".massedit").hasClass("iamcur")) {
                 $(this).find(".mark").click();
             } else {
                 $(this).closest(".sitecreation").find("form").find(".saveSiteButton").click();

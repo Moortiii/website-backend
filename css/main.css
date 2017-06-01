@@ -1176,6 +1176,23 @@ textarea.keepV {
     top: 0;
     right: 0;
 }
+.leftmenucont{
+    background:#222;
+    border-bottom-left-radius:5px;
+    margin-left:-10px;
+    padding-left:10px;
+    min-height:350px;
+    min-width:250px;
+    padding-bottom:15px;
+}
+.currentlyEditing{
+    transition:all 0.2s ease-in-out;
+    transform:rotate(90deg);
+    color:#2ecc71;
+}
+.currentlyEditing i{
+    transition:all 0.2s ease-in;
+}
 .pintab{
     margin:20px 5px;
   cursor:pointer;

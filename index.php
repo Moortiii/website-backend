@@ -126,8 +126,8 @@ page..
       <div class="section sites-section">
         <h2>Sites</h2>
         <div class="site-buttons">
-          <a href="#" class="button-navy large show-createSite">Create site</a>
-          <a href="#" class="button-red large massedit">Start editing</a>
+          <a href="#" class="button-navy large show-createSite">Create site</a><!--
+          <a href="#" class="button-red large massedit">Start editing</a>-->
         </div>
         <table class="createSite">
           <tr>

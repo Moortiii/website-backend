@@ -1,6 +1,8 @@
+<div class="leftmenucont">
 <div class="box">
   <a href="." class="nav-link closed"><i class="fa fa-refresh before dospin navLinkIcon"></i> Sites</a>
   <a href="about" class="nav-link closed"><i class="fa fa-info-circle before navLinkIcon" aria-hidden="true"></i> About</a>
+  <a href="#" class="nav-link closed massedit"><i class="fa fa-pencil-square-o before navLinkIcon"></i> Start editing</a>
   <a href="#" class="nav-link togglesettings closed"><i class="fa fa-cog before fa-spin-hover dospin navLinkIcon"></i> Settings</a>
 </div>
 <div class="settings">
@@ -59,3 +61,4 @@
         <a href="#" class="nav-link">Your plans</a>
         <a href="#" class="nav-link">Manage plans</a>
       </div>-->
+</div>
