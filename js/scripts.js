@@ -94,10 +94,8 @@ function createSite() {
         $("." + uniqueid + " .loadedSiteName").focus();
         if (!$('.sitesCont').html().replace(/\s+/g, '').length) {
             $(".massedit").hide();
-            console.log("abc");
         } else {
             $(".massedit").show();
-            console.log("bca");
         }
     });
 }
@@ -189,6 +187,7 @@ $(document).ready(function() {
         $(".ac-account").prop("checked", true);
         $(".ac-account").click();
     }
+    console.log("----------");
     console.log("%c If you are a guest, please be vary of messing with inspect element and console", 'font-size:18px;display:inline-block;padding: 10px 20px;background:#073B4C;color:#f9f9f9;');
     console.log("%c Your progress is saved directly with .html(), so any changes you make will be saved", 'font-size:18px;display:inline-block;margin-top:10px;padding: 5px 20px;background:#073B4C;color:#f9f9f9;');
     console.log("----------");
@@ -528,7 +527,6 @@ $(function() {
                 $(this).find(".mark").click();
             } else {
                 $(this).closest(".sitecreation").find("form").find(".saveSiteButton").click();
-                console.log("a");
             }
         }
     });
