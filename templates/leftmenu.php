@@ -13,7 +13,7 @@
       <td><input type="checkbox" id="saveProg" name="saveProg" checked /></td>
       <td class="saveSitesTd"> <label for="saveProg">Save sites</label></td>
     </tr>
-    <tr><td></td>
+    <tr><td><i class="fa fa-floppy-o"></i></td>
       <td> <a href="#" class="exportSave">Export save</a></td>
     </tr>
     <tr class="exportSaveTr">
@@ -21,7 +21,7 @@
         <textarea></textarea>
       </td>
     </tr>
-    <tr><td></td>
+    <tr><td><i class="fa fa-floppy-o"></i></td>
       <td> <a href="#" class="importSave">Import save</a></td>
     </tr>
     <tr class="importSaveTr">

@@ -19,7 +19,7 @@ function getCookie(c_name) {
         c_value = unescape(c_value.substring(c_start, c_end)); }
     return c_value; }
 
-function delCookie(name) { document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'; }
+function delCookie(name) { document.cookie = name + '=; expires=' + time() + (10 * 365 * 24 * 60 * 60) + ';'; }
 if (localStorage.getItem("bs-account") == "account") {
     $(".ac-account").attr("checked", "checked");
     $(".ac-account").prop("checked", true);
@@ -165,7 +165,12 @@ $('input[name="siteName"]').keypress(function(event) {
 });*/
 $(document).ready(function() {
     $("label").disableSelection();
-    if (location.hash == "#settings") {
+    if (location.hash === "#settings") {
+        if (localStorage.getItem("isPinned") != "yes"){ 
+            $(".main").addClass("pinned");
+            $(".left-menu").addClass("pinned");
+            $(".pintab").click();
+        }
         $(".togglesettings").click();
     }
     if (!getCookie('firsttime')) {
