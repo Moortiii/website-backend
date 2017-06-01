@@ -831,7 +831,7 @@ select.action {
 }
 
 @media only screen and (max-width:800px) {
-    
+
     .left-menu, .main{
         transition:none !important;
     }
@@ -952,8 +952,12 @@ select.action {
 .importSaveNow {
     display: block;
     padding: 5px;
-    color: #fff;
+    color: #ddd;
     max-width: 200px;
+}
+.exportSave:hover,
+.importSave:hover, .exportSaveNow:hover, .importSaveNow:hover{
+    text-decoration: underline;
 }
 
 .ui-sortable-helper {
@@ -962,7 +966,7 @@ select.action {
 
 .exportSave,
 .importSave {
-    color: #fff;
+    color: #ddd;
     display: block;
     text-decoration: none;
 }
