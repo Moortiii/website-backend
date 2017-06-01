@@ -87,7 +87,6 @@ fieldset {
 .left-menu,
 .main {
     float: left;
-    min-height: 500px;
     transition:width 0.5s cubic-bezier(0.1, 0.59, 0.97, 1), background 0.5s cubic-bezier(0.1, 0.59, 0.97, 1) 0.5s;
 }/*
 .main{
@@ -831,6 +830,12 @@ select.action {
     }
 }
 
+@media only screen and (max-width:800px) {
+    
+    .left-menu, .main{
+        transition:none !important;
+    }
+}
 @media only screen and (min-width:1200px) {
     #container {
         margin: 0 auto;
@@ -1184,7 +1189,6 @@ textarea.keepV {
     border-bottom-left-radius:5px;
     margin-left:-10px;
     padding-left:10px;
-    min-height:496px;
     min-width:250px;
     padding-bottom:15px;
 }
