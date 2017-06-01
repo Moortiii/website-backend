@@ -811,8 +811,8 @@ select.action {
     .left-menu {
         display: none;
     }
-    .main {
-        width: 100%;
+    .main, .main.pinned {
+        width: 100% !important;
     }
 }
 
