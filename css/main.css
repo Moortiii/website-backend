@@ -88,7 +88,7 @@ fieldset {
 .main {
     float: left;
     min-height: 500px;
-    transition:width 0.2s ease-in-out 0.5s;
+    transition:width 0.2s ease-in-out 0.5s, border-left-color 0.5s ease-in;
 }
 .nav-link i{
     margin-right: 15px !important;
@@ -102,10 +102,16 @@ fieldset {
     padding-left: 10px;
     padding-right: 10px;
     overflow:hidden;
+    border-left:1px solid transparent;
+    border-bottom:1px solid transparent;
     position:relative;
+}
+.left-menu.pinned{
+    border-left-color:transparent !important;
 }
 .left-menu:hover{
     width: 250px;
+    border-left-color:rgba(255, 255, 255, 0.05);
 }
 .left-menu:hover + .main{
     width:calc(100% - 250px);
@@ -155,7 +161,7 @@ fieldset {
 }
 
 .sitecreation .tools:hover {
-    background: rgba(223, 209, 110, 0.12);
+    background: rgba(95, 28, 44, 0.09);
 }
 
 .sitecreation.closed .tools:hover {
