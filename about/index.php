@@ -30,6 +30,7 @@
       
     }
   }
+  .massedit, .togglesettings, .pintab{display:none !important;}
   </style>
 </head>
 
