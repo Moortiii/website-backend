@@ -88,7 +88,7 @@ fieldset {
 .main {
     float: left;
     min-height: 500px;
-    transition:width 0.5s ease-in-out 0.5s;
+    transition:width 0.2s ease-in-out 0.5s;
 }
 .nav-link i{
     margin-right: 15px !important;
@@ -149,7 +149,7 @@ fieldset {
 }
 
 .sitecreation .tools:hover {
-    background: rgba(223, 160, 110, 0.19);
+    background: rgba(223, 209, 110, 0.12);
 }
 
 .sitecreation.closed .tools:hover {

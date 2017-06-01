@@ -580,12 +580,10 @@ $("body").on("focusout", "input[name^='customScriptLink']", function() {
 });
 var timeoutId;
 $("body").on("mouseenter", ".main", function(){
-
-    console.log("mouseenter");
     if ($(".togglesettings i").hasClass("fa-times-circle")){
         timeoutId = window.setTimeout(function() {
             $(".togglesettings").click();
-       }, 1000);
+       }, 700);
     }
 });
 function makeMouseOutFn(elem){
@@ -598,12 +596,8 @@ function makeMouseOutFn(elem){
         clearTimeout(timeoutId);
     };
 }
-
-//using closure to cache all child elements
 var parent = document.getElementById("main");
 parent.addEventListener('mouseout',makeMouseOutFn(parent),true);
-
-//quick and dirty DFS children traversal, 
 function traverseChildren(elem){
     var children = [];
     var q = [];
@@ -620,15 +614,6 @@ function traverseChildren(elem){
     }
     return children;
 }
-$("body").on("mouseout", ".main", function(event){
-
-});
-
-$("#NewsStrip").hover(function() {
-});
-
-
-
 
 $("body").on("focus", "input[type='text'], textarea", function() {
     $(this).removeClass("doanimation").removeClass("secondanimation").removeClass("keepV").removeClass("errorInput");

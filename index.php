@@ -55,7 +55,7 @@ page..
       Boilersite
   </h1>
 
-      <div class="section">
+      <div class="section" style="display:none;">
         <h2>Account</h2>
         <div class="radio">
           <input type="radio" checked name="accountradio" class="ac-guest" id="ac-guest" /> <label for="ac-guest">Guest</label> <input type="radio" name="accountradio" id="ac-account" class="ac-account" /> <label for="ac-account">Account</label>
