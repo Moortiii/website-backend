@@ -128,6 +128,18 @@
       return normalizeCSS
     }
 
+    function getButtonStyles() {
+      var buttonCSS;
+      $.ajax({
+        url: '../templateCSS/buttons.css',
+        async: false,
+        success: function(response) {
+          buttonCSS = response;
+        }
+      })
+      return buttonCSS
+    }
+
     var name = "<?php echo($name); ?>";
     document.title = name;
     var titleformat = "<?php echo($titleformat); ?>";
@@ -152,6 +164,7 @@
       <?php $sCounter++; } }
     ?>
 
+// This has to be formatted in an ugly way in order to make it look nice on the final page.
     var str =
 `<!DOCTYPE html>
 <html>
@@ -175,7 +188,10 @@
 
     var css = zip.folder("css");
     normalizeText = getNormalizeText();
+    buttonStyles = getButtonStyles();
+    concatCSS = normalizeText + buttonStyles;
     css.file("normalize.css", normalizeText);
+    css.file("concat.css", concatCSS);
 
     var scripts = zip.folder("scripts");
     scripts.file("scripts.js", "alert('Hello World')");
