@@ -102,12 +102,20 @@ fieldset {
     padding-left: 10px;
     padding-right: 10px;
     overflow:hidden;
+    position:relative;
 }
 .left-menu:hover{
     width: 250px;
 }
 .left-menu:hover + .main{
     width:calc(100% - 250px);
+}
+.hovermepls{
+    position:absolute;
+    right:100%;
+    top:0;
+    bottom:0;
+    width:9999px;
 }
 .left-menu .nav-link {
     display: block;

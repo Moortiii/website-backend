@@ -579,27 +579,50 @@ $("body").on("focusout", "input[name^='customScriptLink']", function() {
 
 });
 var timeoutId;
-$("body").on("mouseover", ".main", function(){
+$("body").on("mouseenter", ".main", function(){
+
+    console.log("mouseenter");
     if ($(".togglesettings i").hasClass("fa-times-circle")){
-        if (!timeoutId) {
-            timeoutId = window.setTimeout(function() {
-                timeoutId = null;
-                $(".togglesettings").click();
-           }, 2000);
-        }
-    }
-}, function () {
-    if ($(".togglesettings i").hasClass("fa-times-circle")){
-        if (timeoutId) {
-            window.clearTimeout(timeoutId);
-            timeoutId = null;
-        }
-        else {
+        timeoutId = window.setTimeout(function() {
             $(".togglesettings").click();
-        }
+       }, 1000);
     }
 });
+function makeMouseOutFn(elem){
+    var list = traverseChildren(elem);
+    return function onMouseOut(event) {
+        var e = event.toElement || event.relatedTarget;
+        if (!!~list.indexOf(e)) {
+            return;
+        }
+        clearTimeout(timeoutId);
+    };
+}
 
+//using closure to cache all child elements
+var parent = document.getElementById("main");
+parent.addEventListener('mouseout',makeMouseOutFn(parent),true);
+
+//quick and dirty DFS children traversal, 
+function traverseChildren(elem){
+    var children = [];
+    var q = [];
+    q.push(elem);
+    while (q.length > 0) {
+      var elem = q.pop();
+      children.push(elem);
+      pushAll(elem.children);
+    }
+    function pushAll(elemArray){
+      for(var i=0; i < elemArray.length; i++) {
+        q.push(elemArray[i]);
+      }
+    }
+    return children;
+}
+$("body").on("mouseout", ".main", function(event){
+
+});
 
 $("#NewsStrip").hover(function() {
 });

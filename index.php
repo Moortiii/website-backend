@@ -49,7 +49,7 @@ page..
     <div class="left-menu">
     <?php require_once realpath('templates/leftmenu.php'); ?>
     </div>
-    <div class="main">
+    <div class="main" id="main">
 
       <h1 class="subpage-header">
       Boilersite
