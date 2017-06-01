@@ -1040,7 +1040,7 @@ fieldset{
 }
 
 .btn3d.warning-btn {
-    box-shadow: 0px 6px #d35400;
+    box-shadow: 0px 6px #2c3e50;
 }
 
 .btn3d.error-btn {
@@ -1071,11 +1071,6 @@ fieldset{
     color: #333;
 }
 
-.warning-btn {
-    background: #F58F29;
-    color: #f9f9f9;
-    border: 2px solid #C97622;
-}
 .btn3d:active {
     box-shadow: none !important;
     transform: translate(0px, 6px);
