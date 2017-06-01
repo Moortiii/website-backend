@@ -366,7 +366,7 @@ function doSave(e) {
                 $(".togglesettings, .saveSitesTd").css("box-shadow", "0px 0px 5px 2px var(--red-dark)");
                 $(".togglesettings, .saveSitesTd").css("background", "var(--red)");
                 $('.togglesettings, .saveSitesTd')
-                    .delay(2000)
+                    .delay(3000)
                     .queue(function(next) {
                         $(this).css("box-shadow", "none");
                         $(this).css("background", "#222");
