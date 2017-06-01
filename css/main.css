@@ -110,6 +110,12 @@ fieldset {
 .left-menu:hover + .main{
     width:calc(100% - 250px);
 }
+.main.pinned{
+    width:calc(100% - 250px) !important;
+}
+.left-menu.pinned{
+    width:250px !important;
+}
 .hovermepls{
     position:absolute;
     right:100%;
@@ -1158,7 +1164,29 @@ textarea.keepV {
     top: 0;
     right: 0;
 }
-
+.pintab{
+    margin:20px 5px;
+  cursor:pointer;
+  float:right;
+  position:relative;
+  display:inline-block;
+}
+.pintabinput{
+  opacity:0.01;
+}
+.pintab i{
+  transition:top 0.1s cubic-bezier(0.82, -0.03, 0.58, 1), color 0.1s ease-in-out 0.1s;
+  position:absolute;
+  left:3px;
+  top:-5px;
+  cursor:pointer;
+  color:#f9f9f9;
+  font-size:18px;
+}
+.cckd{
+  top:0px !important;
+  color:#2ecc71 !important;
+}
 
 /*.resetstyles,.resetstyles *,.resetstyles a:hover,.resetstyles a:visited,.resetstyles a:active{
     background:none;

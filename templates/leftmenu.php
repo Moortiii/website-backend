@@ -31,6 +31,10 @@
       </td>
     </tr>
   </table>
+  <div class="pintab">
+  <input type="checkbox" class="pintabinput" />
+  <i class="fa fa-thumb-tack"></i>
+</div>
   <div class="hovermepls"></div>
 </div>
 <!--<div class="box">
