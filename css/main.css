@@ -88,8 +88,10 @@ fieldset {
 .main {
     float: left;
     min-height: 500px;
-    transition:width 0.2s ease-in-out 0.5s, border-left-color 0.5s ease-in;
-}
+    transition:width 0.5s cubic-bezier(0.1, 0.59, 0.97, 1), background 0.5s cubic-bezier(0.1, 0.59, 0.97, 1) 0.5s;
+}/*
+.main{
+    transition:width 0.2s ease-in-out 0.5s, background 0.5s ease-in;}*/
 .nav-link i{
     margin-right: 15px !important;
 }
@@ -100,6 +102,7 @@ fieldset {
     /*width: 250px;*/
     width:45px;
     padding-left: 10px;
+    border-bottom-left-radius:5px;
     padding-right: 10px;
     overflow:hidden;
     border-left:1px solid transparent;
@@ -108,10 +111,13 @@ fieldset {
 }
 .left-menu.pinned{
     border-left-color:transparent !important;
+    background:#222 !important;
 }
+.left-menu:hover, .left-menu:hover + .main{
+    transition:width 0.2s ease-in-out 0.5s, background 0.5s ease-in;}
 .left-menu:hover{
     width: 250px;
-    border-left-color:rgba(255, 255, 255, 0.05);
+    background:#222;
 }
 .left-menu:hover + .main{
     width:calc(100% - 250px);
@@ -1173,7 +1179,7 @@ textarea.keepV {
 .pintab{
     margin:20px 5px;
   cursor:pointer;
-  float:right;
+  float:left;
   position:relative;
   display:inline-block;
 }
