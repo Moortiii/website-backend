@@ -178,7 +178,7 @@ $theme = $_POST['theme'];
             <th colspan="2"><label><input type="checkbox" name="enableFormDesign" checked /> Form design</label></th>
           </tr>
           <tr>
-            <td colspan="2">
+            <td colspan="2" class="relativeTd">
               Option showcase:<br /><br />
               <label><input type="checkbox" name="haveAnimations" class="haveAnimations" checked /> Transitions</label>
               <fieldset class="resetstyles">
@@ -199,26 +199,9 @@ $theme = $_POST['theme'];
                     </div>
                   </div>
                 </fieldset>
-                <tr>
-                  <td>
-                    Include:
-                  </td>
-                  <td>
-                    <label><input type="checkbox" name="flat-check" id="flat-check" checked> Flat Buttons</label>
-                  </td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>
-                    <label><input type="checkbox" name="rounded-check" id="rounded-check" checked> Rounded Buttons</label>
-                  </td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td>
-                    <label><input type="checkbox" name="btn3d-check" id="btn3d-check" checked> 3D Buttons</label>
-                  </td>
-                </tr>
+                    <label class="oneInclude" style="display:inline;"><input type="checkbox" name="flat-check" id="flat-check" checked> Include</label>
+                    <label class="oneInclude"><input type="checkbox" name="rounded-check" id="rounded-check" checked> Include</label>
+                    <label class="oneInclude"><input type="checkbox" name="btn3d-check" id="btn3d-check" checked> Include</label>
               </form>
             </td>
           </tr>

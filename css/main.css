@@ -1229,7 +1229,17 @@ textarea.keepV {
   top:0px !important;
   color:#2ecc71 !important;
 }
-
+.relativeTd{
+    position:relative;
+}
+.oneInclude{
+    position: absolute;
+    top: 57px;
+    left: 100%;
+    margin-left: -75px;
+    display:none;
+}
+}
 /*.resetstyles,.resetstyles *,.resetstyles a:hover,.resetstyles a:visited,.resetstyles a:active{
     background:none;
     border:none;
