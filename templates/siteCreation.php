@@ -37,12 +37,12 @@ $theme = $_POST['theme'];
           </tr>
           <tr>
             <td>Background</td>
-            <td><input type="color" name="boilerColour" id="boilerColour" value="#ffffff" /> 
+            <td><input type="color" name="boilerColour" id="boilerColour" value="#ffffff" />
             </td>
             </tr>
           <tr>
             <td>Text</td>
-            <td><input type="color" name="boilerText" id="boilerText" value="#333333" /> 
+            <td><input type="color" name="boilerText" id="boilerText" value="#333333" />
             </td>
             </tr>
           <tr>
@@ -179,14 +179,14 @@ $theme = $_POST['theme'];
           </tr>
           <tr>
             <td colspan="2">
-              Options:<br /><br />
+              Option showcase:<br /><br />
               <label><input type="checkbox" name="haveAnimations" class="haveAnimations" checked /> Transitions</label>
               <fieldset class="resetstyles">
                 <legend>
                   <select id="theme-select" style="margin: 10px;">
                     <option id="flat" value="Flat">Flat</option>
                     <option id="rounded" value="Rounded">Rounded</option>
-                    <option id="3d" value="3D">3D</option>
+                    <option id="btn3d" value="3D">3D</option>
                   </select>
                 </legend>
                 <div class="form-design">
@@ -199,6 +199,26 @@ $theme = $_POST['theme'];
                     </div>
                   </div>
                 </fieldset>
+                <tr>
+                  <td>
+                    Include:
+                  </td>
+                  <td>
+                    <label><input type="checkbox" name="flat-check" id="flat-check" checked> Flat Buttons</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <label><input type="checkbox" name="rounded-check" id="rounded-check" checked> Rounded Buttons</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <label><input type="checkbox" name="btn3d-check" id="btn3d-check" checked> 3D Buttons</label>
+                  </td>
+                </tr>
               </form>
             </td>
           </tr>

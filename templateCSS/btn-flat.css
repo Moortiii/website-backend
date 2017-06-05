@@ -1,0 +1,23 @@
+.flat {
+    padding: 4px 12px;
+    border-radius: 0px;
+    border-width: 1px !important;
+    font-weight: 300;
+}
+
+.flat.success-btn:hover {
+    color: #333;
+}
+
+.flat:hover {
+    background:transparent;
+    color:#333;
+}
+
+.flat:active {
+    border-style: dashed;
+}
+
+.flat.useAnimations:active {
+    transition: all 0.2s ease-in-out !important;
+}

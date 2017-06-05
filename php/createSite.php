@@ -10,10 +10,15 @@
   $theme;
   $jQuery;
   $normalize;
-  $getNormalize;
   $meta_name;
   $meta_author;
   $titleformat;
+
+  /* Button Variables */
+
+  $flat;
+  $rounded;
+  $btn3d;
 
   function includejQuery() {
     global $jQuery;
@@ -28,11 +33,6 @@
       /* $normalize = "<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css'>"; */
       $normalize = "<link rel='stylesheet' href='css/normalize.css'>";
     }
-  }
-
-  function getNormalize() {
-    global $getNormalize;
-    $getNormalize = $_POST['includeNormalize'];
   }
 
   function setInfo() {
@@ -52,8 +52,10 @@
     if(!empty($_POST['meta-name'])) {
       $meta_author = $_POST['meta-author'];
     }
+
     includejQuery();
     includeNormalize();
+
     switch ($_POST['titleformat']){
       case "snpn":
         $titleformat = $name." / ".$page;
@@ -116,7 +118,7 @@
 
     // Function definitions
 
-    function getNormalizeText() {
+    function normalize_css_styles() {
       var normalizeCSS;
       $.ajax({
         url: '../templateCSS/normalize.css',
@@ -125,10 +127,10 @@
             normalizeCSS = response;
         }
       });
-      return normalizeCSS
+      return normalizeCSS;
     }
 
-    function getButtonStyles() {
+    function btn_default_styles() {
       var buttonCSS;
       $.ajax({
         url: '../templateCSS/buttons.css',
@@ -137,7 +139,43 @@
           buttonCSS = response;
         }
       })
-      return buttonCSS
+      return buttonCSS;
+    }
+
+    function btn_3d_styles() {
+      var btn_3d_css;
+      $.ajax({
+        url: '../templateCSS/btn-3d.css',
+        async: false,
+        success: function(response) {
+          btn_3d_css = response;
+        }
+      })
+      return btn_3d_css;
+    }
+
+    function btn_rounded_styles() {
+      var btn_rounded_css;
+      $.ajax({
+        url: '../templateCSS/btn-rounded.css',
+        async: false,
+        success: function(response) {
+          btn_rounded_css = response;
+        }
+      })
+      return btn_rounded_css;
+    }
+
+    function btn_flat_styles() {
+      var btn_flat_css;
+      $.ajax({
+        url: '../templateCSS/btn-flat.css',
+        async: false,
+        success: function(response) {
+          btn_flat_css = response;
+        }
+      })
+      return btn_flat_css;
     }
 
     var name = "<?php echo($name); ?>";
@@ -183,21 +221,42 @@
   </body>
 </html>`;
 
-    var zip = new JSZip();
-    zip.file("index.html", str);
+      var root = new JSZip();
+      root.file("index.html", str);
 
-    var css = zip.folder("css");
-    normalizeText = getNormalizeText();
-    buttonStyles = getButtonStyles();
-    concatCSS = normalizeText + buttonStyles;
-    css.file("normalize.css", normalizeText);
-    css.file("concat.css", concatCSS);
+      var normalize_css = normalize_css_styles();
+      var button_default_css = btn_default_styles();
+      var btn_complete = button_default_css;
 
-    var scripts = zip.folder("scripts");
-    scripts.file("scripts.js", "alert('Hello World')");
+      var css = root.folder("css");
+      css.file("normalize.css", normalize_css);
+
+      var scripts = root.folder("scripts");
+      scripts.file("scripts.js", "alert('Hello World')");
+
+      /* Include the button styles the user selected using checkboxes */
+      <?php if(isset($_POST['flat-check'])) { ?>
+              var btn_flat_css = btn_flat_styles();
+              btn_complete += btn_flat_css;
+              // css.file("btn-flat.css", btn_flat_css);
+            <?php }
+            if(isset($_POST['rounded-check'])) { ?>
+              var btn_rounded_css = btn_rounded_styles();
+              btn_complete += btn_rounded_css;
+              // css.file("btn-rounded.css", btn_rounded_css);
+            <?php }
+            if(isset($_POST['btn3d-check'])) { ?>
+              var btn_3d_css = btn_3d_styles();
+              btn_complete += btn_3d_css;
+              // css.file("btn-3d.css", btn_3d_css);
+          <?php } ?>
+
+      /* We ahve to add the css file once all checks are completed */
+
+    css.file("btn-styles.css", btn_complete);
 
     function downloadBoilerplate() {
-      zip.generateAsync({
+      root.generateAsync({
         type: "blob"
       }).then(function(blob) {
         saveAs(blob, filename);
