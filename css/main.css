@@ -115,20 +115,22 @@ fieldset {
 .left-menu:hover, .left-menu:hover + .main{
     transition:width 0.2s ease-in-out 1s, background 0.5s ease-in;}
 .left-menu:hover{
-    width: 250px;
+    /*width: 250px;
+    */
+    width:190px;
     background:#222;
 }
 .left-menu:hover + .main{
-    width:calc(100% - 250px);
+    width:calc(100% - 190px);
 }
 .left-menu:hover > .leftmenucont{
     background:#222;
 }
 .main.pinned{
-    width:calc(100% - 250px) !important;
+    width:calc(100% - 190px) !important;
 }
 .left-menu.pinned{
-    width:250px !important;
+    width:190px !important;
 }
 .hovermepls{
     position:absolute;
