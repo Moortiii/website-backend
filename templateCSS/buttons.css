@@ -3,6 +3,13 @@
     margin: 5px;
 }
 
+.error-btn:focus,
+.success-btn:focus,
+.warning-btn:focus,
+.normal-btn:focus {
+    outline: none;
+}
+
 .error-btn {
     background: #e74c3c;
     color: #efefef;
