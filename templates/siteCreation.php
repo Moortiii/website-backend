@@ -179,7 +179,7 @@ $theme = $_POST['theme'];
           </tr>
           <tr>
             <td colspan="2" class="relativeTd">
-              Option showcase:<br /><br />
+              Options:<br /><br />
               <label><input type="checkbox" name="haveAnimations" class="haveAnimations" checked /> Transitions</label>
               <fieldset class="resetstyles">
                 <legend>
