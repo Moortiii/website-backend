@@ -680,6 +680,7 @@ $("body").on("change focusout", "#boilerText", function() {
     $(this).closest(".siteCreation").find(".openSiteButton").css("color", $(this).val());
     $(this).closest(".siteCreation").find(".downloadSiteButtonLarge").css("color", $(this).val());
     $(this).closest(".siteCreation").find(".tools").css("color", $(this).val());
+    $(this).closest(".siteCreation").find(".tools").find("em").css("border-left-color", $(this).val());
     $(this).attr("value", $(this).val());
 });
 $('.importSave').click(function() {
