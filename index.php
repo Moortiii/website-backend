@@ -52,7 +52,7 @@ page..
     <div class="main" id="main">
 
       <h1 class="subpage-header">
-      Boilersite
+      <img src="http://i.imgur.com/Gu47ouy.png" /> Boilersite
   </h1>
 
       <div class="section" style="display:none;">

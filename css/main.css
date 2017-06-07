@@ -21,7 +21,9 @@
 .clear {
     clear: both;
 }
-
+h1 img{
+    max-height:35px;
+}
 body,
 html {
     padding: 0;
@@ -93,6 +95,16 @@ fieldset {
     transition:width 0.2s ease-in-out 0.5s, background 0.5s ease-in;}*/
 .nav-link i{
     margin-right: 15px !important;
+}
+.leftmenucont{
+    border-left:1px solid transparent;
+}
+.leftmenucont:hover{
+    transition: border-left 0.8s ease-in-out;
+    border-left-color: var(--green);
+}
+.left-menu.pinned .leftmenucont{
+    border-left-color: var(--green) !important;
 }
 .nav-link{
     min-width:150px;
@@ -244,7 +256,7 @@ fieldset {
 }
 
 .section .section {
-    border-left-color: #eee !important;
+    border-left-color: var(--navy) !important;
 }
 
 .section:nth-child(odd) {
