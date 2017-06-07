@@ -183,11 +183,19 @@ fieldset {
 }
 
 .sitecreation .tools:hover {
-    background: rgba(95, 28, 44, 0.09);
+    box-shadow:inset 0px 0px 18px -8px #000;
+}
+.sitecreation .tools:hover em{
+    text-decoration: underline;
+    
+}
+.sitecreation.closed .tools:hover em{
+    text-decoration:none;
 }
 
 .sitecreation.closed .tools:hover {
     background: #fff;
+    box-shadow:none;
 }
 
 .sitecreation.closed .tools {
