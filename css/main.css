@@ -187,7 +187,7 @@ fieldset {
 }
 .sitecreation .tools:hover em{
     text-decoration: underline;
-    
+
 }
 .sitecreation.closed .tools:hover em{
     text-decoration:none;
@@ -467,6 +467,15 @@ input[type="textarea"] {
     font-size: 14px;
     outline: none;
     width: 100%;
+}
+input[type="color"]{
+    cursor:pointer;
+        background: #f9f9f9;
+    border-color: #ddd;
+}
+input[type="color"]:hover {
+    background: white;
+    border-color: #eee;
 }
 
 input[type="checkbox"]:focus,
