@@ -961,6 +961,10 @@ select.action {
 .importSaveTr {
     display: none;
 }
+.exportSaveTr textarea, .importSaveTr textarea{
+    max-width:160px;
+    resize: none;
+}
 
 .exportSaveNow,
 .importSaveNow {
